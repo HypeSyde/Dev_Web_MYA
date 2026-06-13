@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MYA — Luxury Yachting Redefined | Sunseeker &amp; Saxdor Western Australia</title>
+<meta name="description" content="Motoryachts Australasia — the official Sunseeker and Saxdor dealer for Western Australia. Sales, brokerage and after-sales service from our North Fremantle marina.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>/* ============================================================
+   MYA — Motoryachts Australasia
+   Aesthetic: Saxdor x Sunseeker London — cool monochrome,
+   marine-steel-blue accent, modern sans, cinematic imagery.
+   ============================================================ */
+
+:root{
+  --ink:#0a0f14; --ink-2:#10171e; --ink-3:#18222b;
+  --paper:#f4f5f3; --paper-2:#e7e9e5;
+  --blue:#2f6f9e; --blue-2:#6aa6cd; --white:#fff;
+  --ink-soft:#525c65; --muted:rgba(244,245,243,.60); --muted-2:rgba(244,245,243,.34);
+  --line-d:rgba(255,255,255,.13); --line-l:rgba(10,15,20,.12);
+  --ease:cubic-bezier(.16,1,.3,1); --ease-2:cubic-bezier(.65,.05,.36,1);
+  --nav-h:92px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Manrope',system-ui,sans-serif;background:var(--paper);color:var(--ink);
+  font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--blue);color:var(--white)}
+::-webkit-scrollbar{width:9px}
+::-webkit-scrollbar-track{background:var(--paper-2)}
+::-webkit-scrollbar-thumb{background:var(--line-l)}
+::-webkit-scrollbar-thumb:hover{background:var(--blue)}
+
+/* ---------- atoms ---------- */
+.wrap{max-width:1340px;margin:0 auto;padding:0 clamp(22px,5vw,84px)}
+.wrap-n{max-width:1040px;margin:0 auto;padding:0 clamp(22px,5vw,84px)}
+section{position:relative}
+.pad{padding:clamp(80px,12vh,168px) 0}
+.pad-s{padding:clamp(56px,8vh,104px) 0}
+.disp{font-family:'Archivo',sans-serif}
+.center{text-align:center}
+.upper{text-transform:uppercase}
+h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;letter-spacing:-.01em}
+.kicker{font-family:'Manrope',sans-serif;font-size:11.5px;letter-spacing:.34em;text-transform:uppercase;
+  font-weight:600;color:var(--blue-2);display:inline-flex;align-items:center;gap:14px}
+.kicker::before{content:"";width:30px;height:1px;background:var(--blue);display:inline-block;
+  transform:scaleX(0);transform-origin:left;transition:transform 1s var(--ease) .1s}
+.reveal.in .kicker::before,.kicker.in::before{transform:scaleX(1)}
+.kicker.plain::before{display:none}
+.h2{font-size:clamp(2.1rem,5.2vw,4.6rem);font-weight:700;text-transform:uppercase;letter-spacing:-.015em;line-height:.98;margin:.3em 0 .5em}
+.h2 .thin{font-weight:300}
+.lead{max-width:60ch;font-weight:300;font-size:1.05rem;line-height:1.8;color:var(--muted)}
+.light .lead{color:var(--ink-soft)}
+
+/* buttons */
+.btn{--bg:var(--white);--fg:var(--ink);position:relative;display:inline-flex;align-items:center;gap:.9em;
+  font-family:'Manrope',sans-serif;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;
+  padding:18px 40px;border:1px solid var(--bg);background:transparent;color:var(--fg);cursor:pointer;
+  overflow:hidden;isolation:isolate;transition:color .55s var(--ease)}
+.btn::before{content:"";position:absolute;inset:0;background:var(--bg);z-index:-1;transform:scaleX(1);
+  transform-origin:left;transition:transform .55s var(--ease)}
+.btn:hover::before{transform:scaleX(0);transform-origin:right}
+.btn:hover{color:var(--bg)}
+.btn--out{--bg:var(--white);--fg:var(--white)}
+.btn--out::before{transform:scaleX(0);transform-origin:right}
+.btn--out:hover::before{transform:scaleX(1);transform-origin:left}
+.btn--out:hover{color:var(--ink)}
+.btn--blue{--bg:var(--blue);--fg:var(--blue)}
+.btn--blue::before{transform:scaleX(0);transform-origin:right}
+.btn--blue:hover::before{transform:scaleX(1);transform-origin:left}
+.btn--blue:hover{color:var(--white);border-color:var(--blue)}
+.btn--dark{--bg:var(--ink);--fg:var(--ink)}
+.btn--dark::before{transform:scaleX(0);transform-origin:right}
+.btn--dark:hover::before{transform:scaleX(1);transform-origin:left}
+.btn--dark:hover{color:var(--paper)}
+.btn .ar,.tlink .ar{transition:transform .5s var(--ease)}
+.btn:hover .ar,.tlink:hover .ar{transform:translateX(6px)}
+.tlink{display:inline-flex;align-items:center;gap:.7em;font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:600;color:var(--blue-2);position:relative;padding-bottom:7px}
+.tlink::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--blue);
+  transform:scaleX(0);transform-origin:right;transition:transform .5s var(--ease)}
+.tlink:hover::after{transform:scaleX(1);transform-origin:left}
+.light .tlink{color:var(--blue)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-d="1"]{transition-delay:.1s}.reveal[data-d="2"]{transition-delay:.2s}
+.reveal[data-d="3"]{transition-delay:.3s}.reveal[data-d="4"]{transition-delay:.4s}
+.reveal[data-d="5"]{transition-delay:.5s}.reveal[data-d="6"]{transition-delay:.6s}
+.maskline{overflow:hidden;display:block}
+.maskline>span{display:block;transform:translateY(110%);transition:transform 1.1s var(--ease)}
+.reveal.in .maskline>span,.in>.maskline>span{transform:translateY(0)}
+
+/* grain + progress */
+.grain{position:fixed;inset:0;z-index:9000;pointer-events:none;opacity:.045;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.progress{position:fixed;top:0;left:0;height:2px;width:0;background:var(--blue);z-index:9500;transition:width .1s linear}
+
+/* ============================================================ HEADER */
+.header{position:fixed;top:0;left:0;width:100%;z-index:1000;border-bottom:1px solid transparent;
+  transition:background .55s var(--ease),backdrop-filter .55s,border-color .55s}
+.header .bar{display:flex;align-items:center;justify-content:space-between;height:var(--nav-h);transition:height .5s var(--ease)}
+.header.scrolled,.header.solid{background:rgba(244,245,243,.92);backdrop-filter:blur(16px) saturate(140%);border-bottom-color:var(--line-l)}
+.header.scrolled .bar,.header.solid .bar{height:68px}
+.header.scrolled .logo,.header.solid .logo,.header.scrolled .nav-links>li>a,.header.solid .nav-links>li>a,
+.header.scrolled .nav-phone,.header.solid .nav-phone,.header.scrolled .nav-enq,.header.solid .nav-enq{color:var(--ink)}
+.header.scrolled .logo small,.header.solid .logo small{color:var(--ink-soft);border-left-color:var(--line-l)}
+.header.scrolled .nav-enq,.header.solid .nav-enq{border-color:var(--line-l)}
+.header.scrolled .burger span,.header.solid .burger span{background:var(--ink)}
+.logo{font-family:'Archivo',sans-serif;font-weight:800;letter-spacing:.04em;font-size:1.75rem;line-height:1;
+  color:var(--paper);display:flex;align-items:center;gap:.6em}
+.logo .dot{color:var(--blue-2)}
+.logo small{font-family:'Manrope',sans-serif;font-size:8.5px;letter-spacing:.32em;font-weight:500;color:var(--muted);
+  text-transform:uppercase;line-height:1.3;border-left:1px solid var(--line-d);padding-left:.8em}
+.nav{display:flex;align-items:center;gap:36px}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links>li>a{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;color:var(--paper);
+  position:relative;padding:8px 0;opacity:.82;transition:opacity .4s}
+.nav-links>li>a:hover,.nav-links>li.active>a{opacity:1}
+.nav-links>li>a::after{content:"";position:absolute;left:0;bottom:0;height:1px;width:100%;background:var(--blue);
+  transform:scaleX(0);transform-origin:right;transition:transform .45s var(--ease)}
+.nav-links>li>a:hover::after,.nav-links>li.active>a::after{transform:scaleX(1);transform-origin:left}
+.has-sub{position:relative}
+.submenu{position:absolute;top:100%;left:-20px;min-width:200px;background:rgba(244,245,243,.98);backdrop-filter:blur(14px);
+  border:1px solid var(--line-l);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .4s var(--ease),transform .4s var(--ease),visibility .4s}
+.has-sub:hover .submenu{opacity:1;visibility:visible;transform:translateY(0)}
+.submenu li{list-style:none}
+.submenu a{display:block;padding:11px 22px;letter-spacing:.16em;font-size:11px;text-transform:uppercase;opacity:.74;transition:.3s;color:var(--ink)}
+.submenu a:hover{background:var(--paper-2);color:var(--blue);opacity:1}
+.caret{font-size:7px;margin-left:6px;opacity:.6;display:inline-block;transition:transform .4s}
+.has-sub:hover .caret{transform:rotate(180deg)}
+.nav-cta{display:flex;align-items:center;gap:22px}
+.nav-phone{font-size:12px;letter-spacing:.1em;color:var(--paper);opacity:.82;display:flex;align-items:center;gap:.5em;transition:color .4s}
+.nav-phone:hover{color:var(--blue-2)}
+.nav-enq{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;border:1px solid var(--line-d);
+  padding:12px 22px;color:var(--paper);transition:.45s var(--ease)}
+.nav-enq:hover{background:var(--blue);color:var(--white);border-color:var(--blue)}
+.burger{display:none;flex-direction:column;gap:5px;width:28px;cursor:pointer;background:none;border:none;padding:6px 0}
+.burger span{height:1.5px;width:100%;background:var(--paper);transition:.4s var(--ease)}
+.burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.burger.open span:nth-child(2){opacity:0}
+.burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.drawer{position:fixed;inset:0;z-index:990;background:var(--paper);padding:112px clamp(26px,8vw,64px) 44px;display:flex;
+  flex-direction:column;opacity:0;visibility:hidden;transform:translateY(-10px);
+  transition:opacity .55s var(--ease),transform .55s var(--ease),visibility .55s;overflow-y:auto}
+.drawer.open{opacity:1;visibility:visible;transform:none}
+.drawer a{font-family:'Archivo',sans-serif;font-size:1.7rem;font-weight:700;text-transform:uppercase;color:var(--ink);
+  padding:13px 0;border-bottom:1px solid var(--line-l);display:flex;justify-content:space-between;align-items:center;letter-spacing:-.01em}
+.drawer a span{font-family:'Manrope',sans-serif;font-size:10px;letter-spacing:.2em;color:var(--blue);opacity:.8;font-weight:500}
+.drawer .sub-m{font-size:1.1rem;padding-left:16px;color:var(--ink-soft);font-weight:600}
+.drawer .d-foot{margin-top:auto;padding-top:28px;font-size:13px;letter-spacing:.04em;color:var(--ink-soft)}
+.drawer .d-foot a{font-family:'Manrope',sans-serif;font-size:13px;border:none;padding:4px 0;display:block;text-transform:none;font-weight:300}
+
+/* ============================================================ PARALLAX PRIMITIVES */
+.px-wrap{position:relative;overflow:hidden}
+.px{will-change:transform}
+[data-parallax]{will-change:transform}
+
+/* ============================================================ HOME HERO (layered parallax) */
+.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden}
+.hero-layer{position:absolute;inset:-12% -2%;z-index:-3;background-size:cover;background-position:center;will-change:transform}
+.hero-haze{position:absolute;inset:0;z-index:-2;
+  background:radial-gradient(130% 100% at 50% 18%,transparent 28%,rgba(8,12,16,.55) 100%),
+  linear-gradient(to bottom,rgba(8,12,16,.5),rgba(8,12,16,.18) 40%,rgba(8,12,16,.9))}
+.hero-inner{position:relative;z-index:2;max-width:1100px;padding:0 22px;will-change:transform}
+.hero .kicker{opacity:0;animation:fadeUp 1s var(--ease) .4s forwards;justify-content:center}
+.hero h1{font-size:clamp(2.9rem,9.6vw,9rem);font-weight:800;text-transform:uppercase;line-height:.92;
+  letter-spacing:-.02em;margin:.22em 0;color:var(--paper)}
+.hero h1 .ln{display:block;overflow:hidden}
+.hero h1 .ln i{display:block;font-style:normal;transform:translateY(112%);animation:lineUp 1.2s var(--ease) forwards}
+.hero h1 .ln:nth-child(1) i{animation-delay:.52s}.hero h1 .ln:nth-child(2) i{animation-delay:.66s}
+.hero h1 .thin{font-weight:300}
+.hero p.sub{max-width:54ch;margin:0 auto;color:rgba(244,245,243,.84);font-size:1.08rem;font-weight:300;
+  opacity:0;animation:fadeUp 1s var(--ease) 1.05s forwards}
+.hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:42px;opacity:0;animation:fadeUp 1s var(--ease) 1.25s forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes lineUp{to{transform:translateY(0)}}
+.scrollcue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;
+  align-items:center;gap:13px;opacity:0;animation:fadeUp 1s var(--ease) 1.6s forwards}
+.scrollcue span{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
+.scrollcue .ln{width:1px;height:52px;background:linear-gradient(var(--blue-2),transparent);position:relative;overflow:hidden}
+.scrollcue .ln::after{content:"";position:absolute;top:-52px;left:0;width:100%;height:52px;background:var(--paper);
+  animation:drop 2.4s var(--ease-2) infinite}
+@keyframes drop{0%{top:-52px}60%,100%{top:52px}}
+/* ghost wordmark drifting behind hero foot */
+.hero-ghost{position:absolute;left:50%;bottom:-7vw;transform:translateX(-50%);z-index:-1;font-family:'Archivo',sans-serif;
+  font-weight:800;font-size:30vw;line-height:.7;color:rgba(255,255,255,.035);letter-spacing:-.04em;pointer-events:none;white-space:nowrap}
+
+/* ============================================================ PAGE HERO (interior) */
+.phero{position:relative;min-height:70vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(44px,7vh,88px)}
+.phero-bg{position:absolute;inset:-8% -2%;z-index:-2;background-size:cover;background-position:center;will-change:transform}
+.phero::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(to top,rgba(8,12,16,.92),rgba(8,12,16,.25) 56%,rgba(8,12,16,.5))}
+.phero-inner{position:relative;z-index:2;width:100%}
+.phero .crumb{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;
+  display:flex;gap:.7em;align-items:center;flex-wrap:wrap}
+.phero .crumb a{transition:color .4s}.phero .crumb a:hover{color:var(--blue-2)}
+.phero .crumb .sl{color:var(--blue-2);opacity:.7}
+.phero .kicker{margin-bottom:18px}
+.phero h1{font-size:clamp(2.6rem,7.4vw,6.4rem);font-weight:800;text-transform:uppercase;line-height:.95;color:var(--paper);letter-spacing:-.02em}
+.phero h1 .thin{font-weight:300}
+.phero p{max-width:56ch;color:rgba(244,245,243,.82);margin-top:22px;font-size:1.05rem;font-weight:300}
+
+/* ============================================================ MARQUEE TICKER */
+.ticker{background:var(--paper-2);border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l);overflow:hidden;padding:0}
+.ticker-track{display:flex;gap:0;white-space:nowrap;animation:scrollx 38s linear infinite}
+.ticker-track .it{font-family:'Archivo',sans-serif;font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--ink-soft);padding:20px 34px;display:inline-flex;align-items:center;gap:34px}
+.ticker-track .it::after{content:"✦";color:var(--blue);font-size:9px;opacity:.7}
+@keyframes scrollx{to{transform:translateX(-50%)}}
+.ticker:hover .ticker-track{animation-play-state:paused}
+
+/* ============================================================ STATS */
+.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
+.stat{background:var(--white);padding:46px 28px;text-align:center}
+.stat .num{font-family:'Archivo',sans-serif;font-size:clamp(2.8rem,6vw,4.8rem);font-weight:800;color:var(--ink);line-height:1;letter-spacing:-.02em}
+.stat .num em{font-style:normal;color:var(--blue)}
+.stat .lbl{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);margin-top:16px;font-weight:500}
+
+/* ============================================================ SECTION HEAD */
+.light{background:var(--paper);color:var(--ink)}
+.light .h2,.light h2,.light h3{color:var(--ink)}
+.light .kicker{color:var(--blue)}
+.head-flex{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:62px}
+.head-flex .copy{max-width:660px}
+
+/* ============================================================ FULL-BLEED PARALLAX BAND */
+.band{position:relative;min-height:86vh;display:flex;align-items:center;overflow:hidden}
+.band-bg{position:absolute;inset:-15% 0;z-index:-2;background-size:cover;background-position:center;will-change:transform}
+.band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,12,16,.82),rgba(8,12,16,.32) 70%,transparent)}
+.band.cent::after{background:radial-gradient(120% 100% at 50% 50%,rgba(8,12,16,.45),rgba(8,12,16,.78))}
+.band-inner{position:relative;z-index:2;max-width:620px}
+.band.cent .band-inner{max-width:820px;text-align:center;margin:0 auto}
+.band h2{font-size:clamp(2.2rem,5.4vw,4.8rem);font-weight:800;text-transform:uppercase;color:var(--paper);line-height:.98;letter-spacing:-.018em;margin-bottom:24px}
+.band h2 .thin{font-weight:300}
+.band p{color:rgba(244,245,243,.82);font-size:1.06rem;font-weight:300;margin-bottom:30px}
+
+/* ============================================================ MARQUES SPLIT SHOWCASE (Saxdor-style) */
+.showcase{display:flex;flex-direction:column;gap:clamp(70px,9vw,150px)}
+.show{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(34px,5vw,84px);align-items:center}
+.show.flip .show-media{order:2}
+.show-media{position:relative;overflow:hidden;aspect-ratio:16/11;background:var(--ink-3)}
+.show-media .px-img{position:absolute;inset:-12% 0;background-size:cover;background-position:center;will-change:transform}
+.show-media .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,12,16,.4),transparent 60%)}
+.show-tag{position:absolute;top:24px;left:24px;z-index:3;font-size:10px;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--white);background:rgba(8,12,16,.5);border:1px solid var(--line-d);padding:8px 16px;backdrop-filter:blur(6px)}
+.show-copy .brandmark{height:30px;width:auto;margin-bottom:24px;filter:brightness(0) invert(1);opacity:.95}
+.light .show-copy .brandmark{filter:none}
+.show-copy h2{font-size:clamp(1.9rem,3.6vw,3.2rem);font-weight:800;text-transform:uppercase;letter-spacing:-.015em;margin-bottom:20px;line-height:1}
+.show-copy .lead{margin-bottom:18px}
+.show-meta{display:flex;gap:34px;margin:26px 0 30px;flex-wrap:wrap}
+.show-meta div{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.light .show-meta div{color:var(--ink-soft)}
+.show-meta div b{display:block;font-family:'Archivo',sans-serif;font-size:1.7rem;font-weight:700;color:var(--paper);margin-top:6px;letter-spacing:-.01em}
+.light .show-meta div b{color:var(--ink)}
+
+/* ============================================================ YACHT CARDS / GRID */
+.fleet{background:var(--paper-2)}
+.fleet-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.fleet-grid.mb{margin-bottom:84px}
+.yacht{position:relative;background:var(--white);overflow:hidden;border:1px solid transparent;
+  transition:border-color .5s var(--ease),transform .5s var(--ease);display:flex;flex-direction:column}
+.light .yacht{background:var(--white)}
+.yacht:hover{border-color:var(--line-l);transform:translateY(-5px)}
+.yacht .ph{position:relative;overflow:hidden;aspect-ratio:4/3}
+.yacht .ph .img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.2s var(--ease)}
+.yacht.cut .ph{background:linear-gradient(160deg,#dfe4e7,#f1f3f2);aspect-ratio:4/3}
+.yacht.cut .ph .img{background-size:contain;background-repeat:no-repeat;inset:8% 6%}
+.yacht:hover .ph .img{transform:scale(1.07)}
+.yacht.cut:hover .ph .img{transform:scale(1.05)}
+.yacht .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,12,16,.55),transparent 60%);opacity:.65;transition:opacity .5s}
+.yacht.cut .ph::after{display:none}
+.yacht:hover .ph::after{opacity:1}
+.yacht .tag{position:absolute;top:16px;left:16px;z-index:3;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--white);background:rgba(8,12,16,.55);border:1px solid var(--line-d);padding:7px 13px;backdrop-filter:blur(6px)}
+.yacht.cut .tag{color:var(--ink);background:rgba(255,255,255,.7);border-color:var(--line-l)}
+.yacht .info{padding:24px 26px 28px;display:flex;flex-direction:column;flex:1}
+.light .yacht .info{color:var(--ink)}
+.yacht .info h3{font-family:'Archivo',sans-serif;font-size:1.5rem;font-weight:700;text-transform:uppercase;color:var(--ink);line-height:1.05;letter-spacing:-.01em}
+.light .yacht .info h3{color:var(--ink)}
+.yacht .meta{display:flex;gap:22px;margin:14px 0 18px;flex-wrap:wrap}
+.yacht .meta div{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.light .yacht .meta div{color:var(--ink-soft)}
+.yacht .meta div b{display:block;font-family:'Archivo',sans-serif;font-size:1.05rem;font-weight:600;color:var(--ink);margin-top:3px;letter-spacing:0}
+.light .yacht .meta div b{color:var(--ink)}
+.yacht .foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line-l);padding-top:16px;margin-top:auto}
+.light .yacht .foot{border-color:var(--line-l)}
+.yacht .price{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.light .yacht .price{color:var(--blue)}
+.yacht .go{font-size:17px;color:var(--ink);opacity:.5;transition:.5s var(--ease)}
+.light .yacht .go{color:var(--ink)}
+.yacht:hover .go{opacity:1;transform:translateX(4px);color:var(--blue-2)}
+
+/* filter tabs */
+.filters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:48px}
+.filters button{font-family:'Manrope',sans-serif;font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;
+  color:var(--ink-soft);background:transparent;border:1px solid var(--line-l);padding:12px 22px;cursor:pointer;transition:.4s var(--ease)}
+.filters button:hover{color:var(--ink)}
+.filters button.active{background:var(--blue);color:var(--white);border-color:var(--blue)}
+.count-note{text-align:center;color:var(--ink-soft);font-size:12px;letter-spacing:.1em;margin-bottom:36px}
+
+/* model index */
+.index-head{text-align:center;margin-bottom:50px}
+.brand-index{margin-bottom:56px}
+.brand-index .b-title{display:flex;align-items:center;gap:22px;margin-bottom:30px}
+.brand-index .b-title h3{font-family:'Archivo',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;text-transform:uppercase;white-space:nowrap;letter-spacing:-.01em}
+.brand-index .b-title .l{height:1px;flex:1;background:var(--line-d)}
+.light .brand-index .b-title .l{background:var(--line-l)}
+.series{margin-bottom:26px}
+.series h4{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--blue-2);margin-bottom:15px;font-weight:600}
+.light .series h4{color:var(--blue)}
+.series .models{display:flex;flex-wrap:wrap;gap:9px}
+.series .models a{font-size:13px;letter-spacing:.04em;color:var(--ink-soft);border:1px solid var(--line-l);padding:10px 17px;transition:.4s var(--ease)}
+.light .series .models a{color:var(--ink-soft);border-color:var(--line-l)}
+.series .models a:hover{color:var(--white);background:var(--blue);border-color:var(--blue)}
+
+/* ============================================================ ABOUT ART */
+.about-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(38px,6vw,90px);align-items:center}
+.about-copy .lead{margin-bottom:22px}
+.quote{font-family:'Archivo',sans-serif;font-size:clamp(1.4rem,2.4vw,2.1rem);font-weight:500;color:var(--ink);line-height:1.28;
+  border-left:2px solid var(--blue);padding:4px 0 4px 28px;margin:36px 0;letter-spacing:-.01em}
+.quote cite{display:block;font-family:'Manrope',sans-serif;font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-top:16px;font-weight:600}
+.about-art{position:relative;height:clamp(420px,52vw,640px)}
+.about-art .a1,.about-art .a2{position:absolute;overflow:hidden;background:var(--ink-3)}
+.about-art .a1{top:0;left:0;width:74%;height:74%;z-index:1}
+.about-art .a2{bottom:0;right:0;width:54%;height:54%;z-index:2;border:8px solid var(--paper)}
+.about-art .px-img{position:absolute;inset:-12% 0;background-size:cover;background-position:center;will-change:transform}
+.about-art .badge{position:absolute;bottom:7%;left:7%;z-index:3;background:var(--blue);color:var(--white);padding:20px 26px;text-align:center}
+.about-art .badge b{font-family:'Archivo',sans-serif;font-size:2.4rem;font-weight:800;display:block;line-height:1}
+.about-art .badge span{font-size:9px;letter-spacing:.2em;text-transform:uppercase}
+
+/* generic split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(34px,5vw,82px);align-items:center}
+.split.flip .split-media{order:2}
+.split-media{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--ink-3)}
+.split-media .px-img{position:absolute;inset:-10% 0;background-size:cover;background-position:center;will-change:transform}
+.split-copy h2{margin-bottom:.4em}
+.split-copy .lead{margin-bottom:20px}
+
+/* ============================================================ FEATURE CARDS */
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l)}
+.feat-grid.c3{grid-template-columns:repeat(3,1fr)}
+.light .feat-grid{background:var(--line-l);border-color:var(--line-l)}
+.feat{background:var(--paper);padding:clamp(32px,4vw,54px);position:relative;overflow:hidden;transition:background .55s var(--ease)}
+.light .feat{background:var(--paper)}
+.feat::before{content:"";position:absolute;left:0;top:0;width:2px;height:100%;background:var(--blue);transform:scaleY(0);transform-origin:top;transition:transform .6s var(--ease)}
+.feat:hover::before{transform:scaleY(1)}
+.feat:hover{background:var(--paper-2)}
+.light .feat:hover{background:var(--paper-2)}
+.feat .no{font-family:'Archivo',sans-serif;font-size:.95rem;color:var(--blue);font-weight:700;letter-spacing:.04em;display:block;margin-bottom:24px}
+.light .feat .no{color:var(--blue)}
+.feat h3{font-family:'Archivo',sans-serif;font-size:clamp(1.3rem,2.2vw,1.75rem);font-weight:700;text-transform:uppercase;margin-bottom:15px;letter-spacing:-.01em}
+.feat p{color:var(--ink-soft);font-size:.96rem;line-height:1.75;font-weight:300}
+.light .feat p{color:var(--ink-soft)}
+
+/* ============================================================ CTA BANNER (parallax) */
+.cta{position:relative;padding:clamp(100px,16vh,182px) 0;text-align:center;overflow:hidden}
+.cta-bg{position:absolute;inset:-15% 0;z-index:-2;background-size:cover;background-position:center;will-change:transform}
+.cta::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(8,12,16,.68)}
+.cta h2{font-family:'Archivo',sans-serif;font-size:clamp(2.3rem,5.6vw,4.8rem);font-weight:800;text-transform:uppercase;color:var(--paper);max-width:20ch;margin:0 auto .35em;line-height:.98;letter-spacing:-.018em}
+.cta h2 .thin{font-weight:300}
+.cta p{color:rgba(244,245,243,.82);max-width:54ch;margin:0 auto 38px;font-size:1.05rem;font-weight:300}
+
+/* ============================================================ MODEL DETAIL */
+.spec-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(38px,5vw,80px);align-items:start}
+.spec-intro h2{font-size:clamp(1.9rem,4vw,3rem);margin-bottom:22px;text-transform:uppercase;font-weight:800;letter-spacing:-.015em}
+.spec-intro p{color:var(--ink-soft);line-height:1.85;margin-bottom:20px;max-width:54ch;font-weight:300}
+.light .spec-intro p{color:var(--ink-soft)}
+.quickfacts{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line-l);border:1px solid var(--line-l);margin:32px 0}
+.light .quickfacts{background:var(--line-l);border-color:var(--line-l)}
+.quickfacts .qf{background:var(--white);padding:24px 22px}
+.light .quickfacts .qf{background:var(--paper)}
+.qf .qf-l{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:8px;font-weight:600}
+.light .qf .qf-l{color:var(--blue)}
+.qf .qf-v{font-family:'Archivo',sans-serif;font-size:1.55rem;font-weight:700;letter-spacing:-.01em}
+.spec-tables{display:flex;flex-direction:column;gap:32px}
+.spec-block h3{font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:14px;padding-bottom:14px;border-bottom:1px solid var(--line-l)}
+.light .spec-block h3{color:var(--blue);border-color:var(--line-l)}
+.spec-row{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--line-l);font-size:14px}
+.light .spec-row{border-color:var(--line-l)}
+.spec-row:last-child{border-bottom:none}
+.spec-row .sk{color:var(--ink-soft);letter-spacing:.05em;text-transform:uppercase;font-size:11px;padding-top:3px;font-weight:500}
+.light .spec-row .sk{color:var(--ink-soft)}
+.spec-row .sv{text-align:right;color:var(--ink);font-weight:300;max-width:62%}
+.light .spec-row .sv{color:var(--ink)}
+.spec-row .sv small{display:block;color:var(--ink-soft);font-size:12px;margin-top:2px}
+.spec-na{padding:34px;border:1px solid var(--line-l);text-align:center}
+.spec-na p{color:var(--ink-soft);margin-bottom:22px}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.gallery .g{position:relative;overflow:hidden;aspect-ratio:4/3;cursor:pointer;background:var(--ink-3)}
+.gallery .g:first-child{grid-column:span 2;grid-row:span 2}
+.gallery .g .img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.1s var(--ease)}
+.gallery .g:hover .img{transform:scale(1.08)}
+.gallery .g::after{content:"+";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-family:'Archivo',sans-serif;font-size:1.8rem;color:var(--paper);background:rgba(8,12,16,.38);opacity:0;transition:opacity .4s}
+.gallery .g:hover::after{opacity:1}
+
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:9800;background:rgba(5,8,11,.95);backdrop-filter:blur(8px);display:flex;align-items:center;
+  justify-content:center;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;padding:30px}
+.lightbox.open{opacity:1;visibility:visible}
+.lightbox img{max-width:92vw;max-height:86vh;object-fit:contain;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lightbox .lb-close{position:absolute;top:26px;right:32px;font-size:30px;color:var(--paper);cursor:pointer;line-height:1;font-weight:200;transition:color .3s}
+.lightbox .lb-close:hover{color:var(--blue-2)}
+.lightbox .lb-nav{position:absolute;top:50%;transform:translateY(-50%);font-size:34px;color:var(--paper);cursor:pointer;padding:18px;user-select:none;transition:color .3s;font-family:'Archivo',sans-serif;font-weight:300}
+.lightbox .lb-nav:hover{color:var(--blue-2)}
+.lightbox .lb-prev{left:8px}.lightbox .lb-next{right:8px}
+.lightbox .lb-count{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);font-size:12px;letter-spacing:.2em;color:var(--muted)}
+
+/* ============================================================ CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(38px,6vw,80px)}
+.contact-info .lead{color:var(--ink-soft);margin-bottom:38px}
+.cblock{margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--line-l)}
+.cblock:last-of-type{border-bottom:none}
+.cblock .ct{font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;font-weight:600}
+.cblock .cline{font-size:1.05rem;color:var(--ink);font-weight:300;line-height:1.6}
+.cblock .cline a{transition:color .4s}.cblock .cline a:hover{color:var(--blue)}
+.cblock .person{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:8px 0;border-bottom:1px dashed var(--line-l)}
+.cblock .person:last-child{border-bottom:none}
+.cblock .person b{font-weight:600}
+.socials{display:flex;gap:12px;margin-top:8px}
+.socials a{width:46px;height:46px;border:1px solid var(--line-l);display:flex;align-items:center;justify-content:center;font-size:10.5px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);transition:.45s var(--ease)}
+.socials a:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.form{background:var(--paper-2);padding:clamp(32px,4vw,56px);color:var(--ink)}
+.form h3{font-family:'Archivo',sans-serif;font-size:1.7rem;font-weight:700;text-transform:uppercase;color:var(--ink);margin-bottom:8px;letter-spacing:-.01em}
+.form .fsub{color:var(--ink-soft);font-size:.92rem;margin-bottom:32px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.field{position:relative;margin-bottom:28px}
+.field input,.field select,.field textarea{width:100%;background:transparent;border:none;border-bottom:1px solid var(--line-l);color:var(--ink);
+  font-family:'Manrope',sans-serif;font-size:15px;font-weight:300;padding:12px 0;outline:none;transition:border-color .4s}
+.field textarea{resize:vertical;min-height:84px}
+.field select option{background:var(--white);color:var(--ink)}
+.field label{position:absolute;left:0;top:12px;font-size:14px;color:var(--ink-soft);pointer-events:none;transition:.35s var(--ease);letter-spacing:.03em}
+.field input:focus~label,.field input:not(:placeholder-shown)~label,.field textarea:focus~label,
+.field textarea:not(:placeholder-shown)~label,.field.sel label{top:-12px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue)}
+.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--blue)}
+.field select{color:var(--ink-soft)}
+.form .btn{width:100%;justify-content:center;margin-top:6px}
+.form-note{margin-top:18px;font-size:12px;color:var(--ink-soft);text-align:center;opacity:0;height:0;transition:opacity .5s}
+.form-note.show{opacity:1;height:auto}
+.map-wrap{margin-top:80px;height:440px;overflow:hidden;border:1px solid var(--line-l);filter:grayscale(1) contrast(1.05);transition:filter .6s var(--ease)}
+.map-wrap:hover{filter:grayscale(0)}
+.map-wrap iframe{width:100%;height:100%;border:0;display:block}
+
+/* coming soon */
+.soon{text-align:center;padding:clamp(40px,8vh,90px) 0}
+.soon .bs{display:inline-block;font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--blue);border:1px solid var(--line-l);padding:10px 22px;margin-bottom:28px;font-weight:600}
+.soon h2{font-size:clamp(2.1rem,5vw,3.6rem);margin-bottom:22px;text-transform:uppercase;font-weight:800;letter-spacing:-.015em}
+.soon p{color:var(--ink-soft);max-width:56ch;margin:0 auto 36px;font-size:1.05rem;line-height:1.8;font-weight:300}
+
+/* ============================================================ FOOTER */
+.footer{background:var(--white);border-top:1px solid var(--line-l);padding:88px 0 38px}
+.footer .logo{color:var(--ink)}
+.footer .logo small{color:var(--ink-soft);border-left-color:var(--line-l)}
+.f-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:48px;margin-bottom:66px}
+.f-brand .logo{font-size:2.2rem;margin-bottom:20px}
+.f-brand p{color:var(--ink-soft);font-size:.94rem;max-width:34ch;line-height:1.8;margin-bottom:24px;font-weight:300}
+.f-brand .ded{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);line-height:2;font-weight:500}
+.f-col h5{font-family:'Archivo',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-bottom:22px;font-weight:700}
+.f-col ul{list-style:none}
+.f-col li{margin-bottom:12px}
+.f-col a{font-size:14px;color:var(--ink-soft);font-weight:300;transition:color .4s,padding .4s}
+.f-col a:hover{color:var(--blue);padding-left:6px}
+.f-col .cl{font-size:14px;color:var(--ink-soft);line-height:1.9;font-weight:300}
+.f-col .cl a:hover{padding-left:0}
+.f-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;padding-top:30px;border-top:1px solid var(--line-l)}
+.f-bottom p{font-size:12px;letter-spacing:.05em;color:var(--ink-soft)}
+.f-bottom .fnav{display:flex;gap:22px}
+.f-bottom .fnav a{font-size:12px;letter-spacing:.1em;color:var(--ink-soft);transition:color .4s}
+.f-bottom .fnav a:hover{color:var(--blue)}
+
+/* ============================================================ RESPONSIVE */
+@media(max-width:1080px){
+  .nav-links,.nav-phone,.nav-enq{display:none}
+  .burger{display:flex}
+  .fleet-grid{grid-template-columns:repeat(2,1fr)}
+  .feat-grid.c3{grid-template-columns:1fr 1fr}
+  .f-top{grid-template-columns:1fr 1fr;gap:38px}
+  .f-brand{grid-column:1/-1}
+  .spec-layout{grid-template-columns:1fr;gap:48px}
+  .gallery{grid-template-columns:repeat(3,1fr)}
+  .show,.show.flip .show-media{grid-template-columns:1fr}
+  .show.flip .show-media{order:0}
+  .show{gap:34px}
+}
+@media(max-width:760px){
+  :root{--nav-h:72px}
+  .stats .grid{grid-template-columns:1fr 1fr}
+  .marques,.about-grid,.split,.contact-grid{grid-template-columns:1fr;gap:50px}
+  .split.flip .split-media{order:0}
+  .about-art{height:78vw;max-height:520px}
+  .feat-grid,.feat-grid.c3{grid-template-columns:1fr}
+  .quickfacts{grid-template-columns:1fr 1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+  .gallery .g:first-child{grid-column:span 2}
+  .grid2{grid-template-columns:1fr}
+  .band{min-height:78vh}.band::after{background:linear-gradient(to top,rgba(8,12,16,.9),rgba(8,12,16,.4))}
+  .head-flex{flex-direction:column;align-items:flex-start}
+  .phero{min-height:60vh}
+  .hero-ghost{font-size:42vw}
+}
+@media(max-width:460px){
+  .stats .grid{grid-template-columns:1fr}
+  .hero .hero-cta{flex-direction:column}
+  .hero .hero-cta .btn{width:100%;justify-content:center}
+  .gallery{grid-template-columns:1fr}
+  .gallery .g:first-child{grid-column:span 1}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .hero h1 .ln i,.maskline>span{transform:none}
+  .reveal{opacity:1;transform:none}
+  [data-parallax],.hero-layer,.band-bg,.phero-bg,.cta-bg,.px-img{transform:none!important}
+}</style>
+</head>
+<body data-page="home">
+<div class="grain"></div>
+<div class="progress" id="progress"></div>
+<header class="header" id="header">
+  <div class="wrap bar">
+    <a href="index.html" class="logo" aria-label="MYA — Motoryachts Australasia home">
+      MYA<span class="dot">.</span><small>Motoryachts<br>Australasia</small>
+    </a>
+    <nav class="nav">
+      <ul class="nav-links">
+        <li data-nav="home"><a href="index.html">Home</a></li>
+        <li data-nav="about"><a href="about.html">About</a></li>
+        <li class="has-sub" data-nav="newyachts">
+          <a href="fleet.html">New Yachts <span class="caret">▼</span></a>
+          <ul class="submenu">
+            <li><a href="sunseeker.html">Sunseeker</a></li>
+            <li><a href="saxdor.html">Saxdor</a></li>
+            <li><a href="fleet.html">View All Models</a></li>
+          </ul>
+        </li>
+        <li data-nav="preowned"><a href="pre-owned.html">Pre-Owned</a></li>
+        <li data-nav="service"><a href="service.html">After-Sales</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="tel:0499770180" class="nav-phone">+61 499 770 180</a>
+        <a href="contact.html" class="nav-enq">Enquire</a>
+      </div>
+      <button class="burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="drawer" id="drawer">
+  <a href="index.html" data-close>Home</a>
+  <a href="about.html" data-close>About</a>
+  <a href="sunseeker.html" data-close>Sunseeker <span>New</span></a>
+  <a href="saxdor.html" data-close>Saxdor <span>New</span></a>
+  <a href="fleet.html" data-close>The Fleet</a>
+  <a href="pre-owned.html" data-close>Pre-Owned</a>
+  <a href="service.html" data-close>After-Sales &amp; Service</a>
+  <div class="d-foot">
+    <a href="tel:0499770180">+61 499 770 180</a>
+    <a href="mailto:james@myaa.com.au">james@myaa.com.au</a>
+    <p style="margin-top:12px">26 Rous Head Road, North Fremantle WA</p>
+  </div>
+</div>
+<main>
+<!-- ===================== HERO (layered parallax) ===================== -->
+<section class="hero" id="top">
+  <div class="hero-layer" data-parallax data-speed="0.22"
+       style="background-image:url('https://images.sunseeker.com/images%2F0d24acdb5bd9675cd9f8ea8c5de73862%2Fen%2FHOMEPAGE-LAUNCH.jpg?auto=format&fit=crop&w=2200')"></div>
+  <div class="hero-haze"></div>
+  <div class="hero-ghost" data-parallax data-speed="0.5">MYA</div>
+  <div class="hero-inner" data-parallax data-speed="-0.07">
+    <span class="kicker plain">Sunseeker &amp; Saxdor · Western Australia</span>
+    <h1 class="disp">
+      <span class="ln"><i>Luxury Yachting</i></span>
+      <span class="ln"><i class="thin">Redefined</i></span>
+    </h1>
+    <p class="sub">From Fremantle's iconic waterfront to the open water of the Indian Ocean — the official Western Australian home of Sunseeker and Saxdor.</p>
+    <div class="hero-cta">
+      <a href="fleet.html" class="btn">Explore the Fleet <span class="ar">→</span></a>
+      <a href="contact.html" class="btn btn--out">Book a Viewing</a>
+    </div>
+  </div>
+  <a href="#intro" class="scrollcue" aria-label="Scroll down"><span>Scroll</span><span class="ln"></span></a>
+</section>
+
+<!-- ===================== TICKER ===================== -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="it">Sunseeker</span><span class="it">Saxdor</span><span class="it">Brokerage</span><span class="it">After-Sales &amp; Service</span><span class="it">Authorised Mercury Dealer</span><span class="it">North Fremantle Marina</span>
+    <span class="it">Sunseeker</span><span class="it">Saxdor</span><span class="it">Brokerage</span><span class="it">After-Sales &amp; Service</span><span class="it">Authorised Mercury Dealer</span><span class="it">North Fremantle Marina</span>
+  </div>
+</div>
+
+<!-- ===================== INTRO + STATS ===================== -->
+<section class="pad light" id="intro">
+  <div class="wrap">
+    <div class="head-flex">
+      <div class="copy reveal">
+        <span class="kicker">Motoryachts Australasia</span>
+        <h2 class="h2">A New Standard <span class="thin">of Yacht Ownership</span></h2>
+      </div>
+      <div class="reveal" data-d="1" style="max-width:440px">
+        <p class="lead">Founded in 2021 and built on more than eighty years of combined marine experience, MYA brings two of the world's most celebrated boatbuilders to Western Australia — supported by genuine, lifelong care.</p>
+        <div style="margin-top:26px"><a href="about.html" class="tlink">Our Story <span class="ar">→</span></a></div>
+      </div>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:30px">
+    <div class="stats"><div class="grid">
+      <div class="stat reveal"><div class="num" data-count="2"><span class="c">0</span></div><div class="lbl">World-Class Marques</div></div>
+      <div class="stat reveal" data-d="1"><div class="num" data-count="30"><span class="c">0</span>+</div><div class="lbl">Models Available</div></div>
+      <div class="stat reveal" data-d="2"><div class="num" data-count="80"><span class="c">0</span>+</div><div class="lbl">Years Combined Experience</div></div>
+      <div class="stat reveal" data-d="3"><div class="num" data-plain data-count="2021"><span class="c">2021</span></div><div class="lbl">Established in Fremantle</div></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ===================== PARALLAX BAND — SUNSEEKER ===================== -->
+<section class="band">
+  <div class="band-bg" data-parallax data-speed="0.16"
+       style="background-image:url('https://motoryachts.yourdevelopmentserver.net/wp-content/uploads/2026/04/134-superyacht-banner.webp')"></div>
+  <div class="wrap"><div class="band-inner reveal">
+    <span class="kicker">The Marques · 01</span>
+    <h2 class="disp">Sunseeker</h2>
+    <p>The world's leading luxury motor-yacht brand. From the exhilarating Predator to the 134 Superyacht, every Sunseeker is the result of an uncompromising approach to design and engineering — handcrafted in Britain, delivered to your berth in Fremantle.</p>
+    <a href="sunseeker.html" class="btn btn--out">Discover Sunseeker <span class="ar">→</span></a>
+  </div></div>
+</section>
+
+<!-- ===================== SHOWCASE — SUNSEEKER ===================== -->
+<section class="pad light">
+  <div class="wrap"><div class="showcase"><div class="show reveal">
+    <div class="show-media px-wrap">
+      <div class="px-img" data-parallax data-speed="0.12" style="background-image:url('https://motoryachts.yourdevelopmentserver.net/wp-content/uploads/2026/04/sunseeker-90-ocean-enclosed-banner-1.webp')"></div>
+      <div class="ov"></div><span class="show-tag">Sunseeker · 90 Ocean Enclosed</span>
+    </div>
+    <div class="show-copy">
+      <span class="kicker">Performance · Yacht · Ocean · Superyacht</span>
+      <h2 class="disp">British Icons,<br><span class="thin">Indian-Ocean Ready</span></h2>
+      <p class="lead">Four distinct ranges spanning 55 to 134 feet. Whether you are drawn to the adrenaline of a Predator or the grand-tourer poise of the Ocean series, each yacht is tailored, commissioned and supported by our Fremantle team.</p>
+      <div class="show-meta">
+        <div>Range<b>55–134 ft</b></div>
+        <div>Models<b>19</b></div>
+        <div>Origin<b>United Kingdom</b></div>
+      </div>
+      <a href="sunseeker.html" class="tlink">View the Sunseeker Range <span class="ar">→</span></a>
+    </div>
+  </div></div></div>
+</section>
+
+<!-- ===================== PARALLAX BAND — SAXDOR (centred) ===================== -->
+<section class="band cent">
+  <div class="band-bg" data-parallax data-speed="0.18"
+       style="background-image:url('https://saxdoryachts.com/wp-content/uploads/2026/04/TRANSFORMING-THE-TOMORROW-OF-BOATING-Large.jpeg')"></div>
+  <div class="wrap"><div class="band-inner reveal">
+    <span class="kicker plain" style="justify-content:center">The Marques · 02</span>
+    <h2 class="disp">Transforming <span class="thin">Tomorrow's Boating</span></h2>
+    <p>Saxdor is the fastest-growing European boat brand — bold, efficient and brilliantly engineered. Functional by nature, refined in detail, and built for real life on the water.</p>
+    <a href="saxdor.html" class="btn btn--out">Discover Saxdor <span class="ar">→</span></a>
+  </div></div>
+</section>
+
+<!-- ===================== SHOWCASE — SAXDOR ===================== -->
+<section class="pad light">
+  <div class="wrap"><div class="showcase"><div class="show flip reveal">
+    <div class="show-media px-wrap">
+      <div class="px-img" data-parallax data-speed="0.12" style="background-image:url('https://saxdoryachts.com/wp-content/uploads/2026/04/400-GTS-desk-gal.jpg')"></div>
+      <div class="ov"></div><span class="show-tag">Saxdor · 400 GTS</span>
+    </div>
+    <div class="show-copy">
+      <span class="kicker">200 · 270 · 320 · 340 · 400 · 460 Series</span>
+      <h2 class="disp">Nordic Design,<br><span class="thin">Pure Adrenaline</span></h2>
+      <p class="lead">From the nimble Saxdor 200 day boat to the award-winning 460 GTC, the range pairs head-turning Scandinavian design with stepped-hull efficiency and genuine versatility — a new way to experience the water.</p>
+      <div class="show-meta">
+        <div>Range<b>20–46 ft</b></div>
+        <div>Models<b>11</b></div>
+        <div>Origin<b>Finland / Poland</b></div>
+      </div>
+      <a href="saxdor.html" class="tlink">View the Saxdor Range <span class="ar">→</span></a>
+    </div>
+  </div></div></div>
+</section>
+
+<!-- ===================== FEATURED FLEET ===================== -->
+<section class="pad light">
+  <div class="wrap">
+    <div class="head-flex">
+      <div class="copy reveal">
+        <span class="kicker">Featured Yachts</span>
+        <h2 class="h2">From the Fleet</h2>
+      </div>
+      <div class="reveal" data-d="1"><a href="fleet.html" class="btn btn--dark">View All Models <span class="ar">→</span></a></div>
+    </div>
+    <div class="fleet-grid" id="home-fleet"></div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT TEASER ===================== -->
+<section class="pad light">
+  <div class="wrap"><div class="about-grid">
+    <div class="about-art reveal">
+      <div class="a1 px-wrap"><div class="px-img" data-parallax data-speed="0.1" style="background-image:url('https://motoryachts.yourdevelopmentserver.net/wp-content/uploads/2026/04/about-us-img1.png')"></div></div>
+      <div class="a2 px-wrap"><div class="px-img" data-parallax data-speed="0.16" style="background-image:url('https://motoryachts.yourdevelopmentserver.net/wp-content/uploads/2026/04/sunseeker-about.webp')"></div></div>
+      <div class="badge"><b>2021</b><span>Founded in WA</span></div>
+    </div>
+    <div class="about-copy reveal" data-d="1">
+      <span class="kicker">Who We Are</span>
+      <h2 class="h2">Driven by the Sea</h2>
+      <p class="lead">Motoryachts Australasia was founded to bring a truly world-class yachting experience to Western Australia — combining the finest European craftsmanship with personal, knowledgeable service.</p>
+      <div class="quote">"We don't simply sell yachts. We deliver a lifetime on the water."<cite>— The MYA Team</cite></div>
+      <a href="about.html" class="btn btn--dark">More About MYA <span class="ar">→</span></a>
+    </div>
+  </div></div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="pad light">
+  <div class="wrap">
+    <div class="head-flex"><div class="copy reveal">
+      <span class="kicker">Beyond the Sale</span>
+      <h2 class="h2">A Lifelong Partnership</h2>
+    </div></div>
+    <div class="feat-grid c3">
+      <a class="feat reveal" href="service.html"><span class="no">01</span><h3>After-Sales &amp; Service</h3><p>Authorised Mercury service, preventative maintenance and 24/7 support from our North Fremantle marina — keeping your vessel in peak condition.</p></a>
+      <a class="feat reveal" data-d="1" href="brokerage.html"><span class="no">02</span><h3>Brokerage</h3><p>Decades of expertise and a global network. Whether buying or selling, we manage every detail with integrity and discretion.</p></a>
+      <a class="feat reveal" data-d="2" href="pre-owned.html"><span class="no">03</span><h3>Pre-Owned</h3><p>A curated selection of quality pre-owned motor yachts, each prepared and presented to the MYA standard. Listings coming soon.</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA BANNER (parallax) ===================== -->
+<section class="cta">
+  <div class="cta-bg" data-parallax data-speed="0.16"
+       style="background-image:url('https://saxdoryachts.com/wp-content/uploads/2024/06/DJI_0077-2-4096x2301.jpg')"></div>
+  <div class="wrap-n reveal">
+    <h2 class="disp">Begin Your <span class="thin">Journey</span></h2>
+    <p>Arrange a private viewing at our North Fremantle marina, or speak with our team about the yacht that's right for you.</p>
+    <div class="hero-cta" style="justify-content:center;animation:none;opacity:1">
+      <a href="contact.html" class="btn">Make an Enquiry <span class="ar">→</span></a>
+      <a href="tel:0499770180" class="btn btn--out">+61 499 770 180</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="footer">
+  <div class="wrap">
+    <div class="f-top">
+      <div class="f-brand">
+        <div class="logo">MYA<span class="dot">.</span></div>
+        <p>Luxury yachting redefined — from Fremantle's iconic waterfront to the open water of Western Australia and beyond.</p>
+        <div class="ded">
+          Official Dealer · Sunseeker &amp; Saxdor<br>
+          Member · DCH Marine Network<br>
+          Authorised Mercury Dealer
+        </div>
+      </div>
+      <div class="f-col">
+        <h5>Yachts</h5>
+        <ul>
+          <li><a href="sunseeker.html">Sunseeker</a></li>
+          <li><a href="saxdor.html">Saxdor</a></li>
+          <li><a href="fleet.html">The Fleet</a></li>
+          <li><a href="pre-owned.html">Pre-Owned</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="brokerage.html">Brokerage</a></li>
+          <li><a href="service.html">After-Sales</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Contact</h5>
+        <p class="cl">
+          26 Rous Head Road<br>North Fremantle WA 6159<br><br>
+          <a href="tel:0499770180">0499 770 180</a><br>
+          <a href="mailto:james@myaa.com.au">james@myaa.com.au</a>
+        </p>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <p>© 2026 MYA — Motoryachts Australasia. All Rights Reserved.</p>
+      <div class="fnav">
+        <a href="https://www.instagram.com/motoryachtsaustralasia" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.facebook.com/motoryachtsaustralasia/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>/* ============================================================
+   MYA — shared behaviour
+   parallax engine · header · reveals · counters · lightbox · form
+   ============================================================ */
+(function(){
+  'use strict';
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- header scroll state + progress ---------- */
+  var header = document.getElementById('header');
+  var progress = document.getElementById('progress');
+  var hero = document.querySelector('.hero');
+  function onScroll(){
+    var y = window.scrollY || document.documentElement.scrollTop;
+    if(header){
+      if(hero){ header.classList.toggle('scrolled', y > 40); }
+      else { header.classList.add('solid'); }
+    }
+    if(progress){
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = (h > 0 ? (y/h)*100 : 0) + '%';
+    }
+  }
+
+  /* ---------- active nav ---------- */
+  var page = document.body.getAttribute('data-page');
+  if(page){
+    document.querySelectorAll('.nav-links > li[data-nav]').forEach(function(li){
+      if(li.getAttribute('data-nav') === page) li.classList.add('active');
+    });
+  }
+
+  /* ---------- mobile drawer ---------- */
+  var burger = document.getElementById('burger');
+  var drawer = document.getElementById('drawer');
+  if(burger && drawer){
+    burger.addEventListener('click', function(){
+      var open = drawer.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+    drawer.querySelectorAll('[data-close]').forEach(function(a){
+      a.addEventListener('click', function(){
+        drawer.classList.remove('open'); burger.classList.remove('open'); document.body.style.overflow = '';
+      });
+    });
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal, .kicker').forEach(function(el){ io.observe(el); });
+
+  /* ---------- number counters ---------- */
+  var counted = new WeakSet();
+  var cObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting || counted.has(e.target)) return;
+      counted.add(e.target);
+      var el = e.target, span = el.querySelector('.c');
+      if(el.dataset.plain || !span) return;
+      var target = parseInt(el.dataset.count, 10);
+      if(reduce){ span.textContent = target; return; }
+      var dur = 1700, start = performance.now();
+      (function tick(now){
+        var p = Math.min((now-start)/dur, 1), eased = 1-Math.pow(1-p,3);
+        span.textContent = Math.round(target*eased);
+        if(p<1) requestAnimationFrame(tick);
+      })(start);
+    });
+  }, {threshold:0.5});
+  document.querySelectorAll('.stat .num').forEach(function(el){ cObs.observe(el); });
+
+  /* ---------- PARALLAX ENGINE ---------- */
+  var pxEls = [].slice.call(document.querySelectorAll('[data-parallax]'));
+  var ticking = false;
+  function applyParallax(){
+    var vh = window.innerHeight;
+    for(var i=0;i<pxEls.length;i++){
+      var el = pxEls[i];
+      var r = el.getBoundingClientRect();
+      if(r.bottom < -vh*0.6 || r.top > vh*1.6) continue;
+      var speed = parseFloat(el.getAttribute('data-speed')) || 0.18;
+      var center = r.top + r.height/2;
+      var offset = center - vh/2;
+      var ty = (-offset*speed);
+      var extra = el.getAttribute('data-px-extra') || '';
+      el.style.transform = 'translate3d(0,' + ty.toFixed(1) + 'px,0) ' + extra;
+    }
+    ticking = false;
+  }
+  function requestPx(){ if(!ticking){ ticking = true; requestAnimationFrame(applyParallax); } }
+
+  /* combined scroll handler */
+  function loop(){ onScroll(); if(!reduce && pxEls.length) requestPx(); }
+  window.addEventListener('scroll', loop, {passive:true});
+  window.addEventListener('resize', loop, {passive:true});
+  loop();
+  if(!reduce && pxEls.length) applyParallax();
+
+  /* ---------- LIGHTBOX (galleries) ---------- */
+  var lb = document.getElementById('lightbox');
+  if(lb){
+    var lbImg = lb.querySelector('img');
+    var lbCount = lb.querySelector('.lb-count');
+    var triggers = [].slice.call(document.querySelectorAll('[data-lb]'));
+    var idx = 0;
+    function show(i){
+      idx = (i + triggers.length) % triggers.length;
+      var src = triggers[idx].getAttribute('data-lb');
+      lbImg.src = src;
+      if(lbCount) lbCount.textContent = (idx+1) + ' / ' + triggers.length;
+    }
+    function open(i){ show(i); lb.classList.add('open'); document.body.style.overflow='hidden'; }
+    function close(){ lb.classList.remove('open'); document.body.style.overflow=''; }
+    triggers.forEach(function(t,i){ t.addEventListener('click', function(){ open(i); }); });
+    lb.querySelector('.lb-close').addEventListener('click', close);
+    lb.querySelector('.lb-prev').addEventListener('click', function(){ show(idx-1); });
+    lb.querySelector('.lb-next').addEventListener('click', function(){ show(idx+1); });
+    lb.addEventListener('click', function(e){ if(e.target === lb) close(); });
+    document.addEventListener('keydown', function(e){
+      if(!lb.classList.contains('open')) return;
+      if(e.key==='Escape') close();
+      if(e.key==='ArrowLeft') show(idx-1);
+      if(e.key==='ArrowRight') show(idx+1);
+    });
+  }
+
+  /* ---------- contact form (front-end demo) ---------- */
+  var form = document.getElementById('enquiry');
+  if(form){
+    var note = document.getElementById('note');
+    var sel = form.querySelector('select');
+    if(sel) sel.addEventListener('change', function(){ sel.style.color = sel.value ? 'var(--paper)' : 'var(--muted)'; });
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      var fn = (form.querySelector('#fn')||{}).value || '';
+      var em = (form.querySelector('#em')||{}).value || '';
+      fn = fn.trim(); em = em.trim();
+      if(!fn || !em){ note.textContent = 'Please add your name and email so we can reply.'; note.classList.add('show'); return; }
+      note.textContent = 'Thank you, ' + fn + ' — your enquiry has been received. Our team will be in touch within one business day.';
+      note.classList.add('show');
+      form.reset();
+      if(sel) sel.style.color = 'var(--muted)';
+    });
+  }
+})();</script>
+<script>/* ============================================================
+   MYA — Yacht dataset + render helpers
+   Sources: dealer photography, saxdoryachts.com, sunseeker imagery.
+   Full spec sheets captured for flagship models across every series.
+   ============================================================ */
+(function(){
+  var DEV = 'https://motoryachts.yourdevelopmentserver.net/wp-content/uploads/';
+  var SX  = 'https://saxdoryachts.com/wp-content/uploads/';
+  function gal(prefix,a,b){ var o=[]; for(var i=a;i<=b;i++) o.push(prefix+i+'.webp'); return o; }
+
+  var Y = [
+    /* ===================== SUNSEEKER — YACHT ===================== */
+    { slug:'76-yacht', brand:'Sunseeker', series:'Yacht', name:'76 Yacht', cats:'sunseeker flybridge',
+      loaM:'23.2', loaFt:"76'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:DEV+'2026/04/sunseeker-88-yacht-gallery-3.webp',
+      desc:'A commanding flybridge motoryacht from Sunseeker\u2019s flagship Yacht line \u2014 generous volume, sociable deck spaces and signature British craftsmanship throughout.' },
+    { slug:'88-yacht', brand:'Sunseeker', series:'Yacht', name:'88 Yacht', cats:'sunseeker flybridge', full:true,
+      loaM:'26.38', loaFt:"86'7\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:DEV+'2026/04/sunseeker-88-yacht-gallery-1.webp',
+      brochure:DEV+'2026/04/sunseeker-88-yacht.pdf', gallery:gal(DEV+'2026/04/sunseeker-88-yacht-gallery-',1,12),
+      desc:'A flagship flybridge yacht delivering exceptional volume and presence. Expansive social spaces, four luxurious cabins and a choice of potent MTU power define life aboard the 88 Yacht.',
+      specs:[
+        {g:'Principal Characteristics', r:[['Length Overall','26.38 m','86\u20197"'],['Beam','6.47 m','21\u20193"'],['Draft','2.12 m','7\u20190"'],['Displacement','77,300 kg','170,417 lb'],['Fresh Water','1,400 L','370 US gal'],['Black Water','400 L','106 US gal'],['Fuel Capacity','11,000 L','2,907 US gal']]},
+        {g:'Accommodation', r:[['Cabins','4'],['En-suites / Day Head','4']]},
+        {g:'Technical', r:[['Engines','Twin MTU 2000 (1,622\u20132,000 PS)'],['Performance','Up to 28 knots'],['Range','1,275 nm @ 12 knots'],['Propulsion','Shafts'],['Generators','2 \u00d7 28 kW']]}
+      ] },
+    { slug:'94-yacht', brand:'Sunseeker', series:'Yacht', name:'94 Yacht', cats:'sunseeker flybridge',
+      loaM:'28.7', loaFt:"94'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:DEV+'2026/04/sunseeker-88-yacht-gallery-5.webp',
+      desc:'Imposing scale meets refined detailing. The 94 Yacht offers superyacht-calibre living, sweeping flybridge entertaining and the assured seakeeping Sunseeker is renowned for.' },
+    { slug:'95-yacht', brand:'Sunseeker', series:'Yacht', name:'95 Yacht', cats:'sunseeker flybridge',
+      loaM:'29.0', loaFt:"95'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:DEV+'2026/04/sunseeker-88-yacht-gallery-7.webp',
+      desc:'A statement of refined taste and bold British innovation \u2014 vast volume, bespoke interiors and effortless long-range cruising in the flagship Yacht series.' },
+    { slug:'manhattan-55', brand:'Sunseeker', series:'Yacht', name:'Manhattan 55', cats:'sunseeker flybridge',
+      loaM:'16.8', loaFt:"55'0\"", hero:DEV+'2026/04/Manhattan-55-banner.webp', card:DEV+'2026/04/Manhattan-55-banner.webp',
+      desc:'From Sunseeker\u2019s Manhattan range \u2014 a refined flybridge yacht balancing elegant proportions with effortless, family-friendly cruising.' },
+    { slug:'manhattan-56', brand:'Sunseeker', series:'Yacht', name:'Manhattan 56', cats:'sunseeker flybridge',
+      loaM:'17.1', loaFt:"56'0\"", hero:DEV+'2026/04/Manhattan-55-banner.webp', card:DEV+'2026/04/Manhattan-55-banner.webp',
+      desc:'The Manhattan 56 brings sociable open-plan living, a generous flybridge and intelligent use of space to the heart of the Sunseeker range.' },
+    { slug:'manhattan-68', brand:'Sunseeker', series:'Yacht', name:'Manhattan 68', cats:'sunseeker flybridge',
+      loaM:'20.7', loaFt:"68'0\"", hero:DEV+'2026/04/Manhattan-55-banner.webp', card:DEV+'2026/04/Manhattan-55-banner.webp',
+      desc:'A flagship Manhattan that blends commanding presence with relaxed elegance \u2014 expansive entertaining decks and beautifully appointed accommodation.' },
+
+    /* ===================== SUNSEEKER — OCEAN ===================== */
+    { slug:'82-ocean', brand:'Sunseeker', series:'Ocean', name:'82 Ocean', cats:'sunseeker ocean',
+      loaM:'25.0', loaFt:"82'0\"", hero:DEV+'2026/04/82-ocean-banner.webp', card:DEV+'2026/04/sunseeker-82-ocean-5.webp',
+      desc:'Open, light-filled living with the brand\u2019s renowned deep-V seakeeping. The 82 Ocean dissolves the line between interior and sea with a focus on indoor\u2013outdoor flow.' },
+    { slug:'82-ocean-enclosed', brand:'Sunseeker', series:'Ocean', name:'82 Ocean Enclosed', cats:'sunseeker ocean',
+      loaM:'25.0', loaFt:"82'0\"", hero:DEV+'2026/04/82-ocean-banner.webp', card:DEV+'2026/04/sunseeker-82-ocean-5.webp',
+      desc:'All the elegance of the Ocean range with a climate-controlled, enclosed main deck \u2014 luminous, serene and built for cruising in any conditions.' },
+    { slug:'90-ocean', brand:'Sunseeker', series:'Ocean', name:'90 Ocean', cats:'sunseeker ocean',
+      loaM:'27.4', loaFt:"90'0\"", hero:DEV+'2026/04/sunseeker-90-ocean-11.webp', card:DEV+'2026/04/sunseeker-90-ocean-36.webp',
+      desc:'A sleek, contemporary expression of the Ocean philosophy \u2014 vast living volumes, beach-club living and the poised performance of a true Sunseeker.' },
+    { slug:'90-ocean-enclosed', brand:'Sunseeker', series:'Ocean', name:'90 Ocean Enclosed', cats:'sunseeker ocean', full:true,
+      loaM:'27.10', loaFt:"88'11\"", hero:DEV+'2026/04/sunseeker-90-ocean-enclosed-banner-1.webp', card:DEV+'2026/04/sunseeker-90-ocean-enclosed-31.webp',
+      brochure:DEV+'2026/04/Sunseeker-90-OceanEnclosed.pdf', gallery:gal(DEV+'2026/04/sunseeker-90-ocean-enclosed-',1,12),
+      desc:'The Ocean range at its most refined. An enclosed, full-beam main deck floods the interior with light, while five cabins and potent MAN V12 power make the 90 Ocean Enclosed a peerless cruising yacht.',
+      specs:[
+        {g:'Principal Characteristics', r:[['Length Overall','27.10 m','88\u201911"'],['Beam','7.16 m','23\u20196"'],['Draft','1.95 m','6\u20195"'],['Displacement','82,300 kg','181,440 lb'],['Fresh Water','1,500 L','400 US gal'],['Black Water','800 L','211 US gal'],['Fuel Capacity','13,000 L','3,434 US gal']]},
+        {g:'Accommodation', r:[['Cabins','5'],['En-suites / Day Head','6']]},
+        {g:'Technical', r:[['Engines','Twin MAN V12 1650 / 1900 / 2000 Shaft'],['Performance','Up to 27 knots'],['Range','1,100 nm'],['Propulsion','Shafts']]}
+      ] },
+
+    /* ===================== SUNSEEKER — PERFORMANCE ===================== */
+    { slug:'predator-55', brand:'Sunseeker', series:'Performance', name:'Predator 55', cats:'sunseeker performance',
+      loaM:'16.8', loaFt:"55'0\"", hero:DEV+'2026/04/predator-65-banner.webp', card:DEV+'2026/04/sunseeker-predator-65-5.webp',
+      desc:'Sunseeker performance DNA in its purest form \u2014 sleek lines, exhilarating pace and a driver-focused sportscar experience on the water.' },
+    { slug:'predator-65', brand:'Sunseeker', series:'Performance', name:'Predator 65', cats:'sunseeker performance', full:true,
+      loaM:'20.50', loaFt:"67'2\"", hero:DEV+'2026/04/predator-65-banner.webp', card:DEV+'2026/04/sunseeker-predator-65-22.webp',
+      brochure:DEV+'2026/04/Sunseeker-Predator-65.pdf', gallery:gal(DEV+'2026/04/sunseeker-predator-65-',1,12),
+      desc:'A pod-driven sportscar of the sea. The Predator 65 pairs adrenaline-charged Volvo IPS performance with sumptuous accommodation and Sunseeker\u2019s unmistakable styling.',
+      specs:[
+        {g:'Principal Characteristics', r:[['Length Overall','20.50 m','67\u20192"'],['Beam','5.10 m','16\u20198"'],['Draft','1.60 m','5\u20193"'],['Displacement','37,810 kg','83,357 lb'],['Fresh Water','800 L','211 US gal'],['Black Water','200 L','52 US gal'],['Fuel Capacity','3,500 L','924 US gal']]},
+        {g:'Accommodation', r:[['Cabins','3 (4 optional)'],['En-suites / Day Head','4']]},
+        {g:'Technical', r:[['Engines','Twin Volvo IPS 1200 / 1350'],['Performance','Up to 35 knots'],['Range','750 nm @ 10 knots'],['Propulsion','IPS Pods'],['Generators','13.5 kW']]}
+      ] },
+    { slug:'predator-75', brand:'Sunseeker', series:'Performance', name:'Predator 75', cats:'sunseeker performance',
+      loaM:'22.9', loaFt:"75'0\"", hero:DEV+'2026/04/predator-75-banner.webp', card:DEV+'2026/04/predator-75-banner.webp',
+      desc:'Bold, muscular and fast \u2014 the Predator 75 delivers thrilling open-water performance with a luxurious, sociable cockpit and sun-soaked deck spaces.' },
+    { slug:'superhawk-55', brand:'Sunseeker', series:'Performance', name:'Superhawk 55', cats:'sunseeker performance',
+      loaM:'16.8', loaFt:"55'0\"", hero:DEV+'2026/04/predator-65-banner.webp', card:DEV+'2026/04/sunseeker-predator-65-9.webp',
+      desc:'A radical, open sports yacht for the purist \u2014 dramatic styling, exhilarating handling and a pure connection between driver, machine and sea.' },
+    { slug:'65-sport-yacht', brand:'Sunseeker', series:'Performance', name:'65 Sport Yacht', cats:'sunseeker performance',
+      loaM:'19.8', loaFt:"65'0\"", hero:DEV+'2026/04/sunseeker-75-sportyacht-4.webp', card:DEV+'2026/04/sunseeker-75-sportyacht-4.webp',
+      desc:'Sweeping lines and open-cockpit living meet effortless cruising range \u2014 the 65 Sport Yacht balances adrenaline with everyday comfort.' },
+    { slug:'75-sport-yacht', brand:'Sunseeker', series:'Performance', name:'75 Sport Yacht', cats:'sunseeker performance',
+      loaM:'22.9', loaFt:"75'0\"", hero:DEV+'2026/04/sunseeker-75-sportyacht-4.webp', card:DEV+'2026/04/sunseeker-75-sportyacht-4.webp',
+      desc:'A sports yacht that pairs adrenaline with refinement \u2014 a retractable hardtop, expansive cockpit and poised performance for unforgettable days at sea.' },
+
+    /* ===================== SUNSEEKER — SUPERYACHT ===================== */
+    { slug:'134-superyacht', brand:'Sunseeker', series:'Superyacht', name:'134 Superyacht', cats:'sunseeker superyacht', full:true,
+      loaM:'40.45', loaFt:"132'8\"", hero:DEV+'2026/04/134-superyacht-banner.webp', card:DEV+'2026/04/sunseeker-134-superyacht-1.webp',
+      brochure:DEV+'2026/04/Sunseeker-134-Superyacht.pdf', gallery:gal(DEV+'2026/04/sunseeker-134-superyacht-',1,12),
+      desc:'Sunseeker\u2019s flagship. A 40-metre tri-deck superyacht uniting tremendous volume, five opulent cabins and genuine ocean-crossing capability \u2014 the pinnacle of British boatbuilding.',
+      specs:[
+        {g:'Principal Characteristics', r:[['Length Overall','40.45 m','132\u20198"'],['Beam','7.94 m','26\u20191"'],['Draft','2.40 m','7\u201910"'],['Displacement','193,410 kg','426,396 lb'],['Fresh Water','5,350 L','1,413 gal'],['Black Water','1,450 L','383 gal'],['Fuel Capacity','24,750 L','6,538 gal'],['Gross Tonnage','346 GT']]},
+        {g:'Accommodation', r:[['Cabins','5'],['En-suites','5']]},
+        {g:'Technical', r:[['Engines','2 \u00d7 MTU 12V 2000 M96X (16V option)'],['Performance','Up to 20 knots'],['Range','Up to 1,600 nm @ 10 knots'],['Propulsion','Shafts']]}
+      ] },
+
+    /* ===================== SAXDOR — 200 SERIES ===================== */
+    { slug:'saxdor-200', brand:'Saxdor', series:'200 Series', name:'Saxdor 200', cats:'saxdor sport', cut:true,
+      loaM:'6.1', loaFt:"20'0\"", hero:SX+'2024/06/DJI_0077-2-4096x2301.jpg', card:SX+'2025/06/200_nav.png',
+      desc:'Compact, sporty and remarkably capable \u2014 Saxdor\u2019s entry into a bold new class of day boat, engineered for efficiency, handling and pure fun on the water.' },
+    { slug:'saxdor-205', brand:'Saxdor', series:'200 Series', name:'Saxdor 205', cats:'saxdor sport', cut:true,
+      loaM:'6.4', loaFt:"21'0\"", hero:SX+'2024/06/DJI_0077-2-4096x2301.jpg', card:SX+'2025/06/205_nav.png',
+      desc:'The evolution of the Saxdor day boat \u2014 clever spatial design, confident performance and that distinctive Nordic-modern aesthetic in an accessible package.' },
+
+    /* ===================== SAXDOR — 270 SERIES ===================== */
+    { slug:'saxdor-270-gto', brand:'Saxdor', series:'270 Series', name:'Saxdor 270 GTO', cats:'saxdor sport',
+      loaM:'8.3', loaFt:"27'0\"", hero:SX+'2026/04/270-GTO-desk-gal.jpg', card:SX+'2026/04/270-GTO-desk-gal.jpg',
+      desc:'A versatile sport cruiser delivering Saxdor\u2019s signature blend of speed, space and design intelligence \u2014 open-air freedom with everyday usability.' },
+
+    /* ===================== SAXDOR — 320 SERIES ===================== */
+    { slug:'saxdor-320-gto', brand:'Saxdor', series:'320 Series', name:'Saxdor 320 GTO', cats:'saxdor sport',
+      loaM:'9.8', loaFt:"32'0\"", hero:SX+'2026/04/400-GTO-desk-gal-2.jpg', card:SX+'2026/04/400-GTO-desk-gal-2.jpg',
+      desc:'Big-boat presence in an agile package. The 320 GTO brings open-air freedom, responsive handling and versatile spaces \u2014 designed to make every journey feel effortless.' },
+    { slug:'saxdor-320-gtc', brand:'Saxdor', series:'320 Series', name:'Saxdor 320 GTC', cats:'saxdor sport',
+      loaM:'9.8', loaFt:"32'0\"", hero:SX+'2026/04/320-GTC-desk-gal.jpg', card:SX+'2026/04/320-GTC-desk-gal.jpg',
+      desc:'The closed-wheelhouse 320 \u2014 a luminous, all-weather cabin, intelligent spatial design and refined detailing wrapped around Saxdor\u2019s efficient stepped hull.' },
+
+    /* ===================== SAXDOR — 340 SERIES ===================== */
+    { slug:'saxdor-340-gtwa', brand:'Saxdor', series:'340 Series', name:'Saxdor 340 GTWA', cats:'saxdor sport',
+      loaM:'10.5', loaFt:"34'0\"", hero:SX+'2026/04/340-GTWA-desk-gal.jpg', card:SX+'2026/04/340-GTWA-desk-gal.jpg',
+      desc:'A walkaround built for adventure \u2014 360\u00b0 deck access, rugged versatility and Saxdor\u2019s efficient, stepped-hull performance for serious time on the water.' },
+
+    /* ===================== SAXDOR — 400 SERIES ===================== */
+    { slug:'saxdor-400-gts', brand:'Saxdor', series:'400 Series', name:'Saxdor 400 GTS', cats:'saxdor sport',
+      loaM:'12.4', loaFt:"40.7'", hero:SX+'2026/04/400-GTS-desk-gal.jpg', card:SX+'2026/04/400-GTS-desk-gal.jpg',
+      desc:'The open expression of the flagship 400 platform \u2014 full-beam social living, vast sunpads and twin-outboard performance built for unforgettable days.' },
+    { slug:'saxdor-400-gtc', brand:'Saxdor', series:'400 Series', name:'Saxdor 400 GTC', cats:'saxdor sport', full:true,
+      loaM:'12.4', loaFt:"40.7'", hero:DEV+'2026/04/saxdor-400-gtc-4.webp', card:DEV+'2026/04/saxdor-400-gtc-4.webp',
+      brochure:DEV+'2026/04/saxdor-400-GTC.pdf', gallery:[DEV+'2026/04/saxdor-400-gtc.webp'].concat(gal(DEV+'2026/04/saxdor-400-gtc-',1,10)),
+      desc:'Engineered for twin-outboard rigs with Saxdor\u2019s unique naval architecture. An innovative main deck extends the wheelhouse to the full beam of the boat, while vast insulated glazing creates a luminous, all-weather interior connected directly to the side terraces.',
+      specs:[
+        {g:'Specifications', r:[['Length','12.4 m','40.7 ft'],['Beam','3.55 m','11.7 ft'],['Draft (excl. engines)','0.64 m','2.1 ft'],['Passengers','12','Category B'],['Max. Engine Power','850 hp'],['Max. Speed','35\u201345 knots'],['Fuel','1,000 L','264 gal'],['Fresh Water','210 L','55 gal'],['Grey Water','105 L','27.8 gal'],['Black Water','60 L','15.8 gal'],['Outboard Engines','700\u2013850 hp'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}
+      ] },
+    { slug:'saxdor-400-gto', brand:'Saxdor', series:'400 Series', name:'Saxdor 400 GTO', cats:'saxdor sport',
+      loaM:'12.4', loaFt:"40.7'", hero:SX+'2026/04/400-GTO-desk-gal.jpg', card:SX+'2026/04/400-GTO-desk-gal.jpg',
+      desc:'The open-top flagship \u2014 expansive deck living, panoramic sightlines and exhilarating twin-outboard performance from Saxdor\u2019s most versatile 40-foot platform.' },
+
+    /* ===================== SAXDOR — 460 SERIES ===================== */
+    { slug:'saxdor-460-gtc', brand:'Saxdor', series:'460 Series', name:'Saxdor 460 GTC', cats:'saxdor sport',
+      loaM:'14.0', loaFt:"46'0\"", hero:SX+'2026/04/460-GTC-desk-gal.jpg', card:SX+'2026/04/460-GTC-desk-gal.jpg',
+      desc:'Saxdor\u2019s largest and most luxurious \u2014 winner of the \u2018Motoryacht 14\u201316m\u2019 category at the Yacht Style Awards 2026. Expansive living, refined finish and genuine long-range capability.' }
+  ];
+
+  /* ---------- helpers ---------- */
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function card(y){
+    var cut = y.cut ? ' cut' : '';
+    return '<a class="yacht'+cut+'" href="yacht.html?model='+y.slug+'" data-filter="'+y.cats+'">'
+      + '<div class="ph"><div class="img" style="background-image:url(\''+y.card+'\')"></div>'
+      + '<span class="tag">'+esc(y.brand)+' \u00b7 '+esc(y.series)+'</span></div>'
+      + '<div class="info"><h3>'+esc(y.name)+'</h3>'
+      + '<div class="meta"><div>Length<b>'+y.loaM+' m</b></div><div>Series<b>'+esc(y.series)+'</b></div><div>Status<b>New</b></div></div>'
+      + '<div class="foot"><span class="price">'+(y.full?'Full Specifications':'Enquire')+'</span><span class="go">\u2192</span></div>'
+      + '</div></a>';
+  }
+
+  function reveal(scope){
+    var o = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); o.unobserve(e.target);} }); }, {threshold:0.1, rootMargin:'0px 0px -6% 0px'});
+    (scope||document).querySelectorAll('.reveal:not(.in)').forEach(function(el){ o.observe(el); });
+  }
+
+  function grid(id, items){
+    var host = document.getElementById(id); if(!host) return;
+    host.innerHTML = items.map(card).join('');
+    reveal(host);
+  }
+
+  function groups(id, brand){
+    var host = document.getElementById(id); if(!host) return;
+    var order = brand==='Sunseeker'
+      ? ['Yacht','Ocean','Performance','Superyacht']
+      : ['200 Series','270 Series','320 Series','340 Series','400 Series','460 Series'];
+    var html = '';
+    order.forEach(function(s){
+      var items = Y.filter(function(y){ return y.brand===brand && y.series===s; });
+      if(!items.length) return;
+      html += '<div class="brand-index reveal"><div class="b-title"><h3 class="disp">'+esc(s)+'</h3><span class="l"></span></div>'
+            + '<div class="fleet-grid">'+items.map(card).join('')+'</div></div>';
+    });
+    host.innerHTML = html;
+    reveal(host);
+  }
+
+  function find(slug){ for(var i=0;i<Y.length;i++) if(Y[i].slug===slug) return Y[i]; return null; }
+
+  window.MYA = { data:Y, esc:esc, card:card, grid:grid, groups:groups, find:find, reveal:reveal };
+})();</script><script>document.addEventListener('DOMContentLoaded',function(){if(window.MYA)MYA.grid('home-fleet',[MYA.find('predator-65'),MYA.find('90-ocean-enclosed'),MYA.find('saxdor-400-gtc'),MYA.find('134-superyacht'),MYA.find('saxdor-460-gtc'),MYA.find('88-yacht')].filter(Boolean));});</script>
+</body>
+</html>
