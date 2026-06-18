@@ -36,7 +36,7 @@ a{color:inherit;text-decoration:none}
 ::-webkit-scrollbar-thumb:hover{background:var(--blue)}
 
 /* ---------- atoms ---------- */
-.wrap{max-width:1340px;margin:0 auto;padding:0 clamp(22px,5vw,84px)}
+.wrap{margin:0 auto;padding:0 clamp(22px,1vw,84px)}
 .wrap-n{max-width:1040px;margin:0 auto;padding:0 clamp(22px,5vw,84px)}
 section{position:relative}
 .pad{padding:clamp(80px,12vh,168px) 0}
@@ -103,16 +103,27 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 
 /* ============================================================ HEADER */
 .header{position:fixed;top:0;left:0;width:100%;z-index:1000;
-  background:linear-gradient(180deg,rgba(0,0,0,.95),rgba(0,0,0,0));backdrop-filter:blur(14px);transition:background .55s var(--ease),border-color .55s}
-.header .bar{display:flex;align-items:center;height:var(--nav-h);transition:height .5s var(--ease);position:relative}
-.header.scrolled,.header.solid{background:linear-gradient(180deg,rgba(0,0,0,.98),rgba(0,0,0,0));border-bottom-color:transparent}
-.header.scrolled .bar,.header.solid .bar{height:68px}
+  background:linear-gradient(180deg,rgba(0,0,0,.95),rgba(0,0,0,.55));backdrop-filter:blur(14px);transition:background .55s var(--ease),border-color .55s}
+.header .bar{display:flex;align-items:center;justify-content:center;height:var(--nav-h);gap:24px;transition:height .5s var(--ease)}
+.header.scrolled,.header.solid{background:linear-gradient(180deg,rgb(0, 0, 0),rgba(0, 0, 0, 0.33));border-color:rgba(59, 59, 59, 0.532)}
+.header.scrolled .bar,.header.solid .bar{height:92px}
 .header.scrolled .logo,.header.solid .logo,.header.scrolled .nav-links>li>a,.header.solid .nav-links>li>a,
 .header.scrolled .nav-enq,.header.solid .nav-enq{color:var(--paper)}
 .header.scrolled .nav-enq,.header.solid .nav-enq{border-color:rgba(255,255,255,.35)}
 .header.scrolled .burger span,.header.solid .burger span{background:var(--paper)}
-.logo{display:flex;align-items:center;justify-content:center;flex:0 0 auto;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%)}
-.logo-img{max-height:66px;display:block}
+.logo{display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.logo-img{max-height:50px;display:block}
+/* Expanded header on page load */
+.header .logo{flex-direction:column;align-items:center;gap:0}
+.header:not(.scrolled):not(.solid) .bar{height:136px}
+.header-tagline-wrap{overflow:hidden;max-height:36px;margin-top:0px;
+  transition:max-height .5s var(--ease),margin-top .48s var(--ease),opacity .38s var(--ease)}
+.header-tagline{display:block;font-family:'Manrope',sans-serif;font-size:20.5px;letter-spacing:.3em;
+  text-transform:uppercase;font-weight:600;color:rgba(244,245,243,.7);white-space:nowrap;
+  transition:transform .5s var(--ease)}
+.header.scrolled .header-tagline-wrap,.header.solid .header-tagline-wrap{max-height:0;margin-top:0;opacity:0}
+.header.scrolled .header-tagline,.header.solid .header-tagline{transform:translateY(-130%)}
+@media(max-width:900px){.header:not(.scrolled):not(.solid) .bar{height:var(--nav-h)}.header-tagline-wrap{display:none}}
 .nav{display:flex;align-items:center;justify-content:center;gap:32px;width:100%;flex:1}
 .nav-left,.nav-right{display:flex;align-items:center;gap:28px;flex:1}
 .nav-left{justify-content:flex-start}
@@ -526,7 +537,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 <div class="progress" id="progress"></div>
 <header class="header" id="header">
   <div class="wrap bar">
-    <nav class="nav-left">
+    <nav class="nav-left">f
       <ul class="nav-links">
         <li data-nav="home"><a href="index.html">Home</a></li>
         <li class="has-sub" data-nav="newyachts">
@@ -541,6 +552,9 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
     </nav>
     <a href="index.html" class="logo" aria-label="MYA — Motoryachts Australasia home">
       <img src="Assets/Main_Logo.png" alt="MYA — Motoryachts Australasia" class="logo-img">
+      <div class="header-tagline-wrap">
+        <span class="header-tagline">Motoryachts Australasia</span>
+      </div>
     </a>
     <div class="nav-right">
       <ul class="nav-links">
@@ -613,7 +627,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   <div class="wrap">
     <div class="f-top">
       <div class="f-brand">
-        <div class="logo">MYA<span class="dot">.</span></div>
+        <!-- <div class="logo">MYA<span class="dot">.</span></div> -->
         <p>Luxury yachting redefined — from Fremantle's iconic waterfront to the open water of Western Australia and beyond.</p>
         <div class="ded">
           Official Dealer · Sunseeker &amp; Saxdor<br>
