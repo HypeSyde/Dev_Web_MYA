@@ -106,13 +106,24 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   background:linear-gradient(180deg,rgba(0,0,0,.95),rgba(0,0,0,.55));backdrop-filter:blur(14px);transition:background .55s var(--ease),border-color .55s}
 .header .bar{display:flex;align-items:center;justify-content:center;height:var(--nav-h);gap:24px;transition:height .5s var(--ease)}
 .header.scrolled,.header.solid{background:linear-gradient(180deg,rgb(0, 0, 0),rgba(0, 0, 0, 0.33));border-color:rgba(59, 59, 59, 0.532)}
-.header.scrolled .bar,.header.solid .bar{height:68px}
+.header.scrolled .bar,.header.solid .bar{height:92px}
 .header.scrolled .logo,.header.solid .logo,.header.scrolled .nav-links>li>a,.header.solid .nav-links>li>a,
 .header.scrolled .nav-enq,.header.solid .nav-enq{color:var(--paper)}
 .header.scrolled .nav-enq,.header.solid .nav-enq{border-color:rgba(255,255,255,.35)}
 .header.scrolled .burger span,.header.solid .burger span{background:var(--paper)}
 .logo{display:flex;align-items:center;justify-content:center;flex:0 0 auto}
-.logo-img{max-height:90px;display:block}
+.logo-img{max-height:50px;display:block}
+/* Expanded header on page load */
+.header .logo{flex-direction:column;align-items:center;gap:0}
+.header:not(.scrolled):not(.solid) .bar{height:136px}
+.header-tagline-wrap{overflow:hidden;max-height:36px;margin-top:0px;
+  transition:max-height .5s var(--ease),margin-top .48s var(--ease),opacity .38s var(--ease)}
+.header-tagline{display:block;font-family:'Manrope',sans-serif;font-size:20.5px;letter-spacing:.3em;
+  text-transform:uppercase;font-weight:600;color:rgba(244,245,243,.7);white-space:nowrap;
+  transition:transform .5s var(--ease)}
+.header.scrolled .header-tagline-wrap,.header.solid .header-tagline-wrap{max-height:0;margin-top:0;opacity:0}
+.header.scrolled .header-tagline,.header.solid .header-tagline{transform:translateY(-130%)}
+@media(max-width:900px){.header:not(.scrolled):not(.solid) .bar{height:var(--nav-h)}.header-tagline-wrap{display:none}}
 .nav{display:flex;align-items:center;justify-content:center;gap:32px;width:100%;flex:1}
 .nav-left,.nav-right{display:flex;align-items:center;gap:28px;flex:1}
 .nav-left{justify-content:flex-start}
@@ -161,20 +172,27 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 [data-parallax]{will-change:transform}
 
 /* ============================================================ HOME HERO (layered parallax) */
-.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;
+.hero{position:relative;height:130vh;min-height:780px;display:flex;align-items:flex-end;justify-content:center;
   text-align:center;overflow:hidden}
 .hero-layer{position:absolute;inset:-12% -2%;z-index:-3;background-size:cover;background-position:center;will-change:transform}
 .hero-haze{position:absolute;inset:0;z-index:-2;
-  background:radial-gradient(130% 100% at 50% 18%,transparent 28%,rgba(8,12,16,.55) 100%),
-  linear-gradient(to bottom,rgba(8,12,16,.5),rgba(8,12,16,.18) 40%,rgba(8,12,16,.9))}
-.hero-inner{position:relative;z-index:2;max-width:1100px;padding:0 22px;will-change:transform}
+  background:radial-gradient(130% 100% at 50% 18%,transparent 28%,rgba(8,12,16,.45) 100%),
+  linear-gradient(to bottom,rgba(8,12,16,.38),rgba(8,12,16,.10) 42%,rgba(8,12,16,.88))}
+.hero-inner{position:relative;z-index:2;max-width:1100px;padding:0 50px clamp(140px,20vh,240px);will-change:transform}
 .logo-brands{display:flex;gap:40px;align-items:center;justify-content:center;margin-bottom:32px;opacity:0;animation:fadeUp 1s var(--ease) .4s forwards;flex-wrap:wrap}
 .brand-logo{max-height:80px;display:block;object-fit:contain}
 @media (max-width:768px){.logo-brands{gap:24px}.brand-logo{max-height:60px}}
 @media (max-width:480px){.logo-brands{flex-direction:column;gap:16px}.brand-logo{max-height:50px}}
 .hero .kicker{opacity:0;animation:fadeUp 1s var(--ease) .4s forwards;justify-content:center}
-.hero h1{font-size:clamp(0.58rem,1.92vw,1.8rem);font-weight:800;text-transform:uppercase;line-height:.92;
+.hero h1{font-size:clamp(2.4rem,5.5vw,6rem);font-weight:800;text-transform:uppercase;line-height:.92;
   letter-spacing:-.02em;margin:.22em 0;color:var(--paper)}
+/* Sky branding block */
+.hero-sky-brand{position:absolute;top:18%;left:50%;transform:translateX(-50%);z-index:10;text-align:center;pointer-events:none;width:100%;display:flex;justify-content:center}
+.hero-marque{color:rgba(210,218,226,.78);font-family:'Archivo',sans-serif;font-size:clamp(.8rem,1.4vw,1.3rem);font-weight:700;letter-spacing:.07em;margin-bottom:20px;white-space:nowrap}
+.hero-brand-row{display:flex;align-items:center;justify-content:center;gap:clamp(24px,4vw,64px);width:auto}
+.hero-sunseeker-logo{max-height:clamp(200px,11vw,145px);display:block;flex-shrink:0;filter:drop-shadow(0 6px 30px rgba(0,0,0,.55))}
+.hero-saxdor-logo{max-height:clamp(10px,3.8vw,15px);display:block;flex-shrink:0;filter:brightness(0) invert(1);opacity:.75}
+.hero-sealegs-logo{max-height:clamp(120px,7vw,120px);display:block;flex-shrink:0;filter:brightness(0) invert(1);opacity:.75}
 .hero h1 .ln{display:block;overflow:hidden}
 .hero h1 .ln i{display:block;font-style:normal;transform:translateY(112%);animation:lineUp 1.2s var(--ease) forwards}
 .hero h1 .ln:nth-child(1) i{animation-delay:.52s}.hero h1 .ln:nth-child(2) i{animation-delay:.66s}
@@ -544,7 +562,10 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
       </ul>
     </nav>
     <a href="index.html" class="logo" aria-label="MYA — Motoryachts Australasia home">
-      <img src="Assets/New_Logo.png" alt="MYA — Motoryachts Australasia" class="logo-img" style="padding-top: 5%;">
+      <img src="Assets/New_Logo_01.png" alt="MYA — Motoryachts Australasia" class="logo-img">
+      <div class="header-tagline-wrap">
+        <span class="header-tagline">Motoryachts Australasia</span>
+      </div>
     </a>
     <div class="nav-right">
       <ul class="nav-links">
@@ -576,19 +597,23 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 <main>
 <!-- ===================== HERO (layered parallax) ===================== -->
 <section class="hero" id="top">
-  <h2 style="position: absolute; top: 120px; left: 50%; transform: translateX(-50%); z-index: 10; color: #c0c0c0; font-family: 'Archivo', sans-serif; font-size: 2rem; font-weight: 700; letter-spacing: 0.05em; white-space: nowrap;">MOTORYACHTS AUSTRALASIA</h2>
-  <img src="Assets/Sunseeker_Silver_Logo.png" alt="Sunseeker" class="brand-logo" style="max-height: 240px; position: absolute; top: 180px; left: 50%; transform: translateX(-50%); z-index: 10;">
   <div class="hero-layer" data-parallax data-speed="0.22"
-       style="background-image:url('https://images.sunseeker.com/images%2F0d24acdb5bd9675cd9f8ea8c5de73862%2Fen%2FHOMEPAGE-LAUNCH.jpg?auto=format&fit=crop&w=2200')"></div>
+       style="background-image:url('Assets/Hero_Background.png')"></div>
   <div class="hero-haze"></div>
   <div class="hero-ghost" data-parallax data-speed="0.5">MYA</div>
-  <div class="hero-inner" data-parallax data-speed="-0.07">
-    <div class="logo-brands">
-      <!-- <img src="Assets/Saxdor-White-Logo_Smaller.png" alt="Saxdor" class="brand-logo"> -->
+  <!-- Sky area: brand row sits in the clear blue sky above the yacht -->
+  <div class="hero-sky-brand">
+    <div class="hero-brand-row">
+      <img src="Assets/Saxdor-Black-Logo.png" alt="Saxdor" class="hero-saxdor-logo">
+      <img src="Assets/Sunseeker_Silver_Logo.png" alt="Sunseeker" class="hero-sunseeker-logo">
+      <img src="Assets/Sealegs-logo.png" alt="Sealegs" class="hero-sealegs-logo">
     </div>
+  </div>
+  <!-- Below-boat area: headline + subtitle + CTA anchored to the base of the hero -->
+  <div class="hero-inner" data-parallax data-speed="-0.07">
     <h1 class="disp">
-      <span class="ln"><i>Luxury Yachting</i></span>
-      <span class="ln"><i class="thin">Redefined</i></span>
+      <span class="ln"><i>Absolute</i></span>
+      <span class="ln"><i class="thin">Service</i></span>
     </h1>
     <p class="sub">From Fremantle's iconic waterfront to the open water of the Indian Ocean — the official Western Australian home of Sunseeker and Saxdor.</p>
     <div class="hero-cta">
