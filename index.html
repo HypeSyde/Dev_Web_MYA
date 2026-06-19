@@ -103,7 +103,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 
 /* ============================================================ HEADER */
 .header{position:fixed;top:0;left:0;width:100%;z-index:1000;
-  background:linear-gradient(180deg,rgba(0,0,0,.95),rgba(0,0,0,.55));backdrop-filter:blur(14px);transition:background .55s var(--ease),border-color .55s}
+  background:linear-gradient(180deg,rgba(57, 57, 57, 0.753),rgba(191, 190, 190, 0));backdrop-filter:blur(14px);transition:background .55s var(--ease),border-color .55s}
 .header .bar{display:flex;align-items:center;justify-content:center;height:var(--nav-h);gap:24px;transition:height .5s var(--ease)}
 .header.scrolled,.header.solid{background:linear-gradient(180deg,rgb(0, 0, 0),rgba(0, 0, 0, 0.33));border-color:rgba(59, 59, 59, 0.532)}
 .header.scrolled .bar,.header.solid .bar{height:92px}
@@ -172,27 +172,27 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 [data-parallax]{will-change:transform}
 
 /* ============================================================ HOME HERO (layered parallax) */
-.hero{position:relative;height:130vh;min-height:780px;display:flex;align-items:flex-end;justify-content:center;
+.hero{position:relative;height:130vh;min-height:780px;display:flex;align-items:center;justify-content:center;
   text-align:center;overflow:hidden}
 .hero-layer{position:absolute;inset:-12% -2%;z-index:-3;background-size:cover;background-position:center;will-change:transform}
 .hero-haze{position:absolute;inset:0;z-index:-2;
-  background:radial-gradient(130% 100% at 50% 18%,transparent 28%,rgba(8,12,16,.45) 100%),
-  linear-gradient(to bottom,rgba(8,12,16,.38),rgba(8,12,16,.10) 42%,rgba(8,12,16,.88))}
-.hero-inner{position:relative;z-index:2;max-width:1100px;padding:0 50px clamp(140px,20vh,240px);will-change:transform}
+  background:radial-gradient(130% 100% at 50% 18%,transparent 28%,rgba(143, 143, 143, 0.296) 100%),
+  linear-gradient(to bottom,rgba(8,12,16,.38),rgba(8, 12, 16, 0) 42%,rgba(8,12,16,.88))}
+.hero-inner{position:relative;z-index:2;max-width:1100px;padding:0 50px;will-change:transform;text-shadow:0 2px 18px rgba(0,0,0,.55),0 1px 4px rgba(0,0,0,.35)}
 .logo-brands{display:flex;gap:40px;align-items:center;justify-content:center;margin-bottom:32px;opacity:0;animation:fadeUp 1s var(--ease) .4s forwards;flex-wrap:wrap}
 .brand-logo{max-height:80px;display:block;object-fit:contain}
 @media (max-width:768px){.logo-brands{gap:24px}.brand-logo{max-height:60px}}
 @media (max-width:480px){.logo-brands{flex-direction:column;gap:16px}.brand-logo{max-height:50px}}
 .hero .kicker{opacity:0;animation:fadeUp 1s var(--ease) .4s forwards;justify-content:center}
 .hero h1{font-size:clamp(2.4rem,5.5vw,6rem);font-weight:800;text-transform:uppercase;line-height:.92;
-  letter-spacing:-.02em;margin:.22em 0;color:var(--paper)}
+  letter-spacing:-.02em;margin:.22em 0;color:var(--paper);text-align:center}
 /* Sky branding block */
 .hero-sky-brand{position:absolute;top:18%;left:50%;transform:translateX(-50%);z-index:10;text-align:center;pointer-events:none;width:100%;display:flex;justify-content:center}
 .hero-marque{color:rgba(210,218,226,.78);font-family:'Archivo',sans-serif;font-size:clamp(.8rem,1.4vw,1.3rem);font-weight:700;letter-spacing:.07em;margin-bottom:20px;white-space:nowrap}
 .hero-brand-row{display:flex;align-items:center;justify-content:center;gap:clamp(24px,4vw,64px);width:auto}
-.hero-sunseeker-logo{max-height:clamp(200px,11vw,145px);display:block;flex-shrink:0;filter:drop-shadow(0 6px 30px rgba(0,0,0,.55))}
-.hero-saxdor-logo{max-height:clamp(10px,3.8vw,15px);display:block;flex-shrink:0;filter:brightness(0) invert(1);opacity:.75}
-.hero-sealegs-logo{max-height:clamp(120px,7vw,120px);display:block;flex-shrink:0;filter:brightness(0) invert(1);opacity:.75}
+.hero-sunseeker-logo{max-height:clamp(200px,11vw,145px);display:block;flex-shrink:0;filter:drop-shadow(0 6px 30px rgba(0,0,0,.25))}
+.hero-saxdor-logo{max-height:clamp(10px,3.8vw,15px);display:block;flex-shrink:0;opacity:.95}
+.hero-sealegs-logo{max-height:clamp(120px,7vw,120px);display:block;flex-shrink:0;filter:brightness(0) invert(1);opacity:.95}
 .hero h1 .ln{display:block;overflow:hidden}
 .hero h1 .ln i{display:block;font-style:normal;transform:translateY(112%);animation:lineUp 1.2s var(--ease) forwards}
 .hero h1 .ln:nth-child(1) i{animation-delay:.52s}.hero h1 .ln:nth-child(2) i{animation-delay:.66s}
@@ -231,7 +231,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 /* ============================================================ MARQUEE TICKER */
 .ticker{background:var(--navy-blue);border-top:1px solid var(--line-l);border-bottom:1px solid var(--line-l);overflow:hidden;padding:0}
 .ticker-track{display:flex;gap:0;white-space:nowrap;animation:scrollx 38s linear infinite}
-.ticker-track .it{font-family:'Archivo',sans-serif;font-weight:600;font-size:13px;letter-spacing:.22em;text-transform:uppercase;
+.ticker-track .it{font-family:'Archivo',sans-serif;font-weight:600;font-size:15px;letter-spacing:.22em;text-transform:uppercase;
   color:var(--muted);padding:20px 34px;display:inline-flex;align-items:center;gap:34px}
 .ticker-track .it::after{content:"✦";color:var(--blue);font-size:9px;opacity:.7}
 @keyframes scrollx{to{transform:translateX(-50%)}}
@@ -564,7 +564,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
       </ul>
     </nav>
     <a href="index.html" class="logo" aria-label="MYA — Motoryachts Australasia home">
-      <img src="Assets/Main_Logo.png" alt="MYA — Motoryachts Australasia" class="logo-img">
+      <img src="Assets/Not_Stretched_Logo.png" alt="MYA — Motoryachts Australasia" class="logo-img">
       <div class="header-tagline-wrap">
         <span class="header-tagline">Motoryachts Australasia</span>
       </div>
@@ -600,27 +600,27 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 <!-- ===================== HERO (layered parallax) ===================== -->
 <section class="hero" id="top">
   <div class="hero-layer" data-parallax data-speed="0.22"
-       style="background-image:url('Assets/Hero_Background.png')"></div>
+       style="background-image:url('Assets/2000W/Hero_Background_2000w.webp')"></div>
   <div class="hero-haze"></div>
   <div class="hero-ghost" data-parallax data-speed="0.5">MYA</div>
   <!-- Sky area: brand row sits in the clear blue sky above the yacht -->
   <div class="hero-sky-brand">
     <div class="hero-brand-row">
-      <img src="Assets/Saxdor-Black-Logo.png" alt="Saxdor" class="hero-saxdor-logo">
-      <img src="Assets/Sunseeker_Silver_Logo.png" alt="Sunseeker" class="hero-sunseeker-logo">
-      <img src="Assets/Sealegs-logo.png" alt="Sealegs" class="hero-sealegs-logo">
-    </div>
+      <img src="Assets/SVG/Saxdor-Blue-Logo.svg" alt="Saxdor" class="hero-saxdor-logo" data-parallax data-speed="-0.10">
+      <img src="Assets/SVG/Sunseeker_Silver_Logo.svg" alt="Sunseeker" class="hero-sunseeker-logo" data-parallax data-speed="-0.10">
+      <img src="Assets/SVG/Sealegs-logo.svg" alt="Sealegs" class="hero-sealegs-logo" data-parallax data-speed="-0.10">
+    </div> 
   </div>
   <!-- Below-boat area: headline + subtitle + CTA anchored to the base of the hero -->
-  <div class="hero-inner" data-parallax data-speed="-0.07">
+  <div class="hero-inner" data-parallax data-speed="-0.10">
     <h1 class="disp">
-      <span class="ln"><i>Absolute</i></span>
-      <span class="ln"><i class="thin">Service</i></span>
+      <span class="ln"><i>Specialised</i></span>
+      <span class="ln"><i class="thin">Marine Group</i></span>
     </h1>
     <p class="sub">From Fremantle's iconic waterfront to the open water of the Indian Ocean — the official Western Australian home of Sunseeker and Saxdor.</p>
     <div class="hero-cta">
-      <a href="fleet.html" class="btn">Explore the Fleet <span class="ar">→</span></a>
-      <a href="contact.html" class="btn btn--out">Book a Viewing</a>
+      <a href="fleet.html" class="btn">Start <span class="ar">→</span></a>
+      <!-- <a href="contact.html" class="btn btn--out">Book a Viewing</a> -->
     </div>
   </div>
   <a href="#intro" class="scrollcue" aria-label="Scroll down"><span>Scroll</span><span class="ln"></span></a>
