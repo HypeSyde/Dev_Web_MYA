@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>The Fleet — All Sunseeker &amp; Saxdor Models | MYA</title>
-<meta name="description" content="Browse the complete MYA fleet — 30 models across Sunseeker and Saxdor, filterable by brand, series and category.">
+<meta name="description" content="Browse the complete MYA fleet — Sunseeker, Saxdor and Sealegs amphibious craft, filterable by brand, series and category.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -172,7 +172,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 [data-parallax]{will-change:transform}
 
 /* ============================================================ HOME HERO (layered parallax) */
-.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;
+.hero{position:relative;height:100vh;height:100dvh;min-height:640px;display:flex;align-items:center;justify-content:center;
   text-align:center;overflow:hidden}
 .hero-layer{position:absolute;inset:-12% -2%;z-index:-3;background-size:cover;background-position:center;will-change:transform}
 .hero-haze{position:absolute;inset:0;z-index:-2;
@@ -203,7 +203,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   font-weight:800;font-size:30vw;line-height:.7;color:rgba(255,255,255,.035);letter-spacing:-.04em;pointer-events:none;white-space:nowrap}
 
 /* ============================================================ PAGE HERO (interior) */
-.phero{position:relative;min-height:70vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(44px,7vh,88px)}
+.phero{position:relative;min-height:70vh;min-height:70dvh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(44px,7vh,88px)}
 .phero-bg{position:absolute;inset:-8% -2%;z-index:-2;background-size:cover;background-position:center;will-change:transform}
 .phero::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(to top,rgba(8,12,16,.92),rgba(8,12,16,.25) 56%,rgba(8,12,16,.5))}
@@ -241,7 +241,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .head-flex .copy{max-width:660px}
 
 /* ============================================================ FULL-BLEED PARALLAX BAND */
-.band{position:relative;min-height:86vh;display:flex;align-items:center;overflow:hidden}
+.band{position:relative;min-height:86vh;min-height:86dvh;display:flex;align-items:center;overflow:hidden}
 .band-bg{position:absolute;inset:-15% 0;z-index:-2;background-size:cover;background-position:center;will-change:transform}
 .band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,12,16,.82),rgba(8,12,16,.32) 70%,transparent)}
 .band.cent::after{background:radial-gradient(120% 100% at 50% 50%,rgba(8,12,16,.45),rgba(8,12,16,.78))}
@@ -513,9 +513,9 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   .gallery{grid-template-columns:1fr 1fr}
   .gallery .g:first-child{grid-column:span 2}
   .grid2{grid-template-columns:1fr}
-  .band{min-height:78vh}.band::after{background:linear-gradient(to top,rgba(8,12,16,.9),rgba(8,12,16,.4))}
+  .band{min-height:78vh;min-height:78dvh}.band::after{background:linear-gradient(to top,rgba(8,12,16,.9),rgba(8,12,16,.4))}
   .head-flex{flex-direction:column;align-items:flex-start}
-  .phero{min-height:60vh}
+  .phero{min-height:60vh;min-height:60dvh}
   .hero-ghost{font-size:42vw}
 }
 @media(max-width:460px){
@@ -530,7 +530,14 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   .hero h1 .ln i,.maskline>span{transform:none}
   .reveal{opacity:1;transform:none}
   [data-parallax],.hero-layer,.band-bg,.phero-bg,.cta-bg,.px-img{transform:none!important}
-}</style>
+}/* ===== device safe-areas + screen-ratio hardening ===== */
+.header{padding-top:env(safe-area-inset-top)}
+.header .bar{padding-left:max(clamp(22px,1vw,84px),env(safe-area-inset-left));padding-right:max(clamp(22px,1vw,84px),env(safe-area-inset-right))}
+.drawer{padding-top:max(112px,calc(env(safe-area-inset-top) + 88px));padding-right:max(clamp(26px,8vw,64px),env(safe-area-inset-right));padding-bottom:max(44px,env(safe-area-inset-bottom));padding-left:max(clamp(26px,8vw,64px),env(safe-area-inset-left))}
+.footer{padding-bottom:max(38px,env(safe-area-inset-bottom))}
+@media (orientation:landscape) and (max-height:560px){.hero{min-height:100svh}}
+@media (min-width:1921px){.wrap{max-width:1680px}}
+</style>
 </head>
 <body data-page="newyachts">
 <div class="grain"></div>
@@ -545,6 +552,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
           <ul class="submenu">
             <li><a href="sunseeker.html">Sunseeker</a></li>
             <li><a href="saxdor.html">Saxdor</a></li>
+            <li><a href="sealegs.html">Sealegs</a></li>
             <li><a href="fleet.html">View All Models</a></li>
           </ul>
         </li>
@@ -574,6 +582,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   <a href="about.html" data-close>About</a>
   <a href="sunseeker.html" data-close>Sunseeker <span>New</span></a>
   <a href="saxdor.html" data-close>Saxdor <span>New</span></a>
+  <a href="sealegs.html" data-close>Sealegs <span>New</span></a>
   <a href="fleet.html" data-close>The Fleet</a>
   <a href="pre-owned.html" data-close>Pre-Owned</a>
   <a href="service.html" data-close>After-Sales &amp; Service</a>
@@ -590,8 +599,8 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   <div class="wrap phero-inner">
     <div class="crumb"><a href="index.html">Home</a><span class="sl">/</span><span>The Fleet</span></div>
     <span class="kicker">All Models</span>
-    <h1 class="disp">The <span class="thin">Fleet</span></h1>
-    <p>Thirty world-class motoryachts from two of the industry's most celebrated builders — explore the full range, filter by brand or series, and find the yacht that fits your life on the water.</p>
+    <h1 class="disp">Drive <span class="thin">Delivery</span></h1>
+    <p>World-class boats from three of the industry's most celebrated builders — Sunseeker, Saxdor and the amphibious pioneers at Sealegs. Explore the full range, filter by brand or series, and find the craft that fits your life on — and off — the water.</p>
   </div>
 </section>
 
@@ -602,11 +611,15 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
       <button class="active" data-filter="all">All Models</button>
       <button data-filter="sunseeker">Sunseeker</button>
       <button data-filter="saxdor">Saxdor</button>
+      <button data-filter="sealegs">Sealegs</button>
       <button data-filter="performance">Performance</button>
       <button data-filter="flybridge">Flybridge / Yacht</button>
       <button data-filter="ocean">Ocean</button>
       <button data-filter="superyacht">Superyacht</button>
       <button data-filter="sport">Sport</button>
+      <button data-filter="rib">Amphibious RIB</button>
+      <button data-filter="alloy">Alloy</button>
+      <button data-filter="commercial">Commercial</button>
     </div>
     <div class="count-note reveal" id="count-note"></div>
     <div class="fleet-grid" id="all-fleet"></div>
@@ -829,6 +842,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 (function(){
   var DEV = 'https://motoryachts.yourdevelopmentserver.net/wp-content/uploads/';
   var SX  = 'https://saxdoryachts.com/wp-content/uploads/';
+  var SL  = 'https://www.sealegs.com/media/';
   function gal(prefix,a,b){ var o=[]; for(var i=a;i<=b;i++) o.push(prefix+i+'.webp'); return o; }
 
   var Y = [
@@ -962,7 +976,64 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
     /* ===================== SAXDOR — 460 SERIES ===================== */
     { slug:'saxdor-460-gtc', brand:'Saxdor', series:'460 Series', name:'Saxdor 460 GTC', cats:'saxdor sport',
       loaM:'14.0', loaFt:"46'0\"", hero:SX+'2026/04/460-GTC-desk-gal.jpg', card:SX+'2026/04/460-GTC-desk-gal.jpg',
-      desc:'Saxdor\u2019s largest and most luxurious \u2014 winner of the \u2018Motoryacht 14\u201316m\u2019 category at the Yacht Style Awards 2026. Expansive living, refined finish and genuine long-range capability.' }
+      desc:'Saxdor\u2019s largest and most luxurious \u2014 winner of the \u2018Motoryacht 14\u201316m\u2019 category at the Yacht Style Awards 2026. Expansive living, refined finish and genuine long-range capability.' },
+
+    /* ===================== SEALEGS — SPORT RIB ===================== */
+    { slug:'sealegs-38-tender', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 3.8m Tender', cats:'sealegs rib', cut:true,
+      loaM:'3.8', loaFt:"12'5\"", hero:SL+'bqgpj0rf/sealegs-38-tender-on-the-water.jpg?width=1800&format=webp', card:SL+'bqgpj0rf/sealegs-38-tender-on-the-water.jpg?width=1000&format=webp',
+      desc:'A luxury amphibious tender bringing drive-on, drive-off capability to every shore trip — the perfect compact companion for the superyacht or the family beach day.' },
+    { slug:'sealegs-61-sport-rib', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 6.1m Sport RIB', cats:'sealegs rib',
+      loaM:'6.1', loaFt:"20'0\"", hero:SL+'tjzh04fd/61m-sport-rib-at-sea.jpg?width=1800&format=webp', card:SL+'tjzh04fd/61m-sport-rib-at-sea.jpg?width=1000&format=webp',
+      desc:'A compact amphibious RIB designed as a versatile superyacht tender or for tight storage — all the freedom of Sealegs in its most manageable form.' },
+    { slug:'sealegs-71-sport-rib', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 7.1m Sport RIB', cats:'sealegs rib',
+      loaM:'7.1', loaFt:"22'4\"", hero:SL+'yknjdftm/71m-rib-cruising-on-water-1.jpg?width=1800&format=webp', card:SL+'yknjdftm/71m-rib-cruising-on-water-1.jpg?width=1000&format=webp',
+      desc:'The aspiring amphibian’s ideal craft — fish, dive and explore, then simply drive up the beach or boat ramp without ever getting your feet wet.' },
+    { slug:'sealegs-75-amphibious-rib', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 7.5m Amphibious RIB', cats:'sealegs rib',
+      loaM:'7.5', loaFt:"24'7\"", hero:SL+'yatbkhqh/75m-sealegs-rib-driving-on-water-front-view.jpg?width=1800&format=webp', card:SL+'yatbkhqh/75m-sealegs-rib-driving-on-water-front-view.jpg?width=1000&format=webp',
+      desc:'Advancing the Sealegs range in design, function and aesthetics — a refined, do-it-all amphibious RIB built for effortless days on the water and the shore.' },
+    { slug:'sealegs-75-electric-rib', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 7.5m Electric RIB', cats:'sealegs rib',
+      loaM:'7.5', loaFt:"24'7\"", hero:SL+'hr3iotzo/img_4228-edited.jpg?width=1800&format=webp', card:SL+'hr3iotzo/img_4228-edited.jpg?width=1000&format=webp',
+      desc:'The electric evolution of the amphibious RIB — near-silent, emission-free running paired with the same go-anywhere, drive-ashore Sealegs capability.' },
+    { slug:'sealegs-9m-hydrasol-rib', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 9m Hydrasol RIB', cats:'sealegs rib',
+      loaM:'9.0', loaFt:"29'11\"", hero:SL+'am4lshyx/sealegs-90-hydrasol-2-55.jpg?width=1800&format=webp', card:SL+'am4lshyx/sealegs-90-hydrasol-2-55.jpg?width=1000&format=webp',
+      desc:'One of the largest amphibious RIBs Sealegs has ever produced — a vast, stable platform for adventure, diving and serious time on and off the water.' },
+    { slug:'sealegs-12m-sport-rib', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 12m Sport RIB', cats:'sealegs rib', full:true,
+      loaM:'12.0', loaFt:"39'5\"", hero:SL+'ugyhxfjb/12rc-kupe-01-aerial-shot-1920.jpg?width=1800&format=webp', card:SL+'ugyhxfjb/12rc-kupe-01-aerial-shot-1920.jpg?width=1000&format=webp',
+      desc:'Sealegs’ flagship sport RIB — the largest commercial-grade amphibious system with a fully enclosed cabin, twin-outboard power and genuine open-water capability.',
+      specs:[
+        {g:'Specifications', r:[['Length','12.0 m','39.5 ft'],['Configuration','Fully enclosed cabin'],['Engines','Twin outboards'],['Max. Power','850 hp'],['Fuel','500 L','132 gal'],['Amphibious System','Sealegs commercial-grade'],['Land Drive','3-wheel powered, retractable'],['Capability','Drive-on / drive-off, land & water']]}
+      ] },
+
+    /* ===================== SEALEGS — SPORT ALLOY ===================== */
+    { slug:'sealegs-65-alloy-cuddy', brand:'Sealegs', series:'Sport Alloy', name:'Sealegs 6.5m Alloy Cuddy Cabin', cats:'sealegs alloy',
+      loaM:'6.5', loaFt:"21'4\"", hero:SL+'w3tlbdwh/sealegs-65m-cuddy-cabin-image-courtesy-of-pacific-power-boat-149.jpg?width=1800&format=webp', card:SL+'w3tlbdwh/sealegs-65m-cuddy-cabin-image-courtesy-of-pacific-power-boat-149.jpg?width=1000&format=webp',
+      desc:'Rugged aluminium construction meets innovative amphibious technology — a tough, weatherly cuddy cabin built for the most demanding conditions.' },
+    { slug:'sealegs-75-alloy', brand:'Sealegs', series:'Sport Alloy', name:'Sealegs 7.5m Alloy', cats:'sealegs alloy',
+      loaM:'7.5', loaFt:"24'11\"", hero:SL+'bkldvbc3/75m-alloy-driving-on-water-for-web.jpg?width=1800&format=webp', card:SL+'bkldvbc3/75m-alloy-driving-on-water-for-web.jpg?width=1000&format=webp',
+      desc:'Highly configurable, robust and versatile — an alloy amphibious craft that adapts to fishing, diving, family days and everything in between.' },
+    { slug:'sealegs-85-alloy-cabin', brand:'Sealegs', series:'Sport Alloy', name:'Sealegs 8.5m Alloy Cabin', cats:'sealegs alloy',
+      loaM:'8.5', loaFt:"27'11\"", hero:SL+'prxfswn2/85-alloy-cabin-sealegs-on-water.jpg?width=1800&format=webp', card:SL+'prxfswn2/85-alloy-cabin-sealegs-on-water.jpg?width=1000&format=webp',
+      desc:'An enclosed alloy cabin for effortless transitions between land and water — comfort, protection and amphibious freedom in equal measure.' },
+    { slug:'sealegs-86-alloy-max', brand:'Sealegs', series:'Sport Alloy', name:'Sealegs 8.6m Alloy MAX', cats:'sealegs alloy',
+      loaM:'8.6', loaFt:"28'3\"", hero:SL+'cm3mgftv/86m-alloy-max-hero.jpg?width=1800&format=webp', card:SL+'cm3mgftv/86m-alloy-max-hero.jpg?width=1000&format=webp',
+      desc:'The comfort of an enclosed alloy cabin combined with the latest Sealegs amphibious technology — the most capable alloy craft in the range.' },
+
+    /* ===================== SEALEGS — COMMERCIAL ===================== */
+    { slug:'sealegs-61-commercial-rib', brand:'Sealegs', series:'Commercial', name:'Sealegs 6.1m Commercial RIB', cats:'sealegs commercial',
+      loaM:'6.1', loaFt:"20'0\"", hero:SL+'zt4ia1pg/com-61m-rib.jpg?width=1800&format=webp', card:SL+'zt4ia1pg/com-61m-rib.jpg?width=1000&format=webp',
+      desc:'Built for rescue, transport and professional duty — robust commercial-grade construction with the unmatched shore access only Sealegs delivers.' },
+    { slug:'sealegs-71-commercial-rib', brand:'Sealegs', series:'Commercial', name:'Sealegs 7.1m Commercial RIB', cats:'sealegs commercial',
+      loaM:'7.1', loaFt:"22'4\"", hero:SL+'5p2hhwqi/com-71m-rib-commandos.jpg?width=1800&format=webp', card:SL+'5p2hhwqi/com-71m-rib-commandos.jpg?width=1000&format=webp',
+      desc:'Commercial-grade materials engineered for the toughest environments — a dependable amphibious workhorse for patrol, rescue and survey crews.' },
+    { slug:'sealegs-9m-commercial-rib', brand:'Sealegs', series:'Commercial', name:'Sealegs 9m Commercial Hydrasol RIB', cats:'sealegs commercial',
+      loaM:'9.0', loaFt:"29'11\"", hero:SL+'qegn1alb/com-9m-yellow-red.jpg?width=1800&format=webp', card:SL+'qegn1alb/com-9m-yellow-red.jpg?width=1000&format=webp',
+      desc:'Highly customisable for tourism, diving, tours and wildlife viewing — a large commercial amphibious platform that launches and retrieves itself.' },
+    { slug:'sealegs-12m-commercial-rib', brand:'Sealegs', series:'Commercial', name:'Sealegs 12m Commercial RIB', cats:'sealegs commercial', full:true,
+      loaM:'12.0', loaFt:"39'5\"", hero:SL+'r0zn1ejb/12m-commercial-1.jpg?width=1800&format=webp', card:SL+'r0zn1ejb/12m-commercial-1.jpg?width=1000&format=webp',
+      desc:'The flagship commercial amphibious RIB — a fully enclosed cabin, twin outboards to 1,200 hp and a commercial-grade drive system for the most serious operators.',
+      specs:[
+        {g:'Specifications', r:[['Length','12.0 m','39.5 ft'],['Configuration','Fully enclosed cabin'],['Engines','Twin outboards'],['Max. Power','1,200 hp'],['Fuel','500 L','132 gal'],['Amphibious System','Sealegs commercial-grade'],['Land Drive','3-wheel powered, retractable'],['Application','Rescue, patrol, tourism, transport']]}
+      ] }
   ];
 
   /* ---------- helpers ---------- */
@@ -994,6 +1065,8 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
     var host = document.getElementById(id); if(!host) return;
     var order = brand==='Sunseeker'
       ? ['Yacht','Ocean','Performance','Superyacht']
+      : brand==='Sealegs'
+      ? ['Sport RIB','Sport Alloy','Commercial']
       : ['200 Series','270 Series','320 Series','340 Series','400 Series','460 Series'];
     var html = '';
     order.forEach(function(s){

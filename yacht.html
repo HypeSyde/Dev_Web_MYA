@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Yacht Details — MYA</title>
 <meta name="description" content="Full specifications, image gallery and brochure download for the selected Sunseeker or Saxdor yacht.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -172,7 +172,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 [data-parallax]{will-change:transform}
 
 /* ============================================================ HOME HERO (layered parallax) */
-.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;
+.hero{position:relative;height:100vh;height:100dvh;min-height:640px;display:flex;align-items:center;justify-content:center;
   text-align:center;overflow:hidden}
 .hero-layer{position:absolute;inset:-12% -2%;z-index:-3;background-size:cover;background-position:center;will-change:transform}
 .hero-haze{position:absolute;inset:0;z-index:-2;
@@ -203,7 +203,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   font-weight:800;font-size:30vw;line-height:.7;color:rgba(255,255,255,.035);letter-spacing:-.04em;pointer-events:none;white-space:nowrap}
 
 /* ============================================================ PAGE HERO (interior) */
-.phero{position:relative;min-height:70vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(44px,7vh,88px)}
+.phero{position:relative;min-height:70vh;min-height:70dvh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(44px,7vh,88px)}
 .phero-bg{position:absolute;inset:-8% -2%;z-index:-2;background-size:cover;background-position:center;will-change:transform}
 .phero::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(to top,rgba(8,12,16,.92),rgba(8,12,16,.25) 56%,rgba(8,12,16,.5))}
@@ -241,7 +241,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .head-flex .copy{max-width:660px}
 
 /* ============================================================ FULL-BLEED PARALLAX BAND */
-.band{position:relative;min-height:86vh;display:flex;align-items:center;overflow:hidden}
+.band{position:relative;min-height:86vh;min-height:86dvh;display:flex;align-items:center;overflow:hidden}
 .band-bg{position:absolute;inset:-15% 0;z-index:-2;background-size:cover;background-position:center;will-change:transform}
 .band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,12,16,.82),rgba(8,12,16,.32) 70%,transparent)}
 .band.cent::after{background:radial-gradient(120% 100% at 50% 50%,rgba(8,12,16,.45),rgba(8,12,16,.78))}
@@ -513,9 +513,9 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   .gallery{grid-template-columns:1fr 1fr}
   .gallery .g:first-child{grid-column:span 2}
   .grid2{grid-template-columns:1fr}
-  .band{min-height:78vh}.band::after{background:linear-gradient(to top,rgba(8,12,16,.9),rgba(8,12,16,.4))}
+  .band{min-height:78vh;min-height:78dvh}.band::after{background:linear-gradient(to top,rgba(8,12,16,.9),rgba(8,12,16,.4))}
   .head-flex{flex-direction:column;align-items:flex-start}
-  .phero{min-height:60vh}
+  .phero{min-height:60vh;min-height:60dvh}
   .hero-ghost{font-size:42vw}
 }
 @media(max-width:460px){
@@ -530,7 +530,14 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   .hero h1 .ln i,.maskline>span{transform:none}
   .reveal{opacity:1;transform:none}
   [data-parallax],.hero-layer,.band-bg,.phero-bg,.cta-bg,.px-img{transform:none!important}
-}</style>
+}/* ===== device safe-areas + screen-ratio hardening ===== */
+.header{padding-top:env(safe-area-inset-top)}
+.header .bar{padding-left:max(clamp(22px,1vw,84px),env(safe-area-inset-left));padding-right:max(clamp(22px,1vw,84px),env(safe-area-inset-right))}
+.drawer{padding-top:max(112px,calc(env(safe-area-inset-top) + 88px));padding-right:max(clamp(26px,8vw,64px),env(safe-area-inset-right));padding-bottom:max(44px,env(safe-area-inset-bottom));padding-left:max(clamp(26px,8vw,64px),env(safe-area-inset-left))}
+.footer{padding-bottom:max(38px,env(safe-area-inset-bottom))}
+@media (orientation:landscape) and (max-height:560px){.hero{min-height:100svh}}
+@media (min-width:1921px){.wrap{max-width:1680px}}
+</style>
 </head>
 <body data-page="newyachts">
 <div class="grain"></div>
@@ -545,6 +552,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
           <ul class="submenu">
             <li><a href="sunseeker.html">Sunseeker</a></li>
             <li><a href="saxdor.html">Saxdor</a></li>
+            <li><a href="sealegs.html">Sealegs</a></li>
             <li><a href="fleet.html">View All Models</a></li>
           </ul>
         </li>
@@ -574,6 +582,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   <a href="about.html" data-close>About</a>
   <a href="sunseeker.html" data-close>Sunseeker <span>New</span></a>
   <a href="saxdor.html" data-close>Saxdor <span>New</span></a>
+  <a href="sealegs.html" data-close>Sealegs <span>New</span></a>
   <a href="fleet.html" data-close>The Fleet</a>
   <a href="pre-owned.html" data-close>Pre-Owned</a>
   <a href="service.html" data-close>After-Sales &amp; Service</a>
@@ -865,6 +874,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 (function(){
   var DEV = 'https://motoryachts.yourdevelopmentserver.net/wp-content/uploads/';
   var SX  = 'https://saxdoryachts.com/wp-content/uploads/';
+  var SL  = 'https://www.sealegs.com/media/';
   function gal(prefix,a,b){ var o=[]; for(var i=a;i<=b;i++) o.push(prefix+i+'.webp'); return o; }
 
   var Y = [
@@ -955,50 +965,61 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
       ] },
 
     /* ===================== SAXDOR — 200 SERIES ===================== */
-    { slug:'saxdor-200', brand:'Saxdor', series:'200 Series', name:'Saxdor 200', cats:'saxdor sport', cut:true,
-      loaM:'6.1', loaFt:"20'0\"", hero:SX+'2024/06/DJI_0077-2-4096x2301.jpg', card:SX+'2025/06/200_nav.png',
-      desc:'Compact, sporty and remarkably capable \u2014 Saxdor\u2019s entry into a bold new class of day boat, engineered for efficiency, handling and pure fun on the water.' },
-    { slug:'saxdor-205', brand:'Saxdor', series:'200 Series', name:'Saxdor 205', cats:'saxdor sport', cut:true,
-      loaM:'6.4', loaFt:"21'0\"", hero:SX+'2024/06/DJI_0077-2-4096x2301.jpg', card:SX+'2025/06/205_nav.png',
-      desc:'The evolution of the Saxdor day boat \u2014 clever spatial design, confident performance and that distinctive Nordic-modern aesthetic in an accessible package.' },
-
+    { slug:'saxdor-200', brand:'Saxdor', series:'200 Series', name:'Saxdor 200', cats:'saxdor sport', full:true, cut:true,
+      loaM:'5.94', loaFt:"19'5\"", hero:'Assets/Saxdor/200/saxdor-200-1.webp', card:'Assets/Saxdor/200/saxdor-200-nav.webp',
+      gallery:gal('Assets/Saxdor/200/saxdor-200-',1,13),
+      desc:'Sporty, agile and genuinely safe \u2014 the Saxdor 200 launched a bold new class of day boat. A featherweight vacuum-infused hull keeps it quick and fuel-efficient in calm water yet planted when the weather turns, while a versatile bow with full-width sunbed, hidden storage and a choice of jockey or side-by-side seating make it endlessly adaptable. Targa, soft-top, hard-top or open roof options tailor it to your waters.',
+      specs:[{g:'Specifications', r:[['Length','5.94 m','19\u20195\"'],['Beam','2.29 m','7\u20195\"'],['Draft','0.72 m','2\u20194\"'],['Passengers','6','CE Category C'],['Berths','2'],['Engines','Single Mercury outboard 115\u2013150 hp'],['Cruising Speed','32\u201345 knots'],['Fuel','100 L','26 gal'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}] },
+    { slug:'saxdor-205', brand:'Saxdor', series:'200 Series', name:'Saxdor 205', cats:'saxdor sport', full:true, cut:true,
+      loaM:'5.94', loaFt:"19'5\"", hero:'Assets/Saxdor/205/saxdor-205-1.webp', card:'Assets/Saxdor/205/saxdor-205-nav.webp',
+      gallery:gal('Assets/Saxdor/205/saxdor-205-',1,12),
+      desc:'The evolution of the Saxdor day boat \u2014 a revamped 20-footer that pairs playful performance with family-friendly versatility. Its sharp-entry, twin-stepped hull stays smooth in the calm and composed in the rough, while vacuum-infused construction keeps weight low and efficiency high. Flexible seating for up to six, multiple layout options and available extras such as a toilet compartment and sun cover make it as practical as it is fun.',
+      specs:[{g:'Specifications', r:[['Length','5.94 m','19\u20195\"'],['Beam','2.29 m','7\u20195\"'],['Draft','0.72 m','2\u20194\"'],['Passengers','6','CE Category C'],['Berths','2'],['Engines','Single Mercury outboard 115\u2013150 hp'],['Cruising Speed','32\u201345 knots'],['Fuel','100 L','26 gal'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}] },
     /* ===================== SAXDOR — 270 SERIES ===================== */
-    { slug:'saxdor-270-gto', brand:'Saxdor', series:'270 Series', name:'Saxdor 270 GTO', cats:'saxdor sport',
-      loaM:'8.3', loaFt:"27'0\"", hero:SX+'2026/04/270-GTO-desk-gal.jpg', card:SX+'2026/04/270-GTO-desk-gal.jpg',
-      desc:'A versatile sport cruiser delivering Saxdor\u2019s signature blend of speed, space and design intelligence \u2014 open-air freedom with everyday usability.' },
-
+    { slug:'saxdor-270-gto', brand:'Saxdor', series:'270 Series', name:'Saxdor 270 GTO', cats:'saxdor sport', full:true, cut:true,
+      loaM:'7.92', loaFt:"25'11\"", hero:'Assets/Saxdor/270-GTO/saxdor-270-gto-1.webp', card:'Assets/Saxdor/270-GTO/saxdor-270-gto-nav.webp',
+      gallery:gal('Assets/Saxdor/270-GTO/saxdor-270-gto-',1,13),
+      desc:'A 27-foot sportboat that turned heads from launch \u2014 winner of the Motorboat & Yachting Award 2024. A distinctive twin-step hull with a sharp 20\u00b0 deadrise delivers nimble, confident handling, while vacuum-infused construction keeps it light, fast and efficient. Flexible seating and twin sunbeds make it a natural day boat, with a compact cabin for the occasional overnight.',
+      specs:[{g:'Specifications', r:[['Length','7.92 m','25\u201911\"'],['Beam','2.60 m','8\u20196\"'],['Draft','0.47 m','1\u20197\"'],['Passengers','7','CE Category C'],['Berths','2'],['Max. Engine Power','Up to 400 hp (Mercury)'],['Cruising Speed','32\u201345 knots'],['Fuel','300 L','79 gal'],['Fresh Water','80 L','21 gal'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}] },
     /* ===================== SAXDOR — 320 SERIES ===================== */
-    { slug:'saxdor-320-gto', brand:'Saxdor', series:'320 Series', name:'Saxdor 320 GTO', cats:'saxdor sport',
-      loaM:'9.8', loaFt:"32'0\"", hero:SX+'2026/04/400-GTO-desk-gal-2.jpg', card:SX+'2026/04/400-GTO-desk-gal-2.jpg',
-      desc:'Big-boat presence in an agile package. The 320 GTO brings open-air freedom, responsive handling and versatile spaces \u2014 designed to make every journey feel effortless.' },
-    { slug:'saxdor-320-gtc', brand:'Saxdor', series:'320 Series', name:'Saxdor 320 GTC', cats:'saxdor sport',
-      loaM:'9.8', loaFt:"32'0\"", hero:SX+'2026/04/320-GTC-desk-gal.jpg', card:SX+'2026/04/320-GTC-desk-gal.jpg',
-      desc:'The closed-wheelhouse 320 \u2014 a luminous, all-weather cabin, intelligent spatial design and refined detailing wrapped around Saxdor\u2019s efficient stepped hull.' },
-
+    { slug:'saxdor-320-gto', brand:'Saxdor', series:'320 Series', name:'Saxdor 320 GTO', cats:'saxdor sport', full:true, cut:true,
+      loaM:'10.28', loaFt:"33'7\"", hero:'Assets/Saxdor/320-GTO/saxdor-320-gto-1.webp', card:'Assets/Saxdor/320-GTO/saxdor-320-gto-nav.webp',
+      gallery:gal('Assets/Saxdor/320-GTO/saxdor-320-gto-',1,13),
+      desc:'A true globetrotter \u2014 striking design and serious performance in an agile 32-foot package. The vacuum-infused, twin-stepped V21\u00b0 hull is engineered for both speed and seaworthiness, while versatile cockpit seating shifts effortlessly between dining and sunbathing. Below deck a full cabin, galley and berths make the 320 GTO equally at home as a high-performance day boat or a weekend cruiser.',
+      specs:[{g:'Specifications', r:[['Length','10.28 m','33\u20197\"'],['Beam','3.10 m','10\u20192\"'],['Draft (excl. engines)','0.48 m','1\u20197\"'],['Passengers','6\u20139','CE Category B/C'],['Berths','2'],['Engines','400\u2013600 hp outboard'],['Cruising Speed','32\u201345 knots'],['Max. Speed','50+ knots'],['Fuel','428 L','113 gal'],['Fresh Water','117 L','31 gal'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}] },
+    { slug:'saxdor-320-gtc', brand:'Saxdor', series:'320 Series', name:'Saxdor 320 GTC', cats:'saxdor sport', full:true, cut:true,
+      loaM:'10.28', loaFt:"33'7\"", hero:'Assets/Saxdor/320-GTC/saxdor-320-gtc-1.webp', card:'Assets/Saxdor/320-GTC/saxdor-320-gtc-nav.webp',
+      gallery:gal('Assets/Saxdor/320-GTC/saxdor-320-gtc-',1,13),
+      desc:'The all-weather machine \u2014 the closed-wheelhouse 320 wraps a luminous, full-beam cabin around the same efficient twin-stepped hull. A low centre of gravity, light construction and sharp entry give it composed handling in varied conditions, while a wide internal corridor and walk-around bow access deliver what Saxdor calls \u201cthe luxury of unused space.\u201d',
+      specs:[{g:'Specifications', r:[['Length','10.28 m','33\u20197\"'],['Beam','3.10 m','10\u20192\"'],['Draft','0.49 m','1\u20197\"'],['Passengers','6\u20139','CE Category B/C'],['Berths','2'],['Engines','400\u2013600 hp Mercury outboards'],['Cruising Speed','32\u201345 knots'],['Fuel','428 L','113 gal'],['Fresh Water','117 L','31 gal'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}] },
     /* ===================== SAXDOR — 340 SERIES ===================== */
-    { slug:'saxdor-340-gtwa', brand:'Saxdor', series:'340 Series', name:'Saxdor 340 GTWA', cats:'saxdor sport',
-      loaM:'10.5', loaFt:"34'0\"", hero:SX+'2026/04/340-GTWA-desk-gal.jpg', card:SX+'2026/04/340-GTWA-desk-gal.jpg',
-      desc:'A walkaround built for adventure \u2014 360\u00b0 deck access, rugged versatility and Saxdor\u2019s efficient, stepped-hull performance for serious time on the water.' },
-
+    { slug:'saxdor-340-gtwa', brand:'Saxdor', series:'340 Series', name:'Saxdor 340 GTWA', cats:'saxdor sport', full:true, cut:true,
+      loaM:'10.78', loaFt:"35'4\"", hero:'Assets/Saxdor/340-GTWA/saxdor-340-gtwa-1.webp', card:'Assets/Saxdor/340-GTWA/saxdor-340-gtwa-nav.webp',
+      gallery:gal('Assets/Saxdor/340-GTWA/saxdor-340-gtwa-',1,13),
+      desc:'An all-weather walkaround that blends open-air freedom with protected comfort. The 340 GTWA pairs a sheltered wheelhouse with expansive walkaround decks and large fold-out side terraces rarely seen at this size, opening the boat to the water on every side. A convertible bow U-lounge and optional aft sun pad make it a natural entertainer for up to eight guests.',
+      specs:[{g:'Specifications', r:[['Length','10.78 m','35\u20194\"'],['Beam','3.10 m','10\u20192\"'],['Draft','0.61 m','2\u20190\"'],['Passengers','8 (Cat B) / 10 (Cat C)'],['Engines','500\u2013600 hp outboard'],['Max. Speed','40\u201350 knots'],['Fuel','480 L','127 gal'],['Fresh Water','100 L','26 gal'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}] },
     /* ===================== SAXDOR — 400 SERIES ===================== */
-    { slug:'saxdor-400-gts', brand:'Saxdor', series:'400 Series', name:'Saxdor 400 GTS', cats:'saxdor sport',
-      loaM:'12.4', loaFt:"40.7'", hero:SX+'2026/04/400-GTS-desk-gal.jpg', card:SX+'2026/04/400-GTS-desk-gal.jpg',
-      desc:'The open expression of the flagship 400 platform \u2014 full-beam social living, vast sunpads and twin-outboard performance built for unforgettable days.' },
-    { slug:'saxdor-400-gtc', brand:'Saxdor', series:'400 Series', name:'Saxdor 400 GTC', cats:'saxdor sport', full:true,
-      loaM:'12.4', loaFt:"40.7'", hero:DEV+'2026/04/saxdor-400-gtc-4.webp', card:DEV+'2026/04/saxdor-400-gtc-4.webp',
-      brochure:DEV+'2026/04/saxdor-400-GTC.pdf', gallery:[DEV+'2026/04/saxdor-400-gtc.webp'].concat(gal(DEV+'2026/04/saxdor-400-gtc-',1,10)),
-      desc:'Engineered for twin-outboard rigs with Saxdor\u2019s unique naval architecture. An innovative main deck extends the wheelhouse to the full beam of the boat, while vast insulated glazing creates a luminous, all-weather interior connected directly to the side terraces.',
-      specs:[
-        {g:'Specifications', r:[['Length','12.4 m','40.7 ft'],['Beam','3.55 m','11.7 ft'],['Draft (excl. engines)','0.64 m','2.1 ft'],['Passengers','12','Category B'],['Max. Engine Power','850 hp'],['Max. Speed','35\u201345 knots'],['Fuel','1,000 L','264 gal'],['Fresh Water','210 L','55 gal'],['Grey Water','105 L','27.8 gal'],['Black Water','60 L','15.8 gal'],['Outboard Engines','700\u2013850 hp'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}
-      ] },
-    { slug:'saxdor-400-gto', brand:'Saxdor', series:'400 Series', name:'Saxdor 400 GTO', cats:'saxdor sport',
-      loaM:'12.4', loaFt:"40.7'", hero:SX+'2026/04/400-GTO-desk-gal.jpg', card:SX+'2026/04/400-GTO-desk-gal.jpg',
-      desc:'The open-top flagship \u2014 expansive deck living, panoramic sightlines and exhilarating twin-outboard performance from Saxdor\u2019s most versatile 40-foot platform.' },
-
+    { slug:'saxdor-400-gts', brand:'Saxdor', series:'400 Series', name:'Saxdor 400 GTS', cats:'saxdor sport', full:true, cut:true,
+      loaM:'12.4', loaFt:"40.7'", hero:'Assets/Saxdor/400-GTS/saxdor-400-gts-1.webp', card:'Assets/Saxdor/400-GTS/saxdor-400-gts-nav.webp',
+      gallery:gal('Assets/Saxdor/400-GTS/saxdor-400-gts-',1,13),
+      desc:'The purest expression of open boating in the 400 series. A walkaround layout, glass-shielded helm and signature folding terraces open the 400 GTS fully to the water, while convertible sunbeds and modular seating flex from high-speed runs to lounging and al-fresco dining. Beneath it all, an agile twin-stepped hull keeps the experience sharp and responsive.',
+      specs:[{g:'Specifications', r:[['Length','12.4 m','40.7 ft'],['Beam','3.55 m','11.7 ft'],['Draft (excl. engines)','0.65 m','2.1 ft'],['Passengers','12','CE Category B'],['Max. Engine Power','850 hp'],['Max. Speed','Up to 50 knots'],['Fuel','900 L','238 gal'],['Fresh Water','170 L','45 gal'],['Grey Water','96 L','25 gal'],['Black Water','53 L','14 gal'],['Engines','Mercury V8 & V10 outboards'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}] },
+    { slug:'saxdor-400-gtc', brand:'Saxdor', series:'400 Series', name:'Saxdor 400 GTC', cats:'saxdor sport', full:true, cut:true,
+      loaM:'12.4', loaFt:"40.7'", hero:'Assets/Saxdor/400-GTC/saxdor-400-gtc-1.webp', card:'Assets/Saxdor/400-GTC/saxdor-400-gtc-nav.webp',
+      gallery:gal('Assets/Saxdor/400-GTC/saxdor-400-gtc-',1,13),
+      desc:'Engineered for twin-outboard rigs with Saxdor\u2019s unique naval architecture, the 400 GTC extends its full-beam wheelhouse the entire width of the boat. Vast insulated glazing and panoramic glass doors create a luminous, all-weather interior connected directly to the side terraces, while electric sunroofs and drop-down balconies transform it from enclosed cruiser to open-air retreat \u2014 \u201cyour private island.\u201d',
+      specs:[{g:'Specifications', r:[['Length','12.4 m','40.7 ft'],['Beam','3.55 m','11.7 ft'],['Draft (excl. engines)','0.64 m','2.1 ft'],['Passengers','12','CE Category B'],['Max. Engine Power','850 hp'],['Max. Speed','35\u201345 knots'],['Fuel','1,000 L','264 gal'],['Fresh Water','210 L','55 gal'],['Grey Water','105 L','27.8 gal'],['Black Water','60 L','15.8 gal'],['Engines','Twin outboards 700\u2013850 hp'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}] },
+    { slug:'saxdor-400-gto', brand:'Saxdor', series:'400 Series', name:'Saxdor 400 GTO', cats:'saxdor sport', full:true, cut:true,
+      loaM:'12.4', loaFt:"40.7'", hero:'Assets/Saxdor/400-GTO/saxdor-400-gto-1.webp', card:'Assets/Saxdor/400-GTO/saxdor-400-gto-nav.webp',
+      gallery:gal('Assets/Saxdor/400-GTO/saxdor-400-gto-',1,13),
+      desc:'The open-top flagship of the 400 platform, built around Saxdor\u2019s \u201cyour private island\u201d concept \u2014 an open wheelhouse extending to full beam with fold-out side terraces that drop at anchor for sea-level lounging and swimming. A twin-stepped hull and enclosed helm with joystick docking make it as easy to handle as it is exhilarating, while a push-button sunroof, convertible stern sunbed, cockpit fridge and stern grill turn every outing into an occasion.',
+      specs:[{g:'Specifications', r:[['Length','12.4 m','40.7 ft'],['Beam','3.55 m','11.7 ft'],['Draft (excl. engines)','0.64 m','2.1 ft'],['Passengers','12','CE Category B'],['Max. Engine Power','850 hp'],['Max. Speed','35\u201345 knots'],['Fuel','1,000 L','264 gal'],['Fresh Water','210 L','55 gal'],['Engines','Twin outboards 700\u2013850 hp'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}] },
     /* ===================== SAXDOR — 460 SERIES ===================== */
-    { slug:'saxdor-460-gtc', brand:'Saxdor', series:'460 Series', name:'Saxdor 460 GTC', cats:'saxdor sport',
-      loaM:'14.0', loaFt:"46'0\"", hero:SX+'2026/04/460-GTC-desk-gal.jpg', card:SX+'2026/04/460-GTC-desk-gal.jpg',
-      desc:'Saxdor\u2019s largest and most luxurious \u2014 winner of the \u2018Motoryacht 14\u201316m\u2019 category at the Yacht Style Awards 2026. Expansive living, refined finish and genuine long-range capability.' }
+    { slug:'saxdor-460-gtc', brand:'Saxdor', series:'460 Series', name:'Saxdor 460 GTC', cats:'saxdor sport', full:true, cut:true,
+      loaM:'14.4', loaFt:"47'2\"", hero:'Assets/Saxdor/460-GTC/saxdor-460-gtc-1.webp', card:'Assets/Saxdor/460-GTC/saxdor-460-gtc-nav.webp',
+      gallery:gal('Assets/Saxdor/460-GTC/saxdor-460-gtc-',1,13),
+      desc:'Saxdor\u2019s flagship \u2014 a full-beam wheelhouse yacht that opens or closes completely, and winner of the \u201cMotoryacht 14\u201316m\u201d category at the Yacht Style Awards 2026. Enclosed, it is a calm, panoramic saloon; opened, the lines simply disappear as fold-down terraces extend the main deck to full width. A twin-step deep-V hull cuts cleanly through rough water with fast acceleration and efficient long-range cruising, while a forward cabin, twin mid-cabin and optional aft cabin make genuine overnighting effortless.',
+      specs:[{g:'Specifications', r:[['Length','14.4 m','47.2 ft'],['Beam','4.10 m','13.45 ft'],['Draft','0.80 m','2.62 ft'],['Passengers','15','CE Category B'],['Cabins','Forward + twin mid-cabin (optional aft cabin)'],['Max. Engine Power','1,275 hp'],['Max. Speed','45\u201350 knots'],['Fuel','1,330 L','351 gal'],['Fresh Water','160 L','42 gal'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped deep-V']]}] }
   ];
 
   /* ---------- helpers ---------- */
@@ -1030,6 +1051,8 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
     var host = document.getElementById(id); if(!host) return;
     var order = brand==='Sunseeker'
       ? ['Yacht','Ocean','Performance','Superyacht']
+      : brand==='Sealegs'
+      ? ['Sport RIB','Sport Alloy','Commercial']
       : ['200 Series','270 Series','320 Series','340 Series','400 Series','460 Series'];
     var html = '';
     order.forEach(function(s){
@@ -1061,7 +1084,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 
   document.getElementById('yacht-crumb').innerHTML =
     '<a href="index.html">Home</a><span class="sl">/</span>' +
-    '<a href="' + (y.brand==='Sunseeker'?'sunseeker.html':'saxdor.html') + '">' + y.brand + '</a>' +
+    '<a href="' + (y.brand==='Sunseeker'?'sunseeker.html':y.brand==='Sealegs'?'sealegs.html':'saxdor.html') + '">' + y.brand + '</a>' +
     '<span class="sl">/</span><span>' + MYA.esc(y.name) + '</span>';
   document.getElementById('yacht-kicker').textContent = y.brand + ' · ' + y.series;
   document.getElementById('yacht-name').innerHTML = MYA.esc(y.name);

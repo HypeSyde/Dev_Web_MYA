@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Pre-Owned Yachts — MYA</title>
 <meta name="description" content="Pre-owned motoryacht listings coming soon. Register your interest for off-market opportunities and curated brokerage inventory.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -172,7 +172,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 [data-parallax]{will-change:transform}
 
 /* ============================================================ HOME HERO (layered parallax) */
-.hero{position:relative;height:100vh;min-height:640px;display:flex;align-items:center;justify-content:center;
+.hero{position:relative;height:100vh;height:100dvh;min-height:640px;display:flex;align-items:center;justify-content:center;
   text-align:center;overflow:hidden}
 .hero-layer{position:absolute;inset:-12% -2%;z-index:-3;background-size:cover;background-position:center;will-change:transform}
 .hero-haze{position:absolute;inset:0;z-index:-2;
@@ -203,7 +203,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   font-weight:800;font-size:30vw;line-height:.7;color:rgba(255,255,255,.035);letter-spacing:-.04em;pointer-events:none;white-space:nowrap}
 
 /* ============================================================ PAGE HERO (interior) */
-.phero{position:relative;min-height:70vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(44px,7vh,88px)}
+.phero{position:relative;min-height:70vh;min-height:70dvh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(44px,7vh,88px)}
 .phero-bg{position:absolute;inset:-8% -2%;z-index:-2;background-size:cover;background-position:center;will-change:transform}
 .phero::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(to top,rgba(8,12,16,.92),rgba(8,12,16,.25) 56%,rgba(8,12,16,.5))}
@@ -241,7 +241,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .head-flex .copy{max-width:660px}
 
 /* ============================================================ FULL-BLEED PARALLAX BAND */
-.band{position:relative;min-height:86vh;display:flex;align-items:center;overflow:hidden}
+.band{position:relative;min-height:86vh;min-height:86dvh;display:flex;align-items:center;overflow:hidden}
 .band-bg{position:absolute;inset:-15% 0;z-index:-2;background-size:cover;background-position:center;will-change:transform}
 .band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,12,16,.82),rgba(8,12,16,.32) 70%,transparent)}
 .band.cent::after{background:radial-gradient(120% 100% at 50% 50%,rgba(8,12,16,.45),rgba(8,12,16,.78))}
@@ -513,9 +513,9 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   .gallery{grid-template-columns:1fr 1fr}
   .gallery .g:first-child{grid-column:span 2}
   .grid2{grid-template-columns:1fr}
-  .band{min-height:78vh}.band::after{background:linear-gradient(to top,rgba(8,12,16,.9),rgba(8,12,16,.4))}
+  .band{min-height:78vh;min-height:78dvh}.band::after{background:linear-gradient(to top,rgba(8,12,16,.9),rgba(8,12,16,.4))}
   .head-flex{flex-direction:column;align-items:flex-start}
-  .phero{min-height:60vh}
+  .phero{min-height:60vh;min-height:60dvh}
   .hero-ghost{font-size:42vw}
 }
 @media(max-width:460px){
@@ -530,7 +530,14 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   .hero h1 .ln i,.maskline>span{transform:none}
   .reveal{opacity:1;transform:none}
   [data-parallax],.hero-layer,.band-bg,.phero-bg,.cta-bg,.px-img{transform:none!important}
-}</style>
+}/* ===== device safe-areas + screen-ratio hardening ===== */
+.header{padding-top:env(safe-area-inset-top)}
+.header .bar{padding-left:max(clamp(22px,1vw,84px),env(safe-area-inset-left));padding-right:max(clamp(22px,1vw,84px),env(safe-area-inset-right))}
+.drawer{padding-top:max(112px,calc(env(safe-area-inset-top) + 88px));padding-right:max(clamp(26px,8vw,64px),env(safe-area-inset-right));padding-bottom:max(44px,env(safe-area-inset-bottom));padding-left:max(clamp(26px,8vw,64px),env(safe-area-inset-left))}
+.footer{padding-bottom:max(38px,env(safe-area-inset-bottom))}
+@media (orientation:landscape) and (max-height:560px){.hero{min-height:100svh}}
+@media (min-width:1921px){.wrap{max-width:1680px}}
+</style>
 </head>
 <body data-page="preowned">
 <div class="grain"></div>
@@ -545,6 +552,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
           <ul class="submenu">
             <li><a href="sunseeker.html">Sunseeker</a></li>
             <li><a href="saxdor.html">Saxdor</a></li>
+            <li><a href="sealegs.html">Sealegs</a></li>
             <li><a href="fleet.html">View All Models</a></li>
           </ul>
         </li>
@@ -574,6 +582,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   <a href="about.html" data-close>About</a>
   <a href="sunseeker.html" data-close>Sunseeker <span>New</span></a>
   <a href="saxdor.html" data-close>Saxdor <span>New</span></a>
+  <a href="sealegs.html" data-close>Sealegs <span>New</span></a>
   <a href="fleet.html" data-close>The Fleet</a>
   <a href="pre-owned.html" data-close>Pre-Owned</a>
   <a href="service.html" data-close>After-Sales &amp; Service</a>

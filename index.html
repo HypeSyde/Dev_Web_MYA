@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>MYA — Luxury Yachting Redefined | Sunseeker &amp; Saxdor Western Australia</title>
 <meta name="description" content="Motoryachts Australasia — the official Sunseeker and Saxdor dealer for Western Australia. Sales, brokerage and after-sales service from our North Fremantle marina.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -104,7 +104,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 /* ============================================================ HEADER */
 .header{position:fixed;top:0;left:0;width:100%;z-index:1000;
   background:linear-gradient(180deg,rgba(57, 57, 57, 0.753),rgba(191, 190, 190, 0));backdrop-filter:blur(14px);transition:background .55s var(--ease),border-color .55s}
-.header .bar{display:flex;align-items:center;justify-content:center;height:var(--nav-h);gap:24px;transition:height .5s var(--ease)}
+.header .bar{position:relative;display:flex;align-items:center;justify-content:center;height:var(--nav-h);gap:24px;transition:height .5s var(--ease)}
 .header.scrolled,.header.solid{background:linear-gradient(180deg,rgb(0, 0, 0),rgba(0, 0, 0, 0.33));border-color:rgba(59, 59, 59, 0.532)}
 .header.scrolled .bar,.header.solid .bar{height:92px}
 .header.scrolled .logo,.header.solid .logo,.header.scrolled .nav-links>li>a,.header.solid .nav-links>li>a,
@@ -148,7 +148,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .nav-enq{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;border:1px solid rgba(255,255,255,.45);
   padding:12px 24px;color:var(--paper);background:rgba(255,255,255,.07);transition:.35s var(--ease)}
 .nav-enq:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
-.burger{display:none;flex-direction:column;gap:5px;width:28px;cursor:pointer;background:none;border:none;padding:6px 0}
+.burger{display:none;flex-direction:column;gap:5px;width:28px;cursor:pointer;background:none;border:none;padding:6px 0;position:absolute;right:max(clamp(22px,1vw,84px),env(safe-area-inset-right));top:50%;transform:translateY(-50%)}
 .burger span{height:1.5px;width:100%;background:var(--paper);transition:.4s var(--ease)}
 @media (max-width:1080px){.nav{gap:20px}.nav-links{gap:18px}.nav-enq{padding:10px 18px}}
 @media (max-width:900px){.nav-left,.nav-right{display:none}.logo{margin:0 auto}.burger{display:flex}}
@@ -172,38 +172,46 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 [data-parallax]{will-change:transform}
 
 /* ============================================================ HOME HERO (layered parallax) */
-.hero{position:relative;height:130vh;min-height:780px;display:flex;align-items:center;justify-content:center;
+.hero{position:relative;height:130vh;height:130dvh;min-height:780px;display:flex;align-items:center;justify-content:center;
   text-align:center;overflow:hidden}
 .hero-layer{position:absolute;inset:-12% -2%;z-index:-3;background-size:cover;background-position:center;will-change:transform}
 .hero-haze{position:absolute;inset:0;z-index:-2;
   background:radial-gradient(130% 100% at 50% 18%,transparent 28%,rgba(143, 143, 143, 0.296) 100%),
   linear-gradient(to bottom,rgba(8,12,16,.38),rgba(8, 12, 16, 0) 42%,rgba(8,12,16,.88))}
-.hero-inner{position:relative;z-index:2;max-width:1100px;padding:0 50px;will-change:transform;text-shadow:0 2px 18px rgba(0,0,0,.55),0 1px 4px rgba(0,0,0,.35)}
+.hero-inner{position:absolute;bottom:calc(30vh + clamp(48px,6vh,80px));left:0;right:0;margin:0 auto;z-index:2;max-width:700px;padding:0 40px;will-change:transform;text-shadow:0 2px 18px rgba(0,0,0,.55),0 1px 4px rgba(0,0,0,.35)}
 .logo-brands{display:flex;gap:40px;align-items:center;justify-content:center;margin-bottom:32px;opacity:0;animation:fadeUp 1s var(--ease) .4s forwards;flex-wrap:wrap}
 .brand-logo{max-height:80px;display:block;object-fit:contain}
 @media (max-width:768px){.logo-brands{gap:24px}.brand-logo{max-height:60px}}
 @media (max-width:480px){.logo-brands{flex-direction:column;gap:16px}.brand-logo{max-height:50px}}
 .hero .kicker{opacity:0;animation:fadeUp 1s var(--ease) .4s forwards;justify-content:center}
-.hero h1{font-size:clamp(2.4rem,5.5vw,6rem);font-weight:800;text-transform:uppercase;line-height:.92;
+.hero h1{font-size:clamp(1.6rem,3.2vw,3.2rem);font-weight:800;text-transform:uppercase;line-height:.92;
   letter-spacing:-.02em;margin:.22em 0;color:var(--paper);text-align:center}
 /* Sky branding block */
-.hero-sky-brand{position:absolute;top:18%;left:50%;transform:translateX(-50%);z-index:10;text-align:center;pointer-events:none;width:100%;display:flex;justify-content:center}
+.hero-sky-brand{position:absolute;top:18%;left:50%;transform:translateX(-50%);z-index:10;text-align:center;pointer-events:none;width:100%;display:flex;justify-content:center;padding:0 16px;box-sizing:border-box}
 .hero-marque{color:rgba(210,218,226,.78);font-family:'Archivo',sans-serif;font-size:clamp(.8rem,1.4vw,1.3rem);font-weight:700;letter-spacing:.07em;margin-bottom:20px;white-space:nowrap}
 .hero-brand-row{display:flex;align-items:center;justify-content:center;gap:clamp(24px,4vw,64px);width:auto}
-.hero-sunseeker-logo{max-height:clamp(200px,11vw,145px);display:block;flex-shrink:0;filter:drop-shadow(0 6px 30px rgba(0,0,0,.25))}
-.hero-saxdor-logo{max-height:clamp(10px,3.8vw,15px);display:block;flex-shrink:0;opacity:.95}
-.hero-sealegs-logo{max-height:clamp(120px,7vw,120px);display:block;flex-shrink:0;filter:brightness(0) invert(1);opacity:.95}
+.hero-sunseeker-logo{max-height:clamp(50px,13.8vw,200px);display:block;flex-shrink:1;min-width:0;filter:drop-shadow(0 6px 30px rgba(0,0,0,.25))}
+.hero-saxdor-logo{max-height:clamp(4px,1.04vw,15px);display:block;flex-shrink:1;min-width:0;opacity:.95}
+.hero-sealegs-logo{max-height:clamp(30px,8.3vw,120px);display:block;flex-shrink:1;min-width:0;filter:brightness(0) invert(1);opacity:.95}
+/* Phone: stack the sky brand vertically and size it up a little (released from the row's height cap, sized by width so the differing aspect ratios stay balanced) */
+@media (max-width:560px){
+  .hero-brand-row{flex-direction:column;gap:clamp(14px,3vw,24px)}
+  .hero-sunseeker-logo{max-height:none;width:clamp(140px,40vw,220px)}
+  .hero-saxdor-logo{max-height:none;width:clamp(130px,38vw,210px)}
+  .hero-sealegs-logo{max-height:none;width:clamp(115px,32vw,180px)}
+}
 .hero h1 .ln{display:block;overflow:hidden}
 .hero h1 .ln i{display:block;font-style:normal;transform:translateY(112%);animation:lineUp 1.2s var(--ease) forwards}
 .hero h1 .ln:nth-child(1) i{animation-delay:.52s}.hero h1 .ln:nth-child(2) i{animation-delay:.66s}
 .hero h1 .thin{font-weight:300}
-.hero p.sub{max-width:54ch;margin:0 auto;color:rgba(244,245,243,.84);font-size:1.08rem;font-weight:300;
+.hero p.sub{max-width:54ch;margin:0 auto;color:rgba(244,245,243,.84);font-size:.92rem;font-weight:300;
   opacity:0;animation:fadeUp 1s var(--ease) 1.05s forwards}
 .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:42px;opacity:0;animation:fadeUp 1s var(--ease) 1.25s forwards}
 @keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
 @keyframes lineUp{to{transform:translateY(0)}}
-.scrollcue{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;
-  align-items:center;gap:13px;opacity:0;animation:fadeUp 1s var(--ease) 1.6s forwards}
+.scrollcue{position:absolute;bottom:34px;left:0;right:0;margin:0 auto;width:fit-content;z-index:3;display:flex;flex-direction:column;
+  align-items:center;gap:13px;opacity:0;animation:scrollcueFadeUp 1s var(--ease) 1.6s forwards}
+@keyframes scrollcueFadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
 .scrollcue span{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--muted)}
 .scrollcue .ln{width:1px;height:52px;background:linear-gradient(var(--blue-2),transparent);position:relative;overflow:hidden}
 .scrollcue .ln::after{content:"";position:absolute;top:-52px;left:0;width:100%;height:52px;background:var(--paper);
@@ -214,7 +222,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   font-weight:800;font-size:30vw;line-height:.7;color:rgba(255,255,255,.035);letter-spacing:-.04em;pointer-events:none;white-space:nowrap}
 
 /* ============================================================ PAGE HERO (interior) */
-.phero{position:relative;min-height:70vh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(44px,7vh,88px)}
+.phero{position:relative;min-height:70vh;min-height:70dvh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(44px,7vh,88px)}
 .phero-bg{position:absolute;inset:-8% -2%;z-index:-2;background-size:cover;background-position:center;will-change:transform}
 .phero::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(to top,rgba(8,12,16,.92),rgba(8,12,16,.25) 56%,rgba(8,12,16,.5))}
@@ -252,7 +260,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .head-flex .copy{max-width:660px}
 
 /* ============================================================ FULL-BLEED PARALLAX BAND */
-.band{position:relative;min-height:86vh;display:flex;align-items:center;overflow:hidden}
+.band{position:relative;min-height:86vh;min-height:86dvh;display:flex;align-items:center;overflow:hidden}
 .band-bg{position:absolute;inset:-15% 0;z-index:-2;background-size:cover;background-position:center;will-change:transform}
 .band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,12,16,.82),rgba(8,12,16,.32) 70%,transparent)}
 .band.cent::after{background:radial-gradient(120% 100% at 50% 50%,rgba(8,12,16,.45),rgba(8,12,16,.78))}
@@ -526,9 +534,9 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   .gallery{grid-template-columns:1fr 1fr}
   .gallery .g:first-child{grid-column:span 2}
   .grid2{grid-template-columns:1fr}
-  .band{min-height:78vh}.band::after{background:linear-gradient(to top,rgba(8,12,16,.9),rgba(8,12,16,.4))}
+  .band{min-height:78vh;min-height:78dvh}.band::after{background:linear-gradient(to top,rgba(8,12,16,.9),rgba(8,12,16,.4))}
   .head-flex{flex-direction:column;align-items:flex-start}
-  .phero{min-height:60vh}
+  .phero{min-height:60vh;min-height:60dvh}
   .hero-ghost{font-size:42vw}
 }
 @media(max-width:460px){
@@ -543,7 +551,14 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   .hero h1 .ln i,.maskline>span{transform:none}
   .reveal{opacity:1;transform:none}
   [data-parallax],.hero-layer,.band-bg,.phero-bg,.cta-bg,.px-img{transform:none!important}
-}</style>
+}/* ===== device safe-areas + screen-ratio hardening ===== */
+.header{padding-top:env(safe-area-inset-top)}
+.header .bar{padding-left:max(clamp(22px,1vw,84px),env(safe-area-inset-left));padding-right:max(clamp(22px,1vw,84px),env(safe-area-inset-right))}
+.drawer{padding-top:max(112px,calc(env(safe-area-inset-top) + 88px));padding-right:max(clamp(26px,8vw,64px),env(safe-area-inset-right));padding-bottom:max(44px,env(safe-area-inset-bottom));padding-left:max(clamp(26px,8vw,64px),env(safe-area-inset-left))}
+.footer{padding-bottom:max(38px,env(safe-area-inset-bottom))}
+@media (orientation:landscape) and (max-height:560px){.hero{min-height:100svh}}
+@media (min-width:1921px){.wrap{max-width:1680px}}
+</style>
 </head>
 <body data-page="home">
 <div class="grain"></div>
@@ -558,13 +573,14 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
           <ul class="submenu">
             <li><a href="sunseeker.html">Sunseeker</a></li>
             <li><a href="saxdor.html">Saxdor</a></li>
+            <li><a href="sealegs.html">Sealegs</a></li>
             <li><a href="fleet.html">View All Models</a></li>
           </ul>
         </li>
       </ul>
     </nav>
     <a href="index.html" class="logo" aria-label="MYA — Motoryachts Australasia home">
-      <img src="Assets/Not_Stretched_Logo.png" alt="MYA — Motoryachts Australasia" class="logo-img">
+      <img src="Assets/Logo_V5.png" alt="MYA — Motoryachts Australasia" class="logo-img">
       <div class="header-tagline-wrap">
         <span class="header-tagline">Motoryachts Australasia</span>
       </div>
@@ -587,6 +603,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   <a href="about.html" data-close>About</a>
   <a href="sunseeker.html" data-close>Sunseeker <span>New</span></a>
   <a href="saxdor.html" data-close>Saxdor <span>New</span></a>
+  <a href="sealegs.html" data-close>Sealegs <span>New</span></a>
   <a href="fleet.html" data-close>The Fleet</a>
   <a href="pre-owned.html" data-close>Pre-Owned</a>
   <a href="service.html" data-close>After-Sales &amp; Service</a>
