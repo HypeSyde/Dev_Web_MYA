@@ -176,8 +176,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   text-align:center;overflow:hidden}
 .hero-layer{position:absolute;inset:-12% -2%;z-index:-3;background-size:cover;background-position:center;will-change:transform}
 .hero-haze{position:absolute;inset:0;z-index:-2;
-  background:radial-gradient(130% 100% at 50% 18%,transparent 28%,rgba(8,12,16,.55) 100%),
-  linear-gradient(to bottom,rgba(8,12,16,.5),rgba(8,12,16,.18) 40%,rgba(8,12,16,.9))}
+  background:transparent}
 .hero-inner{position:relative;z-index:2;max-width:1100px;padding:0 22px;will-change:transform}
 .hero .kicker{opacity:0;animation:fadeUp 1s var(--ease) .4s forwards;justify-content:center}
 .hero h1{font-size:clamp(2.9rem,9.6vw,9rem);font-weight:800;text-transform:uppercase;line-height:.92;
@@ -206,7 +205,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .phero{position:relative;min-height:70vh;min-height:70dvh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(44px,7vh,88px)}
 .phero-bg{position:absolute;inset:-8% -2%;z-index:-2;background-size:cover;background-position:center;will-change:transform}
 .phero::after{content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(to top,rgba(8,12,16,.92),rgba(8,12,16,.25) 56%,rgba(8,12,16,.5))}
+  background:transparent}
 .phero-inner{position:relative;z-index:2;width:100%}
 .phero .crumb{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;
   display:flex;gap:.7em;align-items:center;flex-wrap:wrap}
@@ -243,8 +242,8 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 /* ============================================================ FULL-BLEED PARALLAX BAND */
 .band{position:relative;min-height:86vh;min-height:86dvh;display:flex;align-items:center;overflow:hidden}
 .band-bg{position:absolute;inset:-15% 0;z-index:-2;background-size:cover;background-position:center;will-change:transform}
-.band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,12,16,.82),rgba(8,12,16,.32) 70%,transparent)}
-.band.cent::after{background:radial-gradient(120% 100% at 50% 50%,rgba(8,12,16,.45),rgba(8,12,16,.78))}
+.band::after{content:"";position:absolute;inset:0;z-index:-1;background:transparent}
+.band.cent::after{background:transparent}
 .band-inner{position:relative;z-index:2;max-width:620px}
 .band.cent .band-inner{max-width:820px;text-align:center;margin:0 auto}
 .band h2{font-size:clamp(2.2rem,5.4vw,4.8rem);font-weight:800;text-transform:uppercase;color:var(--paper);line-height:.98;letter-spacing:-.018em;margin-bottom:24px}
@@ -257,7 +256,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .show.flip .show-media{order:2}
 .show-media{position:relative;overflow:hidden;aspect-ratio:16/11;background:var(--ink-3)}
 .show-media .px-img{position:absolute;inset:-12% 0;background-size:cover;background-position:center;will-change:transform}
-.show-media .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,12,16,.4),transparent 60%)}
+.show-media .ov{position:absolute;inset:0;background:transparent}
 .show-tag{position:absolute;top:24px;left:24px;z-index:3;font-size:10px;letter-spacing:.24em;text-transform:uppercase;
   color:var(--white);background:rgba(8,12,16,.5);border:1px solid var(--line-d);padding:8px 16px;backdrop-filter:blur(6px)}
 .show-copy .brandmark{height:30px;width:auto;margin-bottom:24px;filter:brightness(0) invert(1);opacity:.95}
@@ -284,7 +283,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .yacht.cut .ph .img{background-size:contain;background-repeat:no-repeat;inset:8% 6%}
 .yacht:hover .ph .img{transform:scale(1.07)}
 .yacht.cut:hover .ph .img{transform:scale(1.05)}
-.yacht .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,12,16,.55),transparent 60%);opacity:.65;transition:opacity .5s}
+.yacht .ph::after{content:"";position:absolute;inset:0;background:transparent;opacity:.65;transition:opacity .5s}
 .yacht.cut .ph::after{display:none}
 .yacht:hover .ph::after{opacity:1}
 .yacht .tag{position:absolute;top:16px;left:16px;z-index:3;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
@@ -403,6 +402,37 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .spec-na{padding:34px;border:1px solid var(--line-l);text-align:center}
 .spec-na p{color:var(--ink-soft);margin-bottom:22px}
 
+/* spec section — tabbed (Principal Characteristics & Technical Specifications) */
+.spec-section{margin-top:clamp(64px,9vh,120px)}
+.spec-head{margin-bottom:40px;text-align:center}
+.spec-tabs{display:flex;flex-wrap:wrap;gap:2px;justify-content:center;border-bottom:1px solid var(--line-l)}
+.spec-tab{font-family:'Manrope',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+  color:var(--ink-soft);background:transparent;border:none;padding:16px clamp(14px,2vw,30px);cursor:pointer;position:relative;
+  transition:color .4s var(--ease);white-space:nowrap}
+.spec-tab::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:var(--blue);
+  transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease)}
+.spec-tab:hover{color:var(--ink)}
+.spec-tab.active{color:var(--ink)}
+.spec-tab.active::after{transform:scaleX(1)}
+.spec-panels{margin-top:8px}
+.spec-panel{display:none}
+.spec-panel.active{display:block;animation:specFade .55s var(--ease)}
+@keyframes specFade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.spec-table{max-width:940px;margin:0 auto}
+.spec-trow{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:clamp(16px,3vw,48px);align-items:baseline;
+  padding:18px 2px;border-bottom:1px solid var(--line-l)}
+.spec-trow:last-child{border-bottom:none}
+.spec-trow .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
+.spec-trow .m{font-family:'Archivo',sans-serif;font-size:clamp(1rem,1.5vw,1.2rem);font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.spec-trow .m.wide{grid-column:2 / -1;font-weight:600}
+.spec-trow .i{font-family:'Archivo',sans-serif;font-size:clamp(1rem,1.5vw,1.2rem);font-weight:400;color:var(--ink-soft);letter-spacing:-.01em}
+@media(max-width:680px){
+  .spec-trow{grid-template-columns:1fr;gap:4px;padding:16px 2px}
+  .spec-trow .k{margin-bottom:4px}
+  .spec-trow .m.wide{grid-column:1}
+  .spec-tab{padding:14px 16px;font-size:10px;letter-spacing:.14em}
+}
+
 /* gallery */
 .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .gallery .g{position:relative;overflow:hidden;aspect-ratio:4/3;cursor:pointer;background:var(--ink-3)}
@@ -513,7 +543,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   .gallery{grid-template-columns:1fr 1fr}
   .gallery .g:first-child{grid-column:span 2}
   .grid2{grid-template-columns:1fr}
-  .band{min-height:78vh;min-height:78dvh}.band::after{background:linear-gradient(to top,rgba(8,12,16,.9),rgba(8,12,16,.4))}
+  .band{min-height:78vh;min-height:78dvh}.band::after{background:transparent}
   .head-flex{flex-direction:column;align-items:flex-start}
   .phero{min-height:60vh;min-height:60dvh}
   .hero-ghost{font-size:42vw}
@@ -611,10 +641,19 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
         <span class="kicker" id="yacht-intro-kicker"></span>
         <h2 class="disp" id="yacht-intro-name"></h2>
         <p id="yacht-desc"></p>
-        <div class="quickfacts" id="yacht-quickfacts"></div>
-        <div id="yacht-actions" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px"></div>
+        <div id="yacht-actions" style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px"></div>
       </div>
-      <div class="spec-tables reveal" data-d="1" id="yacht-specs"></div>
+      <div class="quickfacts reveal" data-d="1" id="yacht-quickfacts" style="margin:0"></div>
+    </div>
+
+    <!-- Principal Characteristics & Technical Specifications -->
+    <div class="spec-section" id="spec-section">
+      <div class="spec-head reveal">
+        <span class="kicker">Specifications</span>
+        <h2>Principal Characteristics <span class="thin">&amp; Technical Specifications</span></h2>
+      </div>
+      <div class="spec-tabs reveal" data-d="1" id="yacht-spec-tabs"></div>
+      <div class="spec-panels reveal" data-d="2" id="yacht-specs"></div>
     </div>
   </div>
 </section>
@@ -880,10 +919,10 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   var Y = [
     /* ===================== SUNSEEKER — YACHT ===================== */
     { slug:'76-yacht', brand:'Sunseeker', series:'Yacht', name:'76 Yacht', cats:'sunseeker flybridge',
-      loaM:'23.2', loaFt:"76'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:DEV+'2026/04/sunseeker-88-yacht-gallery-3.webp',
+      loaM:'23.2', loaFt:"76'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:'Assets/Sunseeker/76-Yacht/sunseeker-76-yacht-4.webp',
       desc:'A commanding flybridge motoryacht from Sunseeker\u2019s flagship Yacht line \u2014 generous volume, sociable deck spaces and signature British craftsmanship throughout.' },
     { slug:'88-yacht', brand:'Sunseeker', series:'Yacht', name:'88 Yacht', cats:'sunseeker flybridge', full:true,
-      loaM:'26.38', loaFt:"86'7\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:DEV+'2026/04/sunseeker-88-yacht-gallery-1.webp',
+      loaM:'26.38', loaFt:"86'7\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:'Assets/Sunseeker/88-Yacht/sunseeker-88-yacht-4.webp',
       brochure:DEV+'2026/04/sunseeker-88-yacht.pdf', gallery:gal(DEV+'2026/04/sunseeker-88-yacht-gallery-',1,12),
       desc:'A flagship flybridge yacht delivering exceptional volume and presence. Expansive social spaces, four luxurious cabins and a choice of potent MTU power define life aboard the 88 Yacht.',
       specs:[
@@ -892,10 +931,10 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
         {g:'Technical', r:[['Engines','Twin MTU 2000 (1,622\u20132,000 PS)'],['Performance','Up to 28 knots'],['Range','1,275 nm @ 12 knots'],['Propulsion','Shafts'],['Generators','2 \u00d7 28 kW']]}
       ] },
     { slug:'94-yacht', brand:'Sunseeker', series:'Yacht', name:'94 Yacht', cats:'sunseeker flybridge',
-      loaM:'28.7', loaFt:"94'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:DEV+'2026/04/sunseeker-88-yacht-gallery-5.webp',
+      loaM:'28.7', loaFt:"94'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:'Assets/Sunseeker/94-Yacht/sunseeker-94-yacht-1.webp',
       desc:'Imposing scale meets refined detailing. The 94 Yacht offers superyacht-calibre living, sweeping flybridge entertaining and the assured seakeeping Sunseeker is renowned for.' },
     { slug:'95-yacht', brand:'Sunseeker', series:'Yacht', name:'95 Yacht', cats:'sunseeker flybridge',
-      loaM:'29.0', loaFt:"95'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:DEV+'2026/04/sunseeker-88-yacht-gallery-7.webp',
+      loaM:'29.0', loaFt:"95'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:'Assets/Sunseeker/95-Yacht/sunseeker-95-yacht-1.webp',
       desc:'A statement of refined taste and bold British innovation \u2014 vast volume, bespoke interiors and effortless long-range cruising in the flagship Yacht series.' },
     { slug:'manhattan-55', brand:'Sunseeker', series:'Yacht', name:'Manhattan 55', cats:'sunseeker flybridge',
       loaM:'16.8', loaFt:"55'0\"", hero:DEV+'2026/04/Manhattan-55-banner.webp', card:DEV+'2026/04/Manhattan-55-banner.webp',
@@ -944,7 +983,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
       loaM:'22.9', loaFt:"75'0\"", hero:DEV+'2026/04/predator-75-banner.webp', card:DEV+'2026/04/predator-75-banner.webp',
       desc:'Bold, muscular and fast \u2014 the Predator 75 delivers thrilling open-water performance with a luxurious, sociable cockpit and sun-soaked deck spaces.' },
     { slug:'superhawk-55', brand:'Sunseeker', series:'Performance', name:'Superhawk 55', cats:'sunseeker performance',
-      loaM:'16.8', loaFt:"55'0\"", hero:DEV+'2026/04/predator-65-banner.webp', card:DEV+'2026/04/sunseeker-predator-65-9.webp',
+      loaM:'16.8', loaFt:"55'0\"", hero:DEV+'2026/04/predator-65-banner.webp', card:'Assets/Sunseeker/Superhawk-55/sunseeker-superhawk-55-1.webp',
       desc:'A radical, open sports yacht for the purist \u2014 dramatic styling, exhilarating handling and a pure connection between driver, machine and sea.' },
     { slug:'65-sport-yacht', brand:'Sunseeker', series:'Performance', name:'65 Sport Yacht', cats:'sunseeker performance',
       loaM:'19.8', loaFt:"65'0\"", hero:DEV+'2026/04/sunseeker-75-sportyacht-4.webp', card:DEV+'2026/04/sunseeker-75-sportyacht-4.webp',
@@ -955,7 +994,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 
     /* ===================== SUNSEEKER — SUPERYACHT ===================== */
     { slug:'134-superyacht', brand:'Sunseeker', series:'Superyacht', name:'134 Superyacht', cats:'sunseeker superyacht', full:true,
-      loaM:'40.45', loaFt:"132'8\"", hero:DEV+'2026/04/134-superyacht-banner.webp', card:DEV+'2026/04/sunseeker-134-superyacht-1.webp',
+      loaM:'40.45', loaFt:"132'8\"", hero:DEV+'2026/04/134-superyacht-banner.webp', card:'Assets/Sunseeker/134-Superyacht/sunseeker-134-superyacht-1.webp',
       brochure:DEV+'2026/04/Sunseeker-134-Superyacht.pdf', gallery:gal(DEV+'2026/04/sunseeker-134-superyacht-',1,12),
       desc:'Sunseeker\u2019s flagship. A 40-metre tri-deck superyacht uniting tremendous volume, five opulent cabins and genuine ocean-crossing capability \u2014 the pinnacle of British boatbuilding.',
       specs:[
@@ -994,13 +1033,13 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
       specs:[{g:'Specifications', r:[['Length','10.28 m','33\u20197\"'],['Beam','3.10 m','10\u20192\"'],['Draft','0.49 m','1\u20197\"'],['Passengers','6\u20139','CE Category B/C'],['Berths','2'],['Engines','400\u2013600 hp Mercury outboards'],['Cruising Speed','32\u201345 knots'],['Fuel','428 L','113 gal'],['Fresh Water','117 L','31 gal'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}] },
     /* ===================== SAXDOR — 340 SERIES ===================== */
     { slug:'saxdor-340-gtwa', brand:'Saxdor', series:'340 Series', name:'Saxdor 340 GTWA', cats:'saxdor sport', full:true, cut:true,
-      loaM:'10.78', loaFt:"35'4\"", hero:'Assets/Saxdor/340-GTWA/saxdor-340-gtwa-1.webp', card:'Assets/Saxdor/340-GTWA/saxdor-340-gtwa-nav.webp',
+      loaM:'10.78', loaFt:"35'4\"", hero:'Assets/Saxdor/340-GTWA/saxdor-340-gtwa-2.webp', card:'Assets/Saxdor/340-GTWA/saxdor-340-gtwa-nav.webp',
       gallery:gal('Assets/Saxdor/340-GTWA/saxdor-340-gtwa-',1,13),
       desc:'An all-weather walkaround that blends open-air freedom with protected comfort. The 340 GTWA pairs a sheltered wheelhouse with expansive walkaround decks and large fold-out side terraces rarely seen at this size, opening the boat to the water on every side. A convertible bow U-lounge and optional aft sun pad make it a natural entertainer for up to eight guests.',
       specs:[{g:'Specifications', r:[['Length','10.78 m','35\u20194\"'],['Beam','3.10 m','10\u20192\"'],['Draft','0.61 m','2\u20190\"'],['Passengers','8 (Cat B) / 10 (Cat C)'],['Engines','500\u2013600 hp outboard'],['Max. Speed','40\u201350 knots'],['Fuel','480 L','127 gal'],['Fresh Water','100 L','26 gal'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}] },
     /* ===================== SAXDOR — 400 SERIES ===================== */
     { slug:'saxdor-400-gts', brand:'Saxdor', series:'400 Series', name:'Saxdor 400 GTS', cats:'saxdor sport', full:true, cut:true,
-      loaM:'12.4', loaFt:"40.7'", hero:'Assets/Saxdor/400-GTS/saxdor-400-gts-1.webp', card:'Assets/Saxdor/400-GTS/saxdor-400-gts-nav.webp',
+      loaM:'12.4', loaFt:"40.7'", hero:'Assets/Saxdor/400-GTS/saxdor-400-gts-3.webp', card:'Assets/Saxdor/400-GTS/saxdor-400-gts-nav.webp',
       gallery:gal('Assets/Saxdor/400-GTS/saxdor-400-gts-',1,13),
       desc:'The purest expression of open boating in the 400 series. A walkaround layout, glass-shielded helm and signature folding terraces open the 400 GTS fully to the water, while convertible sunbeds and modular seating flex from high-speed runs to lounging and al-fresco dining. Beneath it all, an agile twin-stepped hull keeps the experience sharp and responsive.',
       specs:[{g:'Specifications', r:[['Length','12.4 m','40.7 ft'],['Beam','3.55 m','11.7 ft'],['Draft (excl. engines)','0.65 m','2.1 ft'],['Passengers','12','CE Category B'],['Max. Engine Power','850 hp'],['Max. Speed','Up to 50 knots'],['Fuel','900 L','238 gal'],['Fresh Water','170 L','45 gal'],['Grey Water','96 L','25 gal'],['Black Water','53 L','14 gal'],['Engines','Mercury V8 & V10 outboards'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped V21\u00b0 deep-V']]}] },
@@ -1019,7 +1058,85 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
       loaM:'14.4', loaFt:"47'2\"", hero:'Assets/Saxdor/460-GTC/saxdor-460-gtc-1.webp', card:'Assets/Saxdor/460-GTC/saxdor-460-gtc-nav.webp',
       gallery:gal('Assets/Saxdor/460-GTC/saxdor-460-gtc-',1,13),
       desc:'Saxdor\u2019s flagship \u2014 a full-beam wheelhouse yacht that opens or closes completely, and winner of the \u201cMotoryacht 14\u201316m\u201d category at the Yacht Style Awards 2026. Enclosed, it is a calm, panoramic saloon; opened, the lines simply disappear as fold-down terraces extend the main deck to full width. A twin-step deep-V hull cuts cleanly through rough water with fast acceleration and efficient long-range cruising, while a forward cabin, twin mid-cabin and optional aft cabin make genuine overnighting effortless.',
-      specs:[{g:'Specifications', r:[['Length','14.4 m','47.2 ft'],['Beam','4.10 m','13.45 ft'],['Draft','0.80 m','2.62 ft'],['Passengers','15','CE Category B'],['Cabins','Forward + twin mid-cabin (optional aft cabin)'],['Max. Engine Power','1,275 hp'],['Max. Speed','45\u201350 knots'],['Fuel','1,330 L','351 gal'],['Fresh Water','160 L','42 gal'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped deep-V']]}] }
+      specs:[{g:'Specifications', r:[['Length','14.4 m','47.2 ft'],['Beam','4.10 m','13.45 ft'],['Draft','0.80 m','2.62 ft'],['Passengers','15','CE Category B'],['Cabins','Forward + twin mid-cabin (optional aft cabin)'],['Max. Engine Power','1,275 hp'],['Max. Speed','45\u201350 knots'],['Fuel','1,330 L','351 gal'],['Fresh Water','160 L','42 gal'],['Construction','Vacuum-infused GRP'],['Hull Design','Twin-stepped deep-V']]}] },
+    /* ===================== SEALEGS — SPORT RIB ===================== */
+    { slug:'sealegs-38-tender', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 3.8m Tender', cats:'sealegs rib', full:true,
+      loaM:'3.8', loaFt:"12'5\"", hero:'Assets/Sealegs/3.8m-Tender/sealegs-38-tender-1.webp', card:'Assets/Sealegs/3.8m-Tender/sealegs-38-tender-1.webp',
+      gallery:gal('Assets/Sealegs/3.8m-Tender/sealegs-38-tender-',1,8),
+      desc:'The world\u2019s first amphibious luxury tender \u2014 and it\u2019s electric. Designed to live aboard a superyacht, the 3.8m drives itself down the beach or up the slip on retractable wheels, then whisks up to four guests ashore in near-silence. A teak-look deck, alloy hull and premium Hypalon tubes make it as refined as the yachts it serves.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','4.04 m','13\u20193\"'],['Height (wheels up)','1.2 m','3\u201911\"'],['Dry Weight','580 kg','1,280 lb']]},{g:'On the Water', r:[['Max Speed','30 knots'],['Outboard','Yamaha 40–60 hp'],['Fuel','24 L']]},{g:'On Land', r:[['Land Drive','Electric, 3 kWh lithium'],['Runtime','100 min continuous'],['Recharge','2 hours']]},{g:'Capacity', r:[['Passengers','4']]}] },
+    { slug:'sealegs-61-sport-rib', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 6.1m Sport RIB', cats:'sealegs rib', full:true,
+      loaM:'6.1', loaFt:"20'0\"", hero:'Assets/Sealegs/6.1m-Sport-RIB/sealegs-61-sport-rib-1.webp', card:'Assets/Sealegs/6.1m-Sport-RIB/sealegs-61-sport-rib-1.webp',
+      gallery:gal('Assets/Sealegs/6.1m-Sport-RIB/sealegs-61-sport-rib-',1,12),
+      desc:'Compact, agile and efficient, the 6.1m is the most manageable amphibian in the range \u2014 equally at home as a versatile superyacht tender or a tight-storage family runabout. All-wheel drive carries it over sand and ramps, while a 21\u00b0 deep-V hull and up to 115 hp deliver genuine on-water performance.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','6.13 m','20\u20191\"'],['Beam','2.61 m','8\u20197\"'],['Draft','0.41 m','16"'],['Height (wheels up)','1.82 m','6\u20190\"']]},{g:'On the Water', r:[['Max Speed','35 knots'],['Max Outboard','115 hp Yamaha'],['Fuel','80 L','21 gal'],['Max Sea','2.0 m / 26 kn winds']]},{g:'On Land', r:[['Land Engine','Honda 22 hp inboard petrol'],['Land Speed','7.5 km/h'],['Max Incline','14\u00b0 up / 11\u00b0 down'],['Drive','All-wheel drive']]},{g:'Capacity', r:[['Passengers','6'],['Dry Weight','1,350 kg','2,976 lb']]}] },
+    { slug:'sealegs-71-sport-rib', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 7.1m Sport RIB', cats:'sealegs rib', full:true,
+      loaM:'7.1', loaFt:"22'4\"", hero:'Assets/Sealegs/7.1m-Sport-RIB/sealegs-71-sport-rib-1.webp', card:'Assets/Sealegs/7.1m-Sport-RIB/sealegs-71-sport-rib-1.webp',
+      gallery:gal('Assets/Sealegs/7.1m-Sport-RIB/sealegs-71-sport-rib-',1,9),
+      desc:'A perfect blend of innovation and versatility, the 7.1m fishes, dives, explores and patrols \u2014 then simply drives up the beach or boat ramp without ever getting your feet wet. Marine-grade alloy hull, Hypalon tubes and up to 150 hp make it the aspiring amphibian\u2019s ideal craft.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','7.13 m','23\u20195\"'],['Beam','2.71 m','8\u20199\"'],['Draft','0.41 m','16"'],['Height (wheels up)','1.87 m','6\u20191\"']]},{g:'On the Water', r:[['Max Speed','39 knots'],['Max Outboard','150 hp'],['Fuel','80 L (+100 L opt.)'],['Max Sea','2.0 m / 26 kn winds']]},{g:'On Land', r:[['Land Engine','Honda 22 hp inboard petrol'],['Land Speed','7.5 km/h'],['Max Incline','14\u00b0 up / 11\u00b0 down'],['Drive','All-wheel drive']]},{g:'Capacity', r:[['Passengers','8'],['Dry Weight','1,490 kg','3,285 lb']]}] },
+    { slug:'sealegs-75-amphibious-rib', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 7.5m Amphibious RIB', cats:'sealegs rib', full:true,
+      loaM:'7.5', loaFt:"24'7\"", hero:'Assets/Sealegs/7.5m-Amphibious-RIB/sealegs-75-amphibious-rib-1.webp', card:'Assets/Sealegs/7.5m-Amphibious-RIB/sealegs-75-amphibious-rib-1.webp',
+      gallery:gal('Assets/Sealegs/7.5m-Amphibious-RIB/sealegs-75-amphibious-rib-',1,10),
+      desc:'The do-it-all amphibious RIB \u2014 powerful on-water performance paired with seamless land-to-water transitions. Beach-launch and retrieve without a ramp, then explore remote coastlines that conventional boats simply cannot reach. A 21\u00b0 deep-V hull, IGX800 land engine and up to 200 hp define the modern Sealegs.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','7.55 m','24\u201910\"'],['Beam','2.71 m','8\u201911\"'],['Draft','0.42 m','16.5"'],['Height','2.70 m','8\u201910\"']]},{g:'On the Water', r:[['Max Speed','40 knots'],['Max Outboard','200 hp'],['Fuel','180 L','48 gal'],['Max Sea','2.0 m / 26 kn winds']]},{g:'On Land', r:[['Land Engine','Honda IGX800 28 hp inboard'],['Max Incline','11\u00b0'],['Drive','All-wheel drive'],['Runtime','30 min / hour']]},{g:'Capacity', r:[['Passengers','6–8'],['Dry Weight','1,600–1,900 kg']]}] },
+    { slug:'sealegs-75-electric-rib', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 7.5m Electric RIB', cats:'sealegs rib', full:true,
+      loaM:'7.5', loaFt:"24'7\"", hero:'Assets/Sealegs/7.5m-Electric-RIB/sealegs-75-electric-rib-1.webp', card:'Assets/Sealegs/7.5m-Electric-RIB/sealegs-75-electric-rib-1.webp',
+      gallery:gal('Assets/Sealegs/7.5m-Electric-RIB/sealegs-75-electric-rib-',1,9),
+      desc:'The electric evolution of the amphibious RIB \u2014 quiet, emission-free running ashore and afloat with no compromise on capability. The Sealegs System 70 drive and dual marine batteries power the wheels, while up to 200 hp still delivers 40-knot performance on the water.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','7.55 m','24\u201910\"'],['Beam','2.25 m','7\u20195\"'],['Draft','0.42 m','16.5"'],['Height','2.70 m','8\u201910\"']]},{g:'On the Water', r:[['Max Speed','40 knots'],['Max Outboard','200 hp Yamaha'],['Max Sea','2.0 m / 26 kn winds']]},{g:'On Land', r:[['Land Drive','Sealegs System 70, electric'],['Batteries','Dual Koba marine'],['Max Incline','11\u00b0']]},{g:'Capacity', r:[['Seats','4 (up to 8)'],['Dry Weight','1,600–1,900 kg']]}] },
+    { slug:'sealegs-9m-hydrasol-rib', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 9m Hydrasol RIB', cats:'sealegs rib', full:true,
+      loaM:'9.0', loaFt:"29'11\"", hero:'Assets/Sealegs/9m-Hydrasol-RIB/sealegs-9m-hydrasol-rib-1.webp', card:'Assets/Sealegs/9m-Hydrasol-RIB/sealegs-9m-hydrasol-rib-1.webp',
+      gallery:gal('Assets/Sealegs/9m-Hydrasol-RIB/sealegs-9m-hydrasol-rib-',1,11),
+      desc:'Powerful, spacious and limitless \u2014 one of the largest amphibious RIBs Sealegs has ever produced. Its Hydrasol hull technology optimises the centre of gravity for a stable, sure-footed platform, with seating for up to 12 and a choice of single 300 hp or twin 200 hp power.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','9.15 m','30\u20190\"'],['Beam','3.13 m','10\u20193\"'],['Draft','0.40 m','15.75"'],['Height (wheels up)','2.12 m','6\u201911\"']]},{g:'On the Water', r:[['Max Speed','40 knots'],['Max Outboard','1\u00d7300 hp or 2\u00d7200 hp'],['Fuel','250 L (or 2\u00d7180 L)'],['Max Sea','2.0 m / 26 kn winds']]},{g:'On Land', r:[['Land Engine','Briggs & Stratton 40 hp EFI'],['Max Incline','14\u00b0 up / 11\u00b0 down'],['Drive','All-wheel drive']]},{g:'Capacity', r:[['Passengers','Up to 12'],['Seating','8 Joltrider suspension seats']]}] },
+    { slug:'sealegs-12m-sport-rib', brand:'Sealegs', series:'Sport RIB', name:'Sealegs 12m Sport RIB', cats:'sealegs rib', full:true,
+      loaM:'12.0', loaFt:"39'5\"", hero:'Assets/Sealegs/12m-Sport-RIB/sealegs-12m-sport-rib-1.webp', card:'Assets/Sealegs/12m-Sport-RIB/sealegs-12m-sport-rib-1.webp',
+      gallery:gal('Assets/Sealegs/12m-Sport-RIB/sealegs-12m-sport-rib-',1,8),
+      desc:'Sealegs\u2019 flagship sport RIB and the largest commercial-grade amphibious system in the range. A fully enclosed cabin, twin outboards to 600 hp each and a turbo-diesel land drive give it genuine open-water capability with luxury accommodation for overnighting.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','12.3 m','40\u20194\"'],['Beam','3.63 m','11\u201911\"'],['Height (wheels up)','2.84 m','9\u20194\"'],['Hull Deadrise','15\u00b0']]},{g:'On the Water', r:[['Max Outboard','Twin 450\u2013600 hp'],['Fuel','500 L','132 gal'],['Max Sea','2.0 m / 26 kn winds']]},{g:'On Land', r:[['Land Engine','74 hp turbo-diesel inboard'],['Max Incline','14\u00b0 up / 11\u00b0 down'],['Drive','All-wheel drive']]},{g:'Accommodation', r:[['Configuration','Fully enclosed cabin'],['Seats','Up to 9'],['Berths','Up to 4']]}] },
+    /* ===================== SEALEGS — SPORT ALLOY ===================== */
+    { slug:'sealegs-65-alloy-cuddy', brand:'Sealegs', series:'Sport Alloy', name:'Sealegs 6.5m Alloy Cuddy Cabin', cats:'sealegs alloy', full:true,
+      loaM:'6.5', loaFt:"21'4\"", hero:'Assets/Sealegs/6.5m-Alloy-Cuddy/sealegs-65-alloy-cuddy-1.webp', card:'Assets/Sealegs/6.5m-Alloy-Cuddy/sealegs-65-alloy-cuddy-1.webp',
+      gallery:gal('Assets/Sealegs/6.5m-Alloy-Cuddy/sealegs-65-alloy-cuddy-',1,9),
+      desc:'The most feature-packed, affordable amphibious solution on the market. Rugged marine-grade aluminium meets the Sealegs wheel system in a compact cuddy-cabin package built for fishing and family days, with a cuddy cabin, full-length gunnels and underfloor wet storage.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','6.79 m','22\u20193\"'],['Beam','2.31 m','7\u20197\"'],['Height (wheels up)','2.04 m','6\u20198\"'],['Hull Deadrise','19\u00b0']]},{g:'On the Water', r:[['Max Speed','36 knots'],['Max Outboard','200 hp (150 hp std.)'],['Fuel','100 L','26 gal']]},{g:'On Land', r:[['Land Engine','Honda 24 hp inboard'],['Land Speed','10 km/h'],['Max Incline','14\u00b0 up / 11\u00b0 down'],['Drive','2WD (AWD optional)']]},{g:'Capacity', r:[['Passengers','6'],['Dry Weight','1,420 kg']]}] },
+    { slug:'sealegs-75-alloy', brand:'Sealegs', series:'Sport Alloy', name:'Sealegs 7.5m Alloy', cats:'sealegs alloy', full:true,
+      loaM:'7.5', loaFt:"24'11\"", hero:'Assets/Sealegs/7.5m-Alloy/sealegs-75-alloy-1.webp', card:'Assets/Sealegs/7.5m-Alloy/sealegs-75-alloy-1.webp',
+      gallery:gal('Assets/Sealegs/7.5m-Alloy/sealegs-75-alloy-',1,10),
+      desc:'Rugged, configurable and versatile, the 7.5m Alloy pairs a marine-grade aluminium 21\u00b0 deep-V hull with all-wheel-drive amphibious capability. It adapts effortlessly to fishing, diving, family days and professional duty \u2014 and seats up to ten.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','7.8 m','25\u20196\"'],['Beam','2.25 m','7\u20194\"'],['Height','2.70 m','8\u201910\"'],['Hull Deadrise','21\u00b0']]},{g:'On the Water', r:[['Max Speed','40 knots'],['Max Outboard','200 hp'],['Fuel','180 L','48 gal']]},{g:'On Land', r:[['Land Engine','Honda EFI 28 hp inboard'],['Land Speed','7.5 km/h'],['Max Incline','11\u00b0'],['Drive','All-wheel drive']]},{g:'Capacity', r:[['Passengers','6–10'],['Dry Weight','1,600–1,900 kg']]}] },
+    { slug:'sealegs-85-alloy-cabin', brand:'Sealegs', series:'Sport Alloy', name:'Sealegs 8.5m Alloy Cabin', cats:'sealegs alloy', full:true,
+      loaM:'8.5', loaFt:"27'11\"", hero:'Assets/Sealegs/8.5m-Alloy-Cabin/sealegs-85-alloy-cabin-1.webp', card:'Assets/Sealegs/8.5m-Alloy-Cabin/sealegs-85-alloy-cabin-1.webp',
+      gallery:gal('Assets/Sealegs/8.5m-Alloy-Cabin/sealegs-85-alloy-cabin-',1,12),
+      desc:'An enclosed aluminium cabin for effortless transitions between land and water. A rugged inboard powers the wheels ashore while up to 250 hp drives high-speed cruising afloat, with a Vee-berth cabin and abundant storage for serious fishing trips and weekends away.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','8.5 m','27\u201911\"'],['Beam','2.31 m','7\u20197\"'],['Height (wheels up)','2.74 m','9\u20190\"'],['Dry Weight','2,230 kg','4,916 lb']]},{g:'On the Water', r:[['Max Speed','39 knots'],['Max Outboard','250 hp Yamaha'],['Fuel','250 L','66 gal']]},{g:'On Land', r:[['Land Engine','Briggs & Stratton 40 hp EFI'],['Land Speed','7.5–10 km/h'],['Max Incline','14\u00b0 up / 11\u00b0 down'],['Drive','All-wheel drive']]},{g:'Accommodation', r:[['Configuration','Enclosed alloy cabin'],['Passengers','6']]}] },
+    { slug:'sealegs-86-alloy-max', brand:'Sealegs', series:'Sport Alloy', name:'Sealegs 8.6m Alloy MAX', cats:'sealegs alloy', full:true,
+      loaM:'8.6', loaFt:"28'3\"", hero:'Assets/Sealegs/8.6m-Alloy-MAX/sealegs-86-alloy-max-1.webp', card:'Assets/Sealegs/8.6m-Alloy-MAX/sealegs-86-alloy-max-1.webp',
+      gallery:gal('Assets/Sealegs/8.6m-Alloy-MAX/sealegs-86-alloy-max-',1,11),
+      desc:'The most capable alloy craft in the range \u2014 robust, spacious and comfortable, with the latest Sealegs technology including Super Steering for a 70% tighter turning circle. A 40 hp land engine and up to 350 hp afloat make it built for extended fishing, diving and family adventures.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','8.6 m','28\u20192\"'],['Beam','2.5 m','8\u20192\"'],['Height (wheels up)','2.74 m','9\u20190\"'],['Hull Deadrise','16\u00b0']]},{g:'On the Water', r:[['Max Outboard','300–350 hp Yamaha'],['Fuel','400 L']]},{g:'On Land', r:[['Land Engine','Briggs & Stratton 40 hp EFI'],['Max Incline','14\u00b0'],['Drive','AWD (switchable 2WD)'],['Steering','Sealegs Super Steering']]},{g:'Capacity', r:[['Passengers','6 (600 kg max)']]}] },
+    /* ===================== SEALEGS — COMMERCIAL ===================== */
+    { slug:'sealegs-61-commercial-rib', brand:'Sealegs', series:'Commercial', name:'Sealegs 6.1m Commercial RIB', cats:'sealegs commercial', full:true,
+      loaM:'6.1', loaFt:"20'0\"", hero:'Assets/Sealegs/6.1m-Commercial-RIB/sealegs-61-commercial-rib-1.webp', card:'Assets/Sealegs/6.1m-Commercial-RIB/sealegs-61-commercial-rib-1.webp',
+      gallery:gal('Assets/Sealegs/6.1m-Commercial-RIB/sealegs-61-commercial-rib-',1,9),
+      desc:'Built for demanding commercial operations where performance, durability and ease of use are paramount. The 6.1m Commercial brings rescue, transport and professional capability to remote shores, with all-wheel drive, an automatic braking system and the unmatched shore access only Sealegs delivers.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','6.13 m','20\u20191\"'],['Beam','2.46 m','8\u20191\"'],['Draft','0.41 m','16"'],['Height (wheels up)','1.82 m','6\u20190\"']]},{g:'On the Water', r:[['Max Speed','35 knots'],['Max Outboard','115 hp'],['Fuel','80 L','21 gal'],['Max Sea','2.0 m / 26 kn winds']]},{g:'On Land', r:[['Land Engine','Honda 22 hp inboard'],['Max Incline','14\u00b0 up / 11\u00b0 down'],['Drive','AWD + ABS']]},{g:'Capacity', r:[['Dry Weight','1,350 kg','2,976 lb'],['Use','Rescue, transport, patrol']]}] },
+    { slug:'sealegs-71-commercial-rib', brand:'Sealegs', series:'Commercial', name:'Sealegs 7.1m Commercial RIB', cats:'sealegs commercial', full:true,
+      loaM:'7.1', loaFt:"22'4\"", hero:'Assets/Sealegs/7.1m-Commercial-RIB/sealegs-71-commercial-rib-1.webp', card:'Assets/Sealegs/7.1m-Commercial-RIB/sealegs-71-commercial-rib-1.webp',
+      gallery:gal('Assets/Sealegs/7.1m-Commercial-RIB/sealegs-71-commercial-rib-',1,9),
+      desc:'Commercial-grade materials engineered for the toughest environments \u2014 a dependable amphibious workhorse for patrol, rescue and survey crews. All-wheel drive and up to 150 hp let it reach locations and transport personnel where conventional vessels cannot operate.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','7.13 m','23\u20195\"'],['Beam','2.71 m','8\u20199\"'],['Draft','0.41 m','16"'],['Height (wheels up)','1.87 m','6\u20191\"']]},{g:'On the Water', r:[['Max Speed','39 knots'],['Max Outboard','150 hp'],['Fuel','80 L (+100 L opt.)'],['Max Sea','2.0 m / 26 kn winds']]},{g:'On Land', r:[['Land Engine','Honda 22 hp inboard'],['Max Incline','14\u00b0 up / 11\u00b0 down'],['Drive','All-wheel drive']]},{g:'Capacity', r:[['Dry Weight','1,490 kg','3,285 lb'],['Use','Patrol, rescue, survey']]}] },
+    { slug:'sealegs-9m-commercial-rib', brand:'Sealegs', series:'Commercial', name:'Sealegs 9m Commercial Hydrasol RIB', cats:'sealegs commercial', full:true,
+      loaM:'9.0', loaFt:"29'11\"", hero:'Assets/Sealegs/9m-Commercial-RIB/sealegs-9m-commercial-rib-1.webp', card:'Assets/Sealegs/9m-Commercial-RIB/sealegs-9m-commercial-rib-1.webp',
+      gallery:gal('Assets/Sealegs/9m-Commercial-RIB/sealegs-9m-commercial-rib-',1,9),
+      desc:'A large commercial amphibious platform that launches and retrieves itself \u2014 highly customisable for tourism, diving, tours, wildlife viewing and rescue. Hydrasol hull technology and hydrostatic braking give a stable, sure-footed platform for up to 12 passengers.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','9.15 m','30\u20190\"'],['Beam','3.13 m','10\u20193\"'],['Draft','0.40 m','15.75"'],['Height (wheels up)','2.12 m','6\u201911\"']]},{g:'On the Water', r:[['Max Speed','40 knots'],['Max Outboard','1\u00d7300 hp or 2\u00d7200 hp'],['Fuel','250 L (or 2\u00d7180 L)'],['Max Sea','2.0 m / 26 kn winds']]},{g:'On Land', r:[['Land Engine','Briggs & Stratton 35 hp inboard'],['Max Incline','14\u00b0 up / 11\u00b0 down'],['Drive','AWD + hydrostatic brakes']]},{g:'Capacity', r:[['Passengers','Up to 12'],['Use','Dive, tourism, rescue']]}] },
+    { slug:'sealegs-12m-commercial-rib', brand:'Sealegs', series:'Commercial', name:'Sealegs 12m Commercial RIB', cats:'sealegs commercial', full:true,
+      loaM:'12.0', loaFt:"39'5\"", hero:'Assets/Sealegs/12m-Commercial-RIB/sealegs-12m-commercial-rib-1.webp', card:'Assets/Sealegs/12m-Commercial-RIB/sealegs-12m-commercial-rib-1.webp',
+      gallery:gal('Assets/Sealegs/12m-Commercial-RIB/sealegs-12m-commercial-rib-',1,7),
+      desc:'The flagship commercial amphibious RIB \u2014 a fully enclosed cabin, twin outboards to 1,200 hp and a commercial-grade drive system for the most serious operators. From passenger services to rescue and cargo, it operates across water, coast, rivers and rugged land where traditional vessels cannot.',
+      specs:[{g:'Dimensions', r:[['Length (wheels up)','11.7 m','38\u20195\"'],['Beam','3.63 m','11\u201911\"'],['Height (wheels up)','2.84 m','9\u20194\"'],['Hull Deadrise','15\u00b0']]},{g:'On the Water', r:[['Max Outboard','Twin to 1,200 hp'],['Fuel','500 L','132 gal'],['Max Sea','2.0 m / 26 kn winds']]},{g:'On Land', r:[['Land Engine','94 hp inboard petrol'],['Max Incline','14\u00b0 up / 11\u00b0 down'],['Drive','AWD + hydrostatic brakes']]},{g:'Accommodation', r:[['Configuration','Enclosed cabin'],['Passengers','Up to 12'],['Hull','6 mm marine-grade alloy']]}] }
   ];
 
   /* ---------- helpers ---------- */
@@ -1112,16 +1229,34 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   if(y.brochure) actHtml += '<a href="'+y.brochure+'" target="_blank" rel="noopener" class="btn btn--blue">Download Brochure</a>';
   acts.innerHTML = actHtml;
 
-  /* Specs */
+  /* Specs — tabbed (Principal Characteristics / Accommodation / Technical) */
   var specsHost = document.getElementById('yacht-specs');
-  if(y.full && y.specs){
-    specsHost.innerHTML = y.specs.map(function(blk){
-      return '<div class="spec-block"><h3>'+MYA.esc(blk.g)+'</h3>' + blk.r.map(function(row){
-        var sub = row[2] ? '<small>'+MYA.esc(row[2])+'</small>' : '';
-        return '<div class="spec-row"><span class="sk">'+MYA.esc(row[0])+'</span><span class="sv">'+MYA.esc(row[1])+sub+'</span></div>';
-      }).join('') + '</div>';
+  var tabsHost = document.getElementById('yacht-spec-tabs');
+  if(y.full && y.specs && y.specs.length){
+    tabsHost.style.display = '';
+    tabsHost.innerHTML = y.specs.map(function(blk,i){
+      return '<button type="button" class="spec-tab'+(i===0?' active':'')+'" data-tab="'+i+'">'+MYA.esc(blk.g)+'</button>';
     }).join('');
+    specsHost.innerHTML = y.specs.map(function(blk,i){
+      return '<div class="spec-panel'+(i===0?' active':'')+'" data-panel="'+i+'"><div class="spec-table">'
+        + blk.r.map(function(row){
+            var hasImp = row.length > 2 && row[2];
+            var val = '<span class="m'+(hasImp?'':' wide')+'">'+MYA.esc(row[1])+'</span>';
+            var imp = hasImp ? '<span class="i">'+MYA.esc(row[2])+'</span>' : '';
+            return '<div class="spec-trow"><span class="k">'+MYA.esc(row[0])+'</span>'+val+imp+'</div>';
+          }).join('')
+        + '</div></div>';
+    }).join('');
+    var tabBtns = tabsHost.querySelectorAll('.spec-tab');
+    var panels = specsHost.querySelectorAll('.spec-panel');
+    tabsHost.addEventListener('click', function(e){
+      var btn = e.target.closest('.spec-tab'); if(!btn) return;
+      var idx = btn.getAttribute('data-tab');
+      tabBtns.forEach(function(t){ t.classList.toggle('active', t===btn); });
+      panels.forEach(function(pn){ pn.classList.toggle('active', pn.getAttribute('data-panel')===idx); });
+    });
   } else {
+    tabsHost.style.display = 'none';
     specsHost.innerHTML = '<div class="spec-na">'
       + '<p>Detailed specifications for the <strong>'+MYA.esc(y.name)+'</strong> are available on request.</p>'
       + '<p>Speak with our team for a full technical pack, sea-trial arrangements and delivery options.</p>'

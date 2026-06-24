@@ -176,8 +176,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   text-align:center;overflow:hidden}
 .hero-layer{position:absolute;inset:-12% -2%;z-index:-3;background-size:cover;background-position:center;will-change:transform}
 .hero-haze{position:absolute;inset:0;z-index:-2;
-  background:radial-gradient(130% 100% at 50% 18%,transparent 28%,rgba(8,12,16,.55) 100%),
-  linear-gradient(to bottom,rgba(8,12,16,.5),rgba(8,12,16,.18) 40%,rgba(8,12,16,.9))}
+  background:transparent}
 .hero-inner{position:relative;z-index:2;max-width:1100px;padding:0 22px;will-change:transform}
 .hero .kicker{opacity:0;animation:fadeUp 1s var(--ease) .4s forwards;justify-content:center}
 .hero h1{font-size:clamp(2.9rem,9.6vw,9rem);font-weight:800;text-transform:uppercase;line-height:.92;
@@ -206,7 +205,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .phero{position:relative;min-height:70vh;min-height:70dvh;display:flex;align-items:flex-end;overflow:hidden;padding-bottom:clamp(44px,7vh,88px)}
 .phero-bg{position:absolute;inset:-8% -2%;z-index:-2;background-size:cover;background-position:center;will-change:transform}
 .phero::after{content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(to top,rgba(8,12,16,.92),rgba(8,12,16,.25) 56%,rgba(8,12,16,.5))}
+  background:transparent}
 .phero-inner{position:relative;z-index:2;width:100%}
 .phero .crumb{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;
   display:flex;gap:.7em;align-items:center;flex-wrap:wrap}
@@ -243,8 +242,8 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 /* ============================================================ FULL-BLEED PARALLAX BAND */
 .band{position:relative;min-height:86vh;min-height:86dvh;display:flex;align-items:center;overflow:hidden}
 .band-bg{position:absolute;inset:-15% 0;z-index:-2;background-size:cover;background-position:center;will-change:transform}
-.band::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,12,16,.82),rgba(8,12,16,.32) 70%,transparent)}
-.band.cent::after{background:radial-gradient(120% 100% at 50% 50%,rgba(8,12,16,.45),rgba(8,12,16,.78))}
+.band::after{content:"";position:absolute;inset:0;z-index:-1;background:transparent}
+.band.cent::after{background:transparent}
 .band-inner{position:relative;z-index:2;max-width:620px}
 .band.cent .band-inner{max-width:820px;text-align:center;margin:0 auto}
 .band h2{font-size:clamp(2.2rem,5.4vw,4.8rem);font-weight:800;text-transform:uppercase;color:var(--paper);line-height:.98;letter-spacing:-.018em;margin-bottom:24px}
@@ -257,7 +256,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .show.flip .show-media{order:2}
 .show-media{position:relative;overflow:hidden;aspect-ratio:16/11;background:var(--ink-3)}
 .show-media .px-img{position:absolute;inset:-12% 0;background-size:cover;background-position:center;will-change:transform}
-.show-media .ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,12,16,.4),transparent 60%)}
+.show-media .ov{position:absolute;inset:0;background:transparent}
 .show-tag{position:absolute;top:24px;left:24px;z-index:3;font-size:10px;letter-spacing:.24em;text-transform:uppercase;
   color:var(--white);background:rgba(8,12,16,.5);border:1px solid var(--line-d);padding:8px 16px;backdrop-filter:blur(6px)}
 .show-copy .brandmark{height:30px;width:auto;margin-bottom:24px;filter:brightness(0) invert(1);opacity:.95}
@@ -284,7 +283,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .yacht.cut .ph .img{background-size:contain;background-repeat:no-repeat;inset:8% 6%}
 .yacht:hover .ph .img{transform:scale(1.07)}
 .yacht.cut:hover .ph .img{transform:scale(1.05)}
-.yacht .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(8,12,16,.55),transparent 60%);opacity:.65;transition:opacity .5s}
+.yacht .ph::after{content:"";position:absolute;inset:0;background:transparent;opacity:.65;transition:opacity .5s}
 .yacht.cut .ph::after{display:none}
 .yacht:hover .ph::after{opacity:1}
 .yacht .tag{position:absolute;top:16px;left:16px;z-index:3;font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
@@ -513,7 +512,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   .gallery{grid-template-columns:1fr 1fr}
   .gallery .g:first-child{grid-column:span 2}
   .grid2{grid-template-columns:1fr}
-  .band{min-height:78vh;min-height:78dvh}.band::after{background:linear-gradient(to top,rgba(8,12,16,.9),rgba(8,12,16,.4))}
+  .band{min-height:78vh;min-height:78dvh}.band::after{background:transparent}
   .head-flex{flex-direction:column;align-items:flex-start}
   .phero{min-height:60vh;min-height:60dvh}
   .hero-ghost{font-size:42vw}
@@ -869,10 +868,10 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   var Y = [
     /* ===================== SUNSEEKER — YACHT ===================== */
     { slug:'76-yacht', brand:'Sunseeker', series:'Yacht', name:'76 Yacht', cats:'sunseeker flybridge',
-      loaM:'23.2', loaFt:"76'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:DEV+'2026/04/sunseeker-88-yacht-gallery-3.webp',
+      loaM:'23.2', loaFt:"76'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:'Assets/Sunseeker/76-Yacht/sunseeker-76-yacht-4.webp',
       desc:'A commanding flybridge motoryacht from Sunseeker\u2019s flagship Yacht line \u2014 generous volume, sociable deck spaces and signature British craftsmanship throughout.' },
     { slug:'88-yacht', brand:'Sunseeker', series:'Yacht', name:'88 Yacht', cats:'sunseeker flybridge', full:true,
-      loaM:'26.38', loaFt:"86'7\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:DEV+'2026/04/sunseeker-88-yacht-gallery-1.webp',
+      loaM:'26.38', loaFt:"86'7\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:'Assets/Sunseeker/88-Yacht/sunseeker-88-yacht-4.webp',
       brochure:DEV+'2026/04/sunseeker-88-yacht.pdf', gallery:gal(DEV+'2026/04/sunseeker-88-yacht-gallery-',1,12),
       desc:'A flagship flybridge yacht delivering exceptional volume and presence. Expansive social spaces, four luxurious cabins and a choice of potent MTU power define life aboard the 88 Yacht.',
       specs:[
@@ -881,10 +880,10 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
         {g:'Technical', r:[['Engines','Twin MTU 2000 (1,622\u20132,000 PS)'],['Performance','Up to 28 knots'],['Range','1,275 nm @ 12 knots'],['Propulsion','Shafts'],['Generators','2 \u00d7 28 kW']]}
       ] },
     { slug:'94-yacht', brand:'Sunseeker', series:'Yacht', name:'94 Yacht', cats:'sunseeker flybridge',
-      loaM:'28.7', loaFt:"94'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:DEV+'2026/04/sunseeker-88-yacht-gallery-5.webp',
+      loaM:'28.7', loaFt:"94'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:'Assets/Sunseeker/94-Yacht/sunseeker-94-yacht-1.webp',
       desc:'Imposing scale meets refined detailing. The 94 Yacht offers superyacht-calibre living, sweeping flybridge entertaining and the assured seakeeping Sunseeker is renowned for.' },
     { slug:'95-yacht', brand:'Sunseeker', series:'Yacht', name:'95 Yacht', cats:'sunseeker flybridge',
-      loaM:'29.0', loaFt:"95'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:DEV+'2026/04/sunseeker-88-yacht-gallery-7.webp',
+      loaM:'29.0', loaFt:"95'0\"", hero:DEV+'2026/04/88-yacht-banner.webp', card:'Assets/Sunseeker/95-Yacht/sunseeker-95-yacht-1.webp',
       desc:'A statement of refined taste and bold British innovation \u2014 vast volume, bespoke interiors and effortless long-range cruising in the flagship Yacht series.' },
     { slug:'manhattan-55', brand:'Sunseeker', series:'Yacht', name:'Manhattan 55', cats:'sunseeker flybridge',
       loaM:'16.8', loaFt:"55'0\"", hero:DEV+'2026/04/Manhattan-55-banner.webp', card:DEV+'2026/04/Manhattan-55-banner.webp',
@@ -933,7 +932,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
       loaM:'22.9', loaFt:"75'0\"", hero:DEV+'2026/04/predator-75-banner.webp', card:DEV+'2026/04/predator-75-banner.webp',
       desc:'Bold, muscular and fast \u2014 the Predator 75 delivers thrilling open-water performance with a luxurious, sociable cockpit and sun-soaked deck spaces.' },
     { slug:'superhawk-55', brand:'Sunseeker', series:'Performance', name:'Superhawk 55', cats:'sunseeker performance',
-      loaM:'16.8', loaFt:"55'0\"", hero:DEV+'2026/04/predator-65-banner.webp', card:DEV+'2026/04/sunseeker-predator-65-9.webp',
+      loaM:'16.8', loaFt:"55'0\"", hero:DEV+'2026/04/predator-65-banner.webp', card:'Assets/Sunseeker/Superhawk-55/sunseeker-superhawk-55-1.webp',
       desc:'A radical, open sports yacht for the purist \u2014 dramatic styling, exhilarating handling and a pure connection between driver, machine and sea.' },
     { slug:'65-sport-yacht', brand:'Sunseeker', series:'Performance', name:'65 Sport Yacht', cats:'sunseeker performance',
       loaM:'19.8', loaFt:"65'0\"", hero:DEV+'2026/04/sunseeker-75-sportyacht-4.webp', card:DEV+'2026/04/sunseeker-75-sportyacht-4.webp',
@@ -944,7 +943,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 
     /* ===================== SUNSEEKER — SUPERYACHT ===================== */
     { slug:'134-superyacht', brand:'Sunseeker', series:'Superyacht', name:'134 Superyacht', cats:'sunseeker superyacht', full:true,
-      loaM:'40.45', loaFt:"132'8\"", hero:DEV+'2026/04/134-superyacht-banner.webp', card:DEV+'2026/04/sunseeker-134-superyacht-1.webp',
+      loaM:'40.45', loaFt:"132'8\"", hero:DEV+'2026/04/134-superyacht-banner.webp', card:'Assets/Sunseeker/134-Superyacht/sunseeker-134-superyacht-1.webp',
       brochure:DEV+'2026/04/Sunseeker-134-Superyacht.pdf', gallery:gal(DEV+'2026/04/sunseeker-134-superyacht-',1,12),
       desc:'Sunseeker\u2019s flagship. A 40-metre tri-deck superyacht uniting tremendous volume, five opulent cabins and genuine ocean-crossing capability \u2014 the pinnacle of British boatbuilding.',
       specs:[
