@@ -30,9 +30,9 @@
   padding:18px 2px;border-bottom:1px solid var(--line-l)}
 .spec-trow:last-child{border-bottom:none}
 .spec-trow .k{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);font-weight:600}
-.spec-trow .m{font-family:'Archivo',sans-serif;font-size:clamp(1rem,1.5vw,1.2rem);font-weight:700;color:var(--ink);letter-spacing:-.01em}
-.spec-trow .m.wide{grid-column:2 / -1;font-weight:600}
-.spec-trow .i{font-family:'Archivo',sans-serif;font-size:clamp(1rem,1.5vw,1.2rem);font-weight:400;color:var(--ink-soft);letter-spacing:-.01em}
+.spec-trow .m{font-family:'Archivo',sans-serif;font-size:clamp(1rem,1.5vw,1.2rem);font-weight:400;color:var(--ink-soft);letter-spacing:-.01em}
+.spec-trow .m.wide{grid-column:2 / -1;font-weight:400}
+.spec-trow .i{font-family:'Archivo',sans-serif;font-size:clamp(1rem,1.5vw,1.2rem);font-weight:400;color:var(--ink-softer);letter-spacing:-.01em}
 @media(max-width:680px){
   .spec-trow{grid-template-columns:1fr;gap:4px;padding:16px 2px}
   .spec-trow .k{margin-bottom:4px}
@@ -74,7 +74,7 @@
     <!-- Principal Characteristics & Technical Specifications -->
     <div class="spec-section" id="spec-section">
       <div class="spec-head reveal">
-        <span class="kicker">Specifications</span>
+        <span class="kicker" style="color:var(--blue); margin-bottom: 16px;">Specifications</span>
         <h2>Principal Characteristics <span class="thin">&amp; Technical Specifications</span></h2>
       </div>
       <div class="spec-tabs reveal" data-d="1" id="yacht-spec-tabs"></div>
