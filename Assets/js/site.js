@@ -84,7 +84,6 @@
         <h5>Company</h5>
         <ul>
           <li><a href="about.html">About</a></li>
-          <li><a href="brokerage.html">Brokerage</a></li>
           <li><a href="service.html">After-Sales</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>

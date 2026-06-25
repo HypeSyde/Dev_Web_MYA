@@ -366,6 +366,16 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .cta h2 .thin{font-weight:300}
 .cta p{color:rgba(244,245,243,.82);max-width:54ch;margin:0 auto 38px;font-size:1.05rem;font-weight:300}
 
+/* readability shadow for text over hero / large-display images.
+   --tsh tunes strength per section: default is subtle; tsh-med / tsh-strong / tsh-max
+   step it up for sections whose text sits over brighter backgrounds. */
+.phero h1,.phero .kicker,.phero .crumb,.phero p,
+.band h2,.band p,.band .kicker,
+.cta h2,.cta p{text-shadow:var(--tsh,0 1px 3px rgba(0,0,0,.40))}
+.tsh-med{--tsh:0 1px 4px rgba(0,0,0,.50)}
+.tsh-strong{--tsh:0 1px 2px rgba(0,0,0,.42),0 2px 8px rgba(0,0,0,.42)}
+.tsh-max{--tsh:0 1px 2px rgba(0,0,0,.55),0 3px 11px rgba(0,0,0,.50)}
+
 /* ============================================================ MODEL DETAIL */
 .spec-layout{display:grid;grid-template-columns:1fr 1fr;gap:clamp(38px,5vw,80px);align-items:start}
 .spec-intro h2{font-size:clamp(1.9rem,4vw,3rem);margin-bottom:22px;text-transform:uppercase;font-weight:800;letter-spacing:-.015em}

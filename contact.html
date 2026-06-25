@@ -9,6 +9,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="Assets/css/site.css">
+<style>/* contact.html — social icon glyphs (greyscale, invert to light on hover) */
+.socials a img{width:21px;height:auto;display:block;transition:filter .45s var(--ease)}
+.socials a:hover img{filter:brightness(0) invert(1)}
+</style>
 </head>
 <body data-page="contact">
 <div class="grain"></div>
@@ -18,12 +22,12 @@
 <div class="drawer" id="drawer"></div>
 <main>
 <!-- ===================== HERO ===================== -->
-<section class="phero">
+<section class="phero tsh-med">
   <div class="phero-bg" data-parallax data-speed="0.14" style="background-image:url('https://motoryachts.yourdevelopmentserver.net/wp-content/uploads/2026/04/saxdor-340-gtwa.webp')"></div>
   <div class="wrap phero-inner">
     <div class="crumb"><a href="index.html">Home</a><span class="sl">/</span><span>Contact</span></div>
     <span class="kicker">Get in Touch</span>
-    <h1 class="disp">Contact <span class="thin">MYA</span></h1>
+    <h1 class="disp">Contact <img src="Assets/Logo_V5.png" alt="MYA" style="height:1.05em;width:auto;vertical-align:-.18em;margin-left:.1em;" ></h1>
     <p>Sales enquiries, private viewings, brokerage consultations or service bookings — speak directly with our Fremantle team.</p>
   </div>
 </section>
@@ -39,13 +43,13 @@
 
         <div class="cblock">
           <div class="ct">Sales Team</div>
+          <div class="cline" style="margin-top:14px">
+            <div class="person"><b>Nick Karageorge</b><span><a href="tel:0418949111">0418 949 111</a></span></div>
+            <div class="person"><b><a href="mailto:nick@myaa.com.au">nick@myaa.com.au</a></b><span></span></div>
+          </div>
           <div class="cline">
             <div class="person"><b>James</b><span><a href="tel:0499770180">0499 770 180</a></span></div>
             <div class="person"><b><a href="mailto:james@myaa.com.au">james@myaa.com.au</a></b><span></span></div>
-          </div>
-          <div class="cline" style="margin-top:14px">
-            <div class="person"><b>Shaw Goh</b><span><a href="tel:0409578986">0409 578 986</a></span></div>
-            <div class="person"><b><a href="mailto:shaw.goh@myaa.com.au">shaw.goh@myaa.com.au</a></b><span></span></div>
           </div>
         </div>
 
@@ -57,8 +61,8 @@
         <div class="cblock">
           <div class="ct">Follow Us</div>
           <div class="socials">
-            <a href="https://www.instagram.com/motoryachtsaustralasia" target="_blank" rel="noopener">IG</a>
-            <a href="https://www.facebook.com/motoryachtsaustralasia/" target="_blank" rel="noopener">FB</a>
+            <a href="https://www.instagram.com/motoryachtsaustralasia" target="_blank" rel="noopener" aria-label="Instagram"><img src="Assets/social-instagram.svg" alt="Instagram"></a>
+            <a href="https://www.facebook.com/motoryachtsaustralasia/" target="_blank" rel="noopener" aria-label="Facebook"><img src="Assets/social-facebook.svg" alt="Facebook"></a>
           </div>
         </div>
       </div>
@@ -80,7 +84,7 @@
               <option>Sunseeker</option>
               <option>Saxdor</option>
               <option>Pre-Owned</option>
-              <option>Brokerage</option>
+              <option>Vessel Appraisal</option>
               <option>After-Sales / Service</option>
               <option>Private Viewing</option>
             </select>

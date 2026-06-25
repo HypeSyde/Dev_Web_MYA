@@ -148,6 +148,16 @@
   var ctaBg = document.getElementById('yacht-cta-bg');
   if(ctaBg) ctaBg.style.backgroundImage = 'url("' + y.hero + '")';
 
+  /* Hero text-shadow tier — set per measured brightness of each hero's text region (bottom-left).
+     Models not listed use the subtle default; brighter backgrounds step up to med/strong/max. */
+  var SHADOW = {
+    med:    ['134-superyacht','88-yacht','saxdor-340-gtwa','saxdor-400-gtc','saxdor-400-gts','sealegs-71-commercial-rib','sealegs-75-alloy','sealegs-75-amphibious-rib'],
+    strong: ['75-sport-yacht','76-yacht','90-ocean','94-yacht','95-yacht','manhattan-55','manhattan-68','predator-55','predator-65','saxdor-270-gto','saxdor-320-gtc','saxdor-320-gto','saxdor-400-gto','sealegs-12m-commercial-rib','sealegs-38-tender','sealegs-61-sport-rib','sealegs-75-electric-rib','sealegs-85-alloy-cabin','sealegs-9m-commercial-rib','sealegs-9m-hydrasol-rib'],
+    max:    ['65-sport-yacht','82-ocean','82-ocean-enclosed','90-ocean-enclosed','predator-75','saxdor-200','saxdor-205','sealegs-12m-sport-rib','sealegs-65-alloy-cuddy','sealegs-71-sport-rib']
+  };
+  var heroSec = document.getElementById('yacht-hero');
+  if(heroSec){ for(var _t in SHADOW){ if(SHADOW[_t].indexOf(slug) >= 0){ heroSec.classList.add('tsh-'+_t); break; } } }
+
   document.getElementById('yacht-crumb').innerHTML =
     '<a href="index.html">Home</a><span class="sl">/</span>' +
     '<a href="' + (y.brand==='Sunseeker'?'sunseeker.html':y.brand==='Sealegs'?'sealegs.html':'saxdor.html') + '">' + y.brand + '</a>' +
