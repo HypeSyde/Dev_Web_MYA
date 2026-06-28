@@ -54,23 +54,25 @@
 `;
   var FOOTER = `
   <div class="wrap">
-    <div class="f-top">
-      <div class="f-brand">
-      <img src="Assets/Logo_V5.png" alt="MYA — Motoryachts Australasia" class="logo-img">
-      <p>The official Western Australian dealer for the world's most sought-after yacht and marine brands.</p>
-      <div class="dealer-logos">
-        <img src="Assets/Sunseeker_Silver_Logo.png" alt="Sunseeker" class="dlr-logo">
-        <img src="Assets/Saxdor-Blue-Logo.png" alt="Saxdor" class="dlr-logo">
-        <img src="Assets/Sealegs-logo.png" alt="Sealegs" class="dlr-logo">
-        <img src="Assets/Pirelli_Speedboat_Logo.png" alt="Pirelli" class="dlr-logo">
-        <img src="Assets/Protector_Logo.png" alt="Protector" class="dlr-logo">
-      </div>
-        <div class="ded">
-          Official Dealer · Sunseeker &amp; Saxdor<br>
-          Member · DCH Marine Network<br>
-          Authorised Mercury Dealer
+    <div class="f-brand">
+      <img src="Assets/Logo_V5.png" alt="MYA — Motoryachts Australasia" class="f-mya-logo">
+      <div class="f-dealer-block">
+        <span class="f-partner-label">Official Dealers for:</span>
+        <div class="f-logo-row">
+          <img src="Assets/SVG/Sunseeker_Silver_Logo.svg" alt="Sunseeker" class="f-dlr-logo f-dlr-sunseeker">
+          <img src="Assets/SVG/Saxdor-Blue-Logo.svg" alt="Saxdor" class="f-dlr-logo f-dlr-saxdor">
+          <img src="Assets/SVG/Sealegs-logo.svg" alt="Sealegs" class="f-dlr-logo f-dlr-sealegs">
         </div>
       </div>
+      <div class="f-dealer-block">
+        <span class="f-partner-label">Authorized Service Agents for:</span>
+        <div class="f-logo-row">
+          <img src="Assets/SVG/Protector_Logo.svg" alt="Protector" class="f-dlr-logo f-dlr-service">
+          <img src="Assets/SVG/Pirelli_Speedboat_Logo.svg" alt="Pirelli" class="f-dlr-logo f-dlr-service">
+        </div>
+      </div>
+    </div>
+    <div class="f-cols">
       <div class="f-col">
         <h5>Yachts</h5>
         <ul>
