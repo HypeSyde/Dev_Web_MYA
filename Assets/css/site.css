@@ -141,7 +141,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .burger{display:none;flex-direction:column;gap:5px;width:28px;cursor:pointer;background:none;border:none;padding:6px 0}
 .burger span{height:1.5px;width:100%;background:var(--paper);transition:.4s var(--ease)}
 @media (max-width:1080px){.nav{gap:20px}.nav-links{gap:18px}.nav-enq{padding:10px 18px}}
-@media (max-width:900px){.nav-left,.nav-right{display:none}.logo{margin:0 auto}.burger{display:flex}}
+@media (max-width:900px){.nav-left,.nav-right{display:none}.header .bar{position:relative}.logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0}.burger{display:flex;margin-left:auto}}
 .burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
 .burger.open span:nth-child(2){opacity:0}
 .burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
@@ -267,7 +267,7 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
   transition:border-color .5s var(--ease),transform .5s var(--ease);display:flex;flex-direction:column}
 .light .yacht{background:var(--white)}
 .yacht:hover{border-color:var(--line-l);transform:translateY(-5px)}
-.yacht .ph{position:relative;overflow:hidden;aspect-ratio:4/3}
+.yacht .ph{position:relative;overflow:hidden;aspect-ratio:4/3;container-type:inline-size}
 .yacht .ph .img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform 1.2s var(--ease)}
 .yacht.cut .ph{background:linear-gradient(160deg,#dfe4e7,#f1f3f2);aspect-ratio:4/3}
 .yacht.cut .ph .img{background-size:contain;background-repeat:no-repeat;inset:8% 6%}
@@ -276,8 +276,8 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .yacht .ph::after{content:"";position:absolute;inset:0;background:transparent;opacity:.65;transition:opacity .5s}
 .yacht.cut .ph::after{display:none}
 .yacht:hover .ph::after{opacity:1}
-.yacht .tag{position:absolute;top:10px;left:16px;z-index:3;font-size:15px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;
-  color:var(--black);background:rgba(243, 198, 0, 0.849);border:1px solid var(--line-d);padding:7px 13px;backdrop-filter:blur(6px)}
+.yacht .tag{position:absolute;top:3.2cqw;left:5cqw;z-index:3;font-size:clamp(10px,4.2cqw,15px);letter-spacing:.2em;text-transform:uppercase;font-weight:600;
+  color:var(--black);background:rgba(243, 198, 0, 0.849);border:1px solid var(--line-d);padding:clamp(4px,1.8cqw,7px) clamp(8px,3.4cqw,13px);backdrop-filter:blur(6px)}
 .yacht.cut .tag{color:var(--ink);background:rgba(255,255,255,.7);border-color:var(--line-l)}
 .yacht .info{padding:24px 26px 28px;display:flex;flex-direction:column;flex:1}
 .light .yacht .info{color:var(--ink)}
@@ -468,8 +468,10 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 .field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--blue)}
 .field select{color:var(--ink-soft)}
 .form .btn{width:100%;justify-content:center;margin-top:6px}
-.form-note{margin-top:18px;font-size:12px;color:var(--ink-soft);text-align:center;opacity:0;height:0;transition:opacity .5s}
-.form-note.show{opacity:1;height:auto}
+.form-note{margin-top:18px;font-size:14px;font-weight:600;line-height:1.5;color:var(--ink-soft);text-align:center;opacity:0;height:0;overflow:hidden;border-radius:3px;transition:opacity .4s,height .4s}
+.form-note.show{opacity:1;height:auto;padding:16px 20px;margin-top:18px}
+.form-note.success{background:rgba(47,111,158,.08);border:1px solid var(--blue);color:var(--blue)}
+.form-note.error{background:rgba(192,57,43,.08);border:1px solid #c0392b;color:#c0392b}
 .map-wrap{margin-top:80px;height:440px;overflow:hidden;border:1px solid var(--line-l);filter:grayscale(1) contrast(1.05);transition:filter .6s var(--ease)}
 .map-wrap:hover{filter:grayscale(0)}
 .map-wrap iframe{width:100%;height:100%;border:0;display:block}
@@ -514,7 +516,9 @@ h1,h2,h3,h4{font-family:'Archivo',sans-serif;font-weight:700;line-height:1.0;let
 /* ============================================================ RESPONSIVE */
 @media(max-width:1080px){
   .nav-links,.nav-phone,.nav-enq{display:none}
-  .burger{display:flex}
+  .header .bar{position:relative}
+  .logo{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0}
+  .burger{display:flex;margin-left:auto}
   .fleet-grid{grid-template-columns:repeat(2,1fr)}
   .feat-grid.c3{grid-template-columns:1fr 1fr}
   .footer .wrap{display:block}

@@ -243,22 +243,57 @@
     });
   }
 
-  /* ---------- contact form (front-end demo) ---------- */
+  /* ---------- contact form (sends enquiry to admin@myaa.com.au via Web3Forms) ---------- */
+  var WEB3FORMS_KEY = '98169c29-a7ad-4e9b-aada-a49b5e8368bb'; // get a free key at https://web3forms.com (destination: admin@myaa.com.au)
   var form = document.getElementById('enquiry');
   if(form){
     var note = document.getElementById('note');
     var sel = form.querySelector('select');
-    if(sel) sel.addEventListener('change', function(){ sel.style.color = sel.value ? 'var(--paper)' : 'var(--muted)'; });
+    if(sel) sel.addEventListener('change', function(){ sel.style.color = sel.value ? 'var(--ink)' : 'var(--ink-soft)'; });
     form.addEventListener('submit', function(ev){
       ev.preventDefault();
-      var fn = (form.querySelector('#fn')||{}).value || '';
-      var em = (form.querySelector('#em')||{}).value || '';
-      fn = fn.trim(); em = em.trim();
-      if(!fn || !em){ note.textContent = 'Please add your name and email so we can reply.'; note.classList.add('show'); return; }
-      note.textContent = 'Thank you, ' + fn + ' — your enquiry has been received. Our team will be in touch within one business day.';
-      note.classList.add('show');
-      form.reset();
-      if(sel) sel.style.color = 'var(--muted)';
+      var val = function(id){ var el = form.querySelector(id); return el ? (el.value || '').trim() : ''; };
+      var fn = val('#fn'), em = val('#em');
+      if(!fn || !em){ note.textContent = 'Please add your name and email so we can reply.'; note.classList.remove('success'); note.classList.add('error', 'show'); return; }
+      var ph = val('#ph'), mo = val('#mo'), ms = val('#ms');
+      var type = (sel && sel.value) ? sel.value : 'General Enquiry';
+      var btn = form.querySelector('button[type="submit"]');
+      if(btn) btn.disabled = true;
+      note.classList.remove('show', 'success', 'error');
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject: 'Website Enquiry — ' + type + ' — ' + fn,
+          from_name: fn,
+          name: fn,
+          email: em,
+          phone: ph || '—',
+          enquiry_type: type,
+          model_of_interest: mo || '—',
+          message: ms || '—'
+        })
+      }).then(function(res){ return res.json(); }).then(function(data){
+        if(data.success){
+          note.textContent = '✓ Thank you, ' + fn + ' — your enquiry has been sent. Our team will be in touch within one business day.';
+          note.classList.add('success');
+          form.reset();
+          if(sel) sel.style.color = 'var(--ink-soft)';
+        } else {
+          note.textContent = 'Sorry, something went wrong sending your enquiry. Please email us directly at admin@myaa.com.au.';
+          note.classList.add('error');
+        }
+        note.classList.add('show');
+        note.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }).catch(function(){
+        note.textContent = 'Sorry, something went wrong sending your enquiry. Please email us directly at admin@myaa.com.au.';
+        note.classList.add('error', 'show');
+        note.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }).finally(function(){
+        if(btn) btn.disabled = false;
+      });
     });
   }
 })();
